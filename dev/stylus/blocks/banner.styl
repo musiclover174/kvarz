@@ -1,0 +1,53 @@
+.banner
+  &__car
+    .swiper-slide
+      oh()
+      size 100vw 100vh
+      opacity .999 !important
+      z-index -1
+      &-active
+        z-index 1
+      &-active ^[0]__slide
+        size 100%
+        transition-delay 0s
+    .swiper-buttons
+      df(flex-start, space-between)
+      pos absolute
+      z-index 1
+      b 27px
+      r 33px
+      w 98px
+  &__slide
+    oh()
+    pos absolute
+    z-index 1
+    r 0
+    b 0
+    bgc black
+    size 0 0
+    border-top-left-radius 70vh
+    transition 1s 1s width, 1s 1s height
+    &-inner
+      pos absolute
+      b 0
+      r 0
+      size 100vw 100vh
+      padding 0 30px 12%
+      df(flex-end, flex-start)
+  &__img
+    pos absolute
+    t 0
+    l 0
+    z-index -1
+    size 100%
+    object-fit cover
+    opacity .45
+  &__inner
+    max-width 1020px
+    margin 0 auto
+    c white
+    fontify 60px 600 64px
+    text-align center
+    @media $desktopMax
+      fontify 48px 600 52px
+      max-width 823px

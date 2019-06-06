@@ -1,0 +1,139 @@
+.footer
+  pos relative
+  z-index 1
+  oh()
+  padding 70px 32px 24px
+  &:before
+    content ""
+    bgc $bg
+    pos absolute
+    l 0
+    t 0
+    z-index -1
+    size 100%
+    border-bottom-right-radius 70vh
+  &__top
+    max-width 1570px
+  &__cols
+    df()
+    ml -32px
+    w calc(100% + 32px)
+    &_toend
+      justify-content flex-end
+  &__col
+    ml 32px
+    w calc(100% / 6 - 32px)
+    &_col2
+      w calc(100% / 3 - 32px)
+  &__bottom
+    mt 26px
+    @media $desktopMaxFrom
+      & ^[0]__col
+        w 157px
+  &__copy
+    fontify 15px 400 21px
+    pt 5px
+    mb 20px
+    @media $desktopMax
+      fontify 14px 400 20px
+  &__address
+    fontify 15px 400 21px
+    max-width 85%
+    mb 22px
+    @media $desktopMax
+      fontify 14px 400 20px
+  &__phones
+    df()
+    ml -64px
+    w calc(100% + 64px)
+    @media $desktopMax
+      ml 0
+      w 100%
+      flex-direction column
+    &-elem
+      ml 64px
+      @media $desktopMax
+        ml 0
+      & + &
+        @media $desktopMax
+          mt 23px
+    &-title
+      c $grey
+      fontify 15px 400 21px
+      mb 3px
+      @media $desktopMax
+        fontify 14px 400 20px
+    &-val
+      c black
+      fontify 18px 500 18px
+  &__feed
+    mt 53px
+    &-title
+      fontify 15px 400 21px
+      max-width 81%
+      mb 20px
+      @media $desktopMax
+        fontify 14px 400 20px
+  &__nav
+    overflow hidden
+    pt 4px
+    max-width 185px
+    @media $PortraitMedium
+      mb 40px
+    &-href
+      float left
+      clear both
+      c #858585
+      fontify 15px 400 21px
+      transition .7s color
+      @media $desktopMax
+        fontify 14px 400 20px
+      &:not(&_main):hover, 
+      &:not(&_main).active
+        color $blue
+      &:not(&_main) + &:not(&_main)
+        mt 18px
+      &_main
+        c black
+        fontify 17px 500 23px
+        @media $desktopMax
+          fontify 15px 500 21px
+        &:hover,
+        &.active
+          color $blue
+        &:not(:first-child)
+          mt 40px
+      &_main + &
+        mt 19px
+        @media $desktopMax
+          mt 21px
+      &_main + &_main
+        mt 49px
+  &__dextra
+    pos relative
+    ib()
+    pl 80px
+    color silver
+    font-family Verdana, Geneva, sans-serif
+    fontify 9px 400 14px
+    text-transform uppercase
+    letter-spacing 0.18em
+    @media $PortraitMedium
+      l 42px
+    span
+      pos absolute
+      t 3px
+      w 74px
+      l 0
+      bgc #dfdfdf
+      color white
+      font-family Arial
+      fontify 12px 900 21px
+      text-transform uppercase
+      letter-spacing 0.1em
+      border-radius 3px
+      text-align center
+      padding 0 6px
+      transition 0.7s background
+    &:hover span
+      background-color $blue

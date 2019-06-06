@@ -1,0 +1,235 @@
+.about
+  bgc $blue
+  &__cols
+    df()
+  &__col
+    w calc(50% - 16px)
+    & + &
+      ml 32px
+  &__wrapper
+    h 300vh
+    oh()
+  &__fixer
+    h 100vh
+    &-inner
+      pos relative
+      size 100% 100vh
+  &__map
+    pos absolute
+    size 100%
+    t 0
+    l 0
+    opacity 0
+    visibility hidden
+    transition .7s opacity, .7s visibility
+    pointer-events none
+    filter saturate(150%) brightness(83%)
+    /body.showmap &
+      opacity 1
+      visibility visible
+      z-index 3
+      pointer-events all
+  &__back
+    cursor pointer
+    pos absolute
+    size 33px
+    l 10px
+    t 30px
+    opacity 0
+    z-index 30
+    visibility hidden
+    background: url('../i/left_seq.png') no-repeat 0 -1617px
+    pointer-events none
+    transition 0.5s left, 0.5s opacity
+    /body.showmap &
+      opacity 1
+      l 30px
+      visibility visible
+      pointer-events all
+    &:hover
+      animation arrAnimation 1s steps(49)
+  &__block
+    pos absolute
+    size 100% 100vh
+    t 0
+    l 0
+    z-index 1
+    c white
+    dfv(center, space-between)
+    pt 85px
+    opacity 0
+    pointer-events none
+    visibility hidden
+    transition .5s visibility, .5s opacity
+    ^[0]__wrapper.block1 &_block1
+      opacity 1
+      pointer-events all
+      visibility visible
+      transition .5s .5s visibility, .5s .5s opacity
+    ^[0]__wrapper.block2 &_block2
+      opacity 1
+      pointer-events all
+      visibility visible
+      transition .5s .5s visibility, .5s .5s opacity
+    ^[0]__wrapper.block3 &_block3
+      opacity 1
+      pointer-events all
+      visibility visible
+      transition .5s .5s visibility, .5s .5s opacity
+    ^[0]__wrapper.block3 &-tomap,
+    ^[0]__wrapper.block2 &-tomap
+      opacity 1
+      pointer-events all
+      visibility visible
+      transition .5s .9s visibility, .5s .9s opacity
+    &-tomap
+      cursor pointer
+      position absolute
+      z-index 2
+      b 85px
+      l 50%
+      r 0
+      transform translateX(-50%)
+      text-align center
+      opacity 0
+      pointer-events none
+      visibility hidden
+      transition .5s visibility, .5s opacity
+    &-title
+      fontify 30px 600 34px
+      max-width 90%
+    &-text
+      max-width 90%
+      margin 28px 0
+      fontify 17px 400 23px
+      @media $desktopMax 
+        fontify 15px 400 21px
+      span
+        c black
+        bgc white
+        border-radius 50%
+        display inline-block
+        vertical-align middle
+        size 17px
+        text-align center
+        fontify 13px 600 17px
+        &:first-child
+          mt -4px
+      &:first-child
+        mt 0
+      &:last-child
+        mb 0
+    &-svg
+      pos absolute
+      t 0
+      l 0
+      size 100%
+      .map
+        backface-visibility hidden
+        transition .7s .7s transform
+        transform-origin center !important
+        .st0
+          fill none
+          stroke #5c7bb4
+          opacity .2
+          transition 2s stroke
+        circle
+          fill white
+          transition 0.1s 1.4s opacity
+      .path1
+        opacity 0
+        .st1
+          fill none
+          stroke #FFFFFF
+          stroke-width 2
+          stroke-miterlimit 10
+        .st11
+          enable-background new
+        .st12
+          fill #FFFFFF
+        .st13
+          fill #8593BC
+        .st14
+          fill #FFFFFF
+          stroke #FFFFFF 
+          stroke-width:2 
+          stroke-miterlimit 10
+      .path2
+        opacity 0
+        .st2
+          fill #3059A5
+        .st21
+          fill none
+          stroke #FFFFFF
+          stroke-width 2
+          stroke-miterlimit 10
+        .st22
+          fill #FFFFFF
+        .st223
+          fill #8593BC
+      ^[0]__wrapper.block2 &
+        .map
+          transition .7s transform
+          transform translate3D(40%, -266%, 0) scale(18)
+          .st0
+            stroke #113e92
+            transition .4s stroke
+            &.prefer
+              fill rgba(255, 255, 255, .2)
+          circle
+            opacity 0
+            transition 0s opacity
+        .path1
+          opacity 1
+          transition .7s
+      ^[0]__wrapper.block3 &
+        .map
+          transition .7s transform
+          transform translate3D(125%, -1058%, 0) scale(70)
+          .st0
+            stroke #113e92
+            &.prefer
+              fill rgba(255, 255, 255, .2)
+          circle
+            opacity 0
+            transition 0s opacity
+        .path1
+          opacity 0
+          transition 0s
+        .path2
+          opacity 1
+          transition .7s
+  &__lead
+    c white
+    pt 55px
+    pb 100px
+    &-title
+      fontify 30px 600 34px
+      max-width 85%
+    &-text
+      pt 2px
+      fontify 17px 400 23px
+      mb 28px
+      @media $desktopMax 
+        fontify 15px 400 21px
+    &-href
+      c white
+      fontify 17px 500 23px
+      bb(1px, solid, white)
+      @media $desktopMax 
+        fontify 15px 500 21px
+    &-car
+      margin 75px 32px 0
+      overflow visible
+      .swiper-wrapper
+        align-items stretch
+      .swiper-slide
+        w auto
+        h auto
+        .glightbox
+          db()
+    &-img
+      db()
+      size 100%
+      object-fit cover
+      border-bottom-left-radius 120px

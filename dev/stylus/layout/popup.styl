@@ -1,0 +1,186 @@
+.hidden-block
+  height 0
+
+.popup
+  display inline-block
+  vertical-align middle
+  pos absolute
+  t -1000%
+  c white
+  z-index 1
+  width 94%
+  max-width 856px
+  opacity 0
+  text-align left
+  visibility hidden
+  @media $PortraitMedium
+    padding 30px 20px
+  &_search
+    bgc transparent
+    padding 0
+    max-width 636px
+    w calc(100% - 120px)
+    @media $PortraitMedium
+      w calc(100% - 80px)
+    ml -40px
+    & ^[0]__form
+      mt 0
+  &.show
+    t 0
+    pos relative
+    opacity 1
+    visibility visible
+    transition .7s .7s transform, .7s .7s opacity
+  &__over
+    t 0
+    l 0
+    r 0
+    b 0
+    pos fixed
+    overflow hidden
+    z-index 1000
+    transform translateY(-100%)
+    will-change transform
+    transition 0s 1.4s transform
+    @media $PortraitMedium
+      padding 60px 0 30px
+  &__bg
+    pos fixed
+    z-index 0
+    l 0
+    t 0
+    b 0
+    w 0
+    bgc $blue
+    opacity 0
+    transition .7s .2s opacity, .7s .2s width
+  &__inner
+    pos absolute
+    b 0
+    l 0
+    r 0
+    t 0
+  &__stage
+    padding 60px 0 30px
+    ps absolute
+    l 0
+    t 0
+    h 100%
+    text-align center
+    overflow hidden
+    &:before
+      content ""
+      display inline-block
+      font-size 0
+      height 100%
+      vertical-align middle
+      width 0
+  &-show
+    oh()
+    & ^[0]__bg
+      w 100%
+      opacity 1
+      transition .7s opacity, .7s width
+      @media $desktopMin
+        opacity 1
+    & ^[0]__over
+      transform translateY(0)
+      transition 0s 0s transform
+    & ^[0]__stage
+      overflow-y scroll
+  &__title
+    pos relative
+    z-index 1
+    fontify 44px 700 48px
+    mb 29px
+    @media $lDesktopSmall
+      fontify 36px 700 40px
+    @media $PortraitMax
+      fontify 30px 700 34px
+  &__subtitle
+    fontify 16px 400 26px
+    @media $lDesktopSmall
+      fontify 15px 400 25px
+  &__hint
+    fontify 16px 400 24px
+    max-width 630px
+    a
+      c white
+      bb(1px, solid, white)
+    @media $lDesktopSmall
+      fontify 15px 400 21px
+  &__close
+    pos fixed
+    z-index 2
+    t 33px
+    r 33px
+    size 27px 26px
+    background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAaCAQAAADsge97AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBgQOGCYGrpHVAAAAs0lEQVQ4y5XUUQ6DIAyA4bJzcP97bDvBjMsSPMy/B0JAbEvFFwU/Am1T4c1GRoJP5suHJOzAEYSZA/iR2msEDn/WzxKAp+3b1ApOZ+rTHrxcZFyyoHL787IG1ZDN+87QiPP1QCM0k6Ndv0Eno3rcKnTKwMpSAS+TD9FHEn84yS13DtkD4VSOXxEmXJWRAZdlpMMVMuAaqTCCFNhRWTaFMjaFGJpgbXgR1OGOCM+b7XXjhfwBP4Yq+YhM2FUAAAAASUVORK5CYII=') no-repeat center
+    transition .7s opacity
+    @media $PortraitMedium
+      r 0
+      t -40px
+    &:hover
+      opacity .5
+    &-btn
+      mt 23px
+  &__form
+    mt 41px
+    &_search
+      pos relative
+    &-sbm
+      pos absolute
+      z-index 1
+      t 0
+      r 0
+      size 40px
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAARCAQAAAB+puRPAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjARcNGBwyaNJfAAAA30lEQVQoz32QPU4CcRBHH2TPQNDELNnGzhtgbSI2HoBGQ8P2FhyB1hL1EtYUhoRiEztsSIhgAa4HMFbPgvyB1c3+ppnJvPmsCQAJN5zTIOeFBxbsVAcgJSNiwBUDIjLSPYCYOrMlO4ud2Q8Rxn4V0lskN976dXo88U5RSx7phRFT23/qEdtOQ4cmH/zXJ81wxYaTEqDBJgBjOiXAJeOww8HGZVeEP8SF9JtpiCLgHnhlxDNrjuhwyw/Z4ScRE4dOnDtxaOKFuWf7EWV27drTKgC7rmxVAdh37nFNKnTH9y9AkMAQtzyvuQAAAABJRU5ErkJggg==') no-repeat center $red
+      transition .7s background-color
+
+  &__search
+    &-input
+      c white
+      w 100%
+      background transparent
+      border 0
+      border-bottom 2px solid white
+      h 52px
+      font-size 15px
+      c white
+      pr 45px
+      &::-webkit-input-placeholder
+        c white
+      &::-moz-placeholder
+        c white
+      &:-ms-input-placeholder
+        c white
+      @media $PortraitMedium
+        padding 0
+        pr 35px
+    &-sbm
+      pos absolute
+      t 13px
+      r 0
+      size 21px 21px
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAQAAAADHm0dAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBgQOGio9Lr98AAABFElEQVQoz43SuUpDURAA0HHpxCBCUCGN/yH4D2LERoTghriAIBb5AX/HQiuFCCm0t1EbsXAhihGxUEKOTeJ7eSbEmeYO98Bc5k6IVo45UPWGVxV7Rn9vWtk+lLzpjJrFbvQQnCuaNGTKnCqayllawrf1TMNtDU3FNM175w8MYRc1uYSWcdYFhgEX2EnoJek2HbmM04R+YqoHncZTQmG4B83ho10NxmtE5KN7jEfES7sYjJuImOlBZyPi+rey32cCG8lbRz33mOsOHo2kf2sJX9YycEsDK9kdKGuiYt6EMGlBtbU0twrZzSqqZTbrQclNGqdnuOnYvbo7R1aNCIU07j76JFO4H03h/rSNrwbEP6IQJ1H/AfS55S+6gCe9AAAAAElFTkSuQmCC') no-repeat center
+      transition .7s opacity
+      &:hover
+        opacity .5
+      @media $PortraitMedium
+        r 0
+
+.no-touchevents .popup-show
+  mr 17px
+  .popup__close
+    r 50px
+  .header
+    r 17px
+  &.index
+    overflow hidden
+
+// .no-touchevents .showmap
+//   &.index
+//     overflow hidden
+//   .about__fixer-inner,
+//   .ymaps-2-1-74-map
+//     width 100% !important

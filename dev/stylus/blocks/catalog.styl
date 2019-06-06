@@ -1,0 +1,120 @@
+.catalog
+  &_index
+    pt 88px
+    pb 95px
+    pos relative
+    z-index 1
+  &__decor
+    pos absolute
+    z-index -1
+    &_decor1
+      t 10%
+      r 9%
+      size 217px 230px
+      background url('../i/rock1.png') no-repeat center
+    &_decor2
+      t 45%
+      l 30%
+      size 149px 169px
+      background url('../i/rock2.png') no-repeat center
+  &__title
+    c #010101
+    fontify 48px 600 52px
+    mb 27px
+    @media $desktopMax
+      fontify 36px 600 52px
+      mb 22px
+  &__cols
+    df()
+    mb 35px
+  &__col
+    w calc(50% - 16px)
+    & + &
+      ml 32px
+  &__subtitle
+    fontify 17px 400 23px
+    max-width 445px
+    @media $desktopMax
+      fontify 15px 400 21px
+  &__downloads
+    df()
+    flex-wrap wrap
+    ml -30px
+    mt 14px
+    w calc(100% + 30px)
+    &-item
+      pos relative
+      pl 22px
+      ml 30px
+      &:before
+        content ""
+        pos absolute
+        l 0
+        t 5px
+        size 14px 14px
+      &[data-type="file"]:before
+        background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAPFBMVEURPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpL///9zGEmvAAAAEnRSTlMAw60O67vLzRW0AYgPh8jE5qqPK3JeAAAAAWJLR0QTDLtclgAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB+MGBAwgNZYLuJ4AAABNSURBVAjXjc9LFoAgDAPA4K+CCpj7H1a0VnBHVp1F2lc4WoYRAKdZs1DWQg9N2Ch7JXCUuWGIbAn/UJc743uoj9pNxt/mfH7JRH3hLlyjXQd2Ka+cMQAAAABJRU5ErkJggg==') no-repeat center
+      &[data-type="print"]:before
+        background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOBAMAAADtZjDiAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAIVBMVEX///8RPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpL////jC7s7AAAACXRSTlMAAMPru7TmqsRim+vmAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB+MGBAwhCjl2pOIAAABTSURBVAjXY2BgmjlzpgIDg6AkkJ4oCKc1Z4LAJIbJLiBgyTBVEAQiETRYHYg2cXEG0tMqAwVFp2cC9QHpmTOA5gBpoDmMkunlZRMZGBiFgOobGQAodB/BL+fcjgAAAABJRU5ErkJggg==') no-repeat center
+    &-href
+      c black
+      fontify 15px 500 21px
+      bb(1px, solid, black)
+    &-info
+      c $grey
+      fontify 14px 400 20px
+      ml 8px
+  &__types
+    overflow visible
+    mb 40px
+    .swiper-wrapper
+      align-items stretch
+    .swiper-slide
+      h auto
+  &__type
+    c black
+    size 100%
+    border 2px solid #f0f0f0
+    padding 23px 50px 35px 47px
+    bgc white
+    border-bottom-right-radius 90px
+    transition .7s background-color, .7s border-color
+    &:hover
+      c white
+      bgc $blue
+      border-color $blue
+    &-href
+      c inherit
+      fontify 18px 600 24px
+      bb(1px, solid, currentColor)
+      transition .7s color, .7s border-color
+    &-admixture,
+    &-about
+      c inherit
+      mt 14px
+      fontify 17px 400 23px
+      transition .7s color
+      @media $desktopMax
+        fontify 15px 400 21px
+  &__table
+    w 100%
+    &-wrapper
+      padding 0 32px
+      max-width 1364px
+      margin 0 auto
+      bgc white
+    &-hint
+      fontify 17px 400 23px
+      mt 20px
+      text-align center
+      @media $desktopMax
+        fontify 15px 400 21px
+    &-name
+      font-weight 600
+    .choosed
+      bgc $blue
+      c white
+      transition .7s background-color
+      td
+        transition .7s border-color, .7s color
+        border-color #28519c

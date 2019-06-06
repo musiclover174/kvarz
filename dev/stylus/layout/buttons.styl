@@ -1,0 +1,22 @@
+.btn
+  pos relative
+  z-index 1
+  ib()
+  color white
+  padding 0 20px
+  fontify 15px 400 38px
+  &:before
+    content ""
+    pos absolute
+    z-index -1
+    full()
+    bgc $blue
+    border-radius 25px
+    transition .3s top, .3s bottom
+  &_white
+    c #010101
+    &:before
+      bgc white
+  &:hover:before
+    t 3px
+    b 3px

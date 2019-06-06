@@ -1,0 +1,43 @@
+.hidden-block
+  .popup__over
+    span.popup__bg.js-popbg
+    .popup__inner
+      .popup__stage
+        +b.popup._search#search
+          +e.close.js-popclose(type="button", title="Закрыть")
+          +e('form').form
+            input.popup__search-input(type="text", data-req="req", placeholder="Что будем искать?")
+            button.popup__search-sbm(type="submit", aria-label="Найти")
+
+        +b.popup#feed
+          +e.close.js-popclose(type="button", title="Закрыть")
+          +e('p').title Связаться с нами
+          +e('p').hint Обратите внимание, отправляя данную форму, вы даете согласие на 
+            a(href="#", target="_blank") обработку персональных данных
+            | . Поля со звездочкой «*» – обязательны для заполнения.
+          +e('form').form
+            .common__cols
+              .common__col
+                .common__row
+                  label.common__label Ваше имя 
+                    span *
+                  input.common__input(type="text", data-req="req")
+                .common__row
+                  label.common__label Электронная почта 
+                    span *
+                  input.common__input(type="text", data-req="req")
+                .common__row
+                  label.common__label Телефон
+                  input.common__input.js-phone(type="text")
+              .common__col
+                .common__row
+                  label.common__label Текст сообщения 
+                    span *
+                  textarea.common__textarea(type="text", data-req="req")
+            button.common__submit.btn.btn_white(type="submit") Отправить
+
+        +b.popup#text
+          +e.close.js-popclose(type="button", title="Закрыть")
+          +e('p').title Заявка отправлена
+          +e('p').subtitle Спасибо. Ваша заявка успешно отправлена. Мы свяжемся с вами по указанному номеру в самое ближайшее время.
+          +btn('Закрыть', false)(class="popup__close-btn btn btn_white js-popclose")

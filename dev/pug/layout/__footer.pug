@@ -1,0 +1,55 @@
+include ../mixins/index
+
++b('footer').footer
+  +e.top
+    +e.cols
+      +e.col._col2
+        +e('p').copy © ООО «Русский Кварц», 2019
+        +e('p').address 456870, Россия, Челябинская область, город Кыштым, Каслинское шоссе, дом 3
+        +e.phones
+          +e.phones-elem
+            +e('p').phones-title Телефон
+            +e.phones-val(href="+73515143845") +7 (35151) 4-38-45
+          +e.phones-elem
+            +e('p').phones-title Факс
+            +e('span').phones-val +7 (35151) 4-38-48
+        +e.feed
+          +e('p').feed-title Если у вас остались вопросы, напишите нам, и наш сотрудник ответит вам в кратчайшие сроки.
+          +btn('Связаться с нами', true, '#feed')(class="footer__btn btn")
+      +e.col
+        +e('nav').nav
+          +e.nav-href._main(href="#") О предприятии
+          +e.nav-href(href="#") История
+          +e.nav-href(href="#") Руководство предприятия
+          +e.nav-href(href="#") Месторождение
+          +e.nav-href(href="#") Производство
+          +e.nav-href(href="#") Собственная аналитическая лаборатория
+          +e.nav-href(href="#") Система качества РК
+          +e.nav-href(href="#") Лицензиии сертификаты
+      +e.col
+        +e('nav').nav
+          +e.nav-href._main(href="#") Продукция
+          +e.nav-href(href="#") RQ-2KFf
+          +e.nav-href(href="#") RQ-2Ki
+          +e.nav-href(href="#") RQ-3K
+          +e.nav-href(href="#") RQ-2Kf
+          +e.nav-href(href="#") RQ-2K
+          +e.nav-href(href="#") RQ-1K
+      +e.col
+        +e('nav').nav
+          +e.nav-href._main(href="#") Информация покупателям
+          +e.nav-href(href="#") Области применения продукции РК
+          +e.nav-href(href="#") Как выглядит готовая упакованная продукция
+          +e.nav-href(href="#") Логистика
+      +e.col
+        +e('nav').nav
+          +e.nav-href._main(href="#") Контактная информация
+          +e.nav-href._main(href="#") Брошюры для&nbsp;скачивания
+  +e.bottom
+    +e.cols._toend
+      +e.col
+        +e.dextra(href="https://www.dextra.ru/", target="_blank")
+          span dextra
+          | Разработка<br>сайта
+
+include __popups

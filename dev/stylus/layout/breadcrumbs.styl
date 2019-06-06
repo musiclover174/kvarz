@@ -1,0 +1,21 @@
+.breadcrumbs
+  color black
+  mb 15px
+  &__href
+    color inherit
+    fontify 14px 400 18px
+    border-bottom 1px solid
+    transition .7s border
+    &:not([href])
+      border-color transparent
+    &:hover
+      border-color transparent
+  &__delim
+    display inline-block
+    vertical-align top
+    margin 9px 9px 11px
+    size 15px 2px
+    bgc $red
+
+  & + h1:not([class])
+    mt 0

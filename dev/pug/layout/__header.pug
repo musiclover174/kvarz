@@ -1,0 +1,66 @@
+include ../mixins/index
+
++b('header').header
+  +e.logo(href="#")
+    +e.logo-img(src="img/logo.png")
+  +e('aside').side
+    +e.row
+      +e.lang-href(href="#") Eng
+      +e.lang-href(href="#") 中文
+      +e.tel(href="tel:+73515143845") +7 (35151) 4-38-45
+      +btn('Связаться с нами', true, '#feed')(class="header__btn btn")
+    +e.row
+      +b('nav').menu
+        +e('ul').list
+          +e.item._tablet
+            .header__lang
+              a(href="#").header__lang-href Eng
+              a(href="#").header__lang-href 中文
+          +e.item
+            +e.href._havesub._active(href="#") О предприятии
+            +e('ul').sublist
+              +e.sublist-item
+                +e.sublist-href(href="#") История
+              +e.sublist-item
+                +e.sublist-href(href="#") Руководство предприятия
+              +e.sublist-item
+                +e.sublist-href(href="#") Месторождение
+              +e.sublist-item
+                +e.sublist-href(href="#") Производство
+              +e.sublist-item
+                +e.sublist-href(href="#") Собственная аналитическая лаборатория
+              +e.sublist-item
+                +e.sublist-href(href="#") Система качества РК
+              +e.sublist-item
+                +e.sublist-href(href="#") Лицензии и сертификаты
+          +e.item
+            +e.href(href="#") Продукция
+          +e.item
+            +e.href._havesub(href="#") Информация покупателям
+            +e('ul').sublist
+              +e.sublist-item
+                +e.sublist-href(href="#") Области применения продукции РК
+                +e('ul').sublist._lvl2
+                  +e.sublist-item
+                    +e.sublist-href(href="#") Светотехническая промышленность
+                  +e.sublist-item
+                    +e.sublist-href(href="#") Оптическая промышленность
+                  +e.sublist-item
+                    +e.sublist-href(href="#") Фотоэлектрическая промышленность
+                  +e.sublist-item
+                    +e.sublist-href(href="#") Полупроводниковая промышленность
+              +e.sublist-item
+                +e.sublist-href(href="#") Как выглядит упакованная готовая продукция
+              +e.sublist-item
+                +e.sublist-href(href="#") Логистика
+          +e.item
+            +e.href(href="#") Контактная информация
+          +e.item._search
+            +e.search(type="button", aria-label="Поиск", data-popup, data-src="#search")
+              span Поиск
+          +e.item._tablet
+            +btn('Связаться с нами', true, '#feed')(class="header__btn btn")
+  +b.burger
+    +e(type="button", aria-label="открыть мобильное меню").button.js-burger
+      +e('span').button-meat
+    +e('span').shadow

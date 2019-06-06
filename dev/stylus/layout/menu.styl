@@ -1,0 +1,304 @@
+.menu
+  @media $desktopMin
+    pos fixed
+    z-index 11
+    t 0
+    visibility hidden
+    l -30px
+    opacity 0
+    padding 34px 32px
+    w 100%
+    h 100%
+    pointer-events none
+    transition .7s visibility, .7s left, .7s opacity
+    overflow-y auto
+  @media $PortraitMin
+    padding 40px 15px
+  &__list
+    df()
+    @media $desktopMin
+      flex-direction column
+      pr 0
+      w 100%
+  &__item
+    pos relative
+    font-size 0
+    @media $LandscapeMin
+      w 100%
+    &_tablet
+      df(flex-start, space-between)
+      w 100%
+      @media $desktopTabletFrom
+        dn()
+    &_mobile
+      @media $PortraitMediumFrom
+        dn()
+      @media $PortraitMin
+        .header__order
+          db()
+          ml 0
+    &:not(&_tablet) + &
+      ml 28px
+      @media $desktopMedium
+        ml 15px
+    @media $desktopMin
+      & + &
+        ml 0
+        mt 20px
+  &__href
+    pos relative
+    z-index 1
+    color white
+    fontify 15px 500 19px
+    transition .7s opacity
+    @media $lDesktopSmall
+      fontify 15px 500 19px
+    @media $desktopMin
+      fontify 24px 600 32px
+    &:hover,
+    &.active
+      opacity .5
+  &__sublist
+    visibility hidden
+    opacity 0
+    pos absolute
+    t 30px
+    l -24px
+    max-width 165px
+    padding 14px 0
+    bgc $blue
+    transition .3s visibility, .3s opacity, .3s top, .3s left
+    &_lvl2
+      l calc(100% - 20px)
+      t 0
+      max-width 200px
+      bgc $dblue
+    @media $desktopMin
+      visibility visible
+      opacity 1
+      pos relative
+      t 0
+      l 0
+      padding 0
+      bgc transparent
+      mt 14px
+    &:before
+      content ""
+      pos absolute
+      l 0
+      t -21px
+      h 21px
+      w 100%
+      @media $desktopMin
+        dn()
+    @media $desktopMinFrom
+      ^[0]__item:hover > &
+        t 40px
+        opacity 1
+        visibility visible
+    &-item
+      @media $desktopMinFrom
+        &:hover > ^[0]__sublist
+          l 100%
+          opacity 1
+          visibility visible
+      & + &
+        mt 0
+        @media $desktopMin
+          mt 7px
+    &-href
+      db()
+      pos relative
+      z-index 1
+      color white
+      fontify 14px 400 20px
+      padding 8px 24px 9px
+      transition .7s background
+      @media $desktopMin
+        fontify 18px 400 24px
+        padding 0
+        transition .7s color
+      &:before
+        content ""
+        pos absolute 
+        z-index -1
+        l 0
+        t 0
+        size 0% 100%
+        bgc $dblue
+        transition .7s width
+      ^[0]__sublist_lvl2 &:before
+        bgc #082b6b
+      &:hover,
+      &_active
+        &:before
+          w 100%
+  &__search
+    size 12px
+    background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBgQMKDu5ah+RAAAAs0lEQVQY012NMU4CURRFz/ygCTQkUxpdgg2J7IACGmkpLNTKzg1YsQms2AAl2AqJ7RDWQUnijzNOOBbfMZFzu3dy70PMfHBn5cGVfUnBzLmqn36rlZNGPKp7RwY7Tj0avUqiUIfNgDP1JYnSaPgTt+pCJFDSok1DF4gAgXfOeP49n/MErAHwxtKjr469c6vWXqQfODHaUKuFuWQCXHLPNV9seGNJjy0DPE1uoX6kxn9yloQfvIKVPZQw44MAAAAASUVORK5CYII=') no-repeat center
+    will-change filter
+    mt 3px
+    filter brightness(0) invert(1)
+    transition .7s filter
+    @media $desktopMinFrom
+      span
+        dn()
+    @media $desktopMin
+      fontify 24px 600 32px
+      width auto
+      height auto
+      pl 25px
+      background-position left center
+      transition .7s opacity
+    &:hover
+      @media $desktopMinFrom
+        filter none
+      @media $desktopMin
+        opacity .75
+
+.burger
+  @media $desktopMinFrom
+    dn()
+  ml 30px
+  @media $PortraitMedium
+    ml 15px
+  &__shadow
+    pos fixed
+    l 0
+    t 0
+    transform translateX(-100%)
+    transition 1s transform, .7s opacity
+    will-change transform
+    opacity .2
+    bgc alpha($blue, 1)
+    size 100%
+    z-index 10
+  &__button
+    cursor pointer
+    w 26px
+    h 26px
+    pos relative
+    z-index 11
+    &:before
+      content ""
+      pos absolute
+      t 0
+      r 0
+      w 25px
+      h 2px
+      bgc white
+      transition .5s width, .5s background, .5s transform, .5s top
+    &:after
+      content ""
+      pos absolute
+      b 0
+      r 0
+      w 25px
+      h 2px
+      bgc white
+      transition .5s width, .5s background, .5s transform, .5s top  
+    &-meat
+      content ""
+      pos absolute
+      t 50%
+      r 0
+      w 25px
+      h 2px
+      mt -1px
+      bgc white
+      transition .5s width, .5s background, .5s transform, .5s top  
+    &.open
+      &:before
+        animation burger-top 1s ease-in-out forwards
+      &:after
+        animation burger-bottom 1s ease-in-out forwards
+      & ^[-1]-meat
+        opacity 0
+      & + ^[0]__shadow
+        opacity 1
+        transform translateX(0)
+    &.open.remove
+      &:before
+        animation burger-top-invert 1s ease-in-out forwards
+      &:after
+        animation burger-bottom-invert 1s ease-in-out forwards
+      & ^[-1]-meat
+        opacity 1
+        transition .4s opacity .6s
+
+html:not(.touchevents)
+  .burger
+    &:not(.open):hover
+      &:before
+        animation burger-hover 1s infinite ease-in-out alternate
+      &:after
+        animation burger-hover 1s infinite ease-in-out alternate forwards 400ms
+    &:not(.open):hover &-meat
+      animation burger-hover 1s infinite ease-in-out alternate forwards 200ms
+
+@keyframes burger-hover
+  0%
+    w 100%
+  50%
+    w 50%
+  100%
+    w 100%
+      
+@keyframes burger-top
+  0%
+    t 0
+  40%
+    t 12px
+  60%
+    t 12px
+    transform rotate(0)
+  100%
+    t 12px
+    transform rotate(45deg)
+    
+@keyframes burger-bottom
+  0%
+    b 0
+  40%
+    b 12px
+  60%
+    b 12px
+    transform rotate(0)
+  100%
+    b 12px
+    transform rotate(-45deg)
+
+@keyframes burger-top-invert
+  0%
+    t 12px
+    transform rotate(45deg)
+  40%
+    t 12px
+    transform rotate(0)
+  60%
+    t 12px
+  100%
+    t 0
+    
+@keyframes burger-bottom-invert
+  0%
+    b 12px
+    transform rotate(-45deg)
+  40%
+    b 12px
+    transform rotate(0)
+  60%
+    b 12px
+  100%
+    b 0
+
+body.burgeropen
+  overflow hidden
+  // position fixed
+  w 100%
+  .menu
+    visibility visible
+    opacity 1
+    l 0
+    pointer-events all
+    transition-delay .7s

@@ -1,0 +1,113 @@
+.main
+  oh()
+  /body:not(.index) &
+    pt 106px
+    pos relative
+    @media $LandscapeMax
+      pt 120px
+  h1:not([class])
+    color $dark
+    fontify 60px 500 64px
+    mt 63px 
+    mb 48px
+    @media $desktopMax
+      fontify 48px 500 52px
+    @media $PortraitMax
+      fontify 36px 500 40px
+  h2:not([class])
+    color $dark
+    fontify 48px 500 52px
+    margin 54px 0 -3px
+    @media $desktopMax
+      fontify 36px 500 40px
+      margin 57px 0 1px
+    @media $PortraitMax
+      fontify 30px 500 34px
+  h3:not([class]),
+  h4:not([class])
+    color $dark
+    fontify 30px 500 38px
+    margin 56px 0 -2px
+    @media $desktopMax
+      fontify 24px 500 28px
+  iframe:not([class]),
+  img:not([class])
+    margin 4px 0
+    max-width 100%
+  ul:not([class])
+    list-style  none
+    margin -18px 0 20px
+  ul:not([class]) li
+    pl 25px
+    pos relative
+  ul:not([class]) > li:before
+    content ""
+    pos absolute
+    l 0
+    t 14px
+    size 15px 2px
+    bgc $red
+  ol:not([class])
+    list-style none
+    margin -11px 0 20px
+    counter-reset myCounter
+  ol:not([class]) li
+    pl 25px
+    pos relative
+  ol:not([class]) > li:before
+    counter-increment myCounter
+    content counter(myCounter)"."	
+    pos absolute
+    l 0
+    t 0
+    w 32px
+    pr 9px
+    color $red
+  p:not([class])
+    margin 19px 0
+  a:not([class])
+    c $red
+    border-bottom 1px solid alpha($red, .4)
+    transition .5s border
+    &:hover
+      border-color transparent
+ 
+  *:not([class]):not(span):first-child
+    margin-top 0 !important
+  *:not([class]):not(span):last-child
+    margin-bottom 0 !important
+
+  table
+    c black
+    border 2px solid #f0f0f0
+    tbody
+      border-top 0
+    th
+      fontify 17px 600 23px
+      padding 9px 19px
+      text-align left
+      border-left 1px solid #f0f0f0
+      border-right 1px solid #f0f0f0
+      @media $desktopMax
+        fontify 15px 600 21px
+    td
+      padding 10px 19px 11px
+      font-size 17px
+      line-height 23px
+      border-left 1px solid #f0f0f0
+      border-right 1px solid #f0f0f0
+      @media $desktopMax
+        font-size 14px
+        line-height 20px
+
+div[class\^="table-scroller"]
+  overflow auto
+  pos relative
+  pl 1px
+  margin 33px 0 33px
+  @media $desktopMax
+    w 100%
+  &:first-child
+    mt 0
+  &:last-child
+    mb 0
