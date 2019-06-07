@@ -6,16 +6,34 @@
   z-index 10
   padding 30px 33px 0
   df(flex-start, space-between)
+  @media $LandscapeMax
+    padding 20px 20px 0
+  @media $PortraitMax
+    pos fixed
+    bgc white
+    padding 10px 20px
+  // &__side
+  //   @media $LandscapeMax
+  //     dn()
   &__logo
     pos relative
     t -2px
+    @media $PortraitMax
+      t 0
     &-img
       max-width 100%
       max-height 100%
+      @media $PortraitMax
+        max-height 55px
   &__row
     df(center, flex-end)
+    @media $LandscapeMax
+      &:first-child
+        dn()
     & + &
       mt 26px
+      @media $LandscapeMax
+        mt 0
   &__lang
     &-href
       c white
@@ -29,3 +47,8 @@
     ml 30px
   &__btn
     ml 30px
+    @media $LandscapeMax
+      ml 0
+      c #010101
+      &:before
+        bgc white

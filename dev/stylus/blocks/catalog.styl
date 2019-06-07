@@ -4,9 +4,14 @@
     pb 95px
     pos relative
     z-index 1
+    @media $LandscapeMax
+      pt 58px
+      pb 65px
   &__decor
     pos absolute
     z-index -1
+    @media $LandscapeMax
+      dn()
     &_decor1
       t 10%
       r 9%
@@ -24,18 +29,31 @@
     @media $desktopMax
       fontify 36px 600 52px
       mb 22px
+    @media $LandscapeMedium
+      fontify 32px 600 36px
+    @media $PortraitMax
+      fontify 26px 600 30px
   &__cols
     df()
     mb 35px
+    @media $LandscapeMedium
+      flex-direction column
   &__col
     w calc(50% - 16px)
+    @media $LandscapeMedium
+      w 100%
     & + &
       ml 32px
+      @media $LandscapeMedium
+        ml 0
+        mt 19px
   &__subtitle
     fontify 17px 400 23px
     max-width 445px
     @media $desktopMax
       fontify 15px 400 21px
+    @media $LandscapeMedium
+      max-width 540px
   &__downloads
     df()
     flex-wrap wrap
@@ -67,18 +85,39 @@
   &__types
     overflow visible
     mb 40px
+    @media $PortraitMax
+      mb 0
     .swiper-wrapper
       align-items stretch
     .swiper-slide
+      w 412px
       h auto
+      @media $LandscapeMedium
+        w 312px
+    .swiper-button-prev
+      pos absolute
+      background-image none
+      size calc((100vw - 100%) / 2) 100%
+      t 0
+      l calc((100% - 100vw) / 2)
+      cursor url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAfCAMAAABeSlSAAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAsVBMVEUMNYH///8MNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYH///8OEDCSAAAAOXRSTlMAAD2q6TvoPjnmQDVENEYySDBJLuROLFEq5VIoVSbiVyThWiPgXsOk2GFdWSdUKVMrTUoxM+dBPKkqavEaAAAAAWJLR0QB/wIt3gAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB+MGBwkNCY0w8/MAAACnSURBVDjLhdPXDoJAFATQsQCuvawFGyjYe9f//zHhUUxm5vlkk82dAX6SLyCTXAYUHS4c1wMVJVMGFRVTBRU1tw4qGm4TVLRMG1R0bBdU9GwfVAz8IagY2TGomEwDUBHO5qAiihfgYvnhWSFab8QbCOOtEMlfdkJgbw9C4GhOQuDsi7ukt70IkfTjKgRuqmPAXfU06fpDdD3dy1MIvbl0ty8h4L3/xBdYBw8viStCmAAAAABJRU5ErkJggg=='), auto
+    .swiper-button-next
+      pos absolute
+      background-image none
+      size calc((100vw - 100%) / 2) 100%
+      t 0
+      r calc((100% - 100vw) / 2)
+      cursor url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAfCAMAAABeSlSAAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAsVBMVEUMNYH///8MNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYH///8OEDCSAAAAOXRSTlMAAKo9O+k+6EDmOUQ1RjRIMkkwTuQuUSxS5SpVKFfiJlrhJF7gI6TDYdhdWVQnUykrTUoxM+dBPKlLel+0AAAAAWJLR0QB/wIt3gAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB+MGBwkRLCBDeukAAACjSURBVDjLhdPZDoIwEAXQiyBjRQS1orgr4L7v/v+P+Ywmc+dtkpOmnc4FfqvillrnD8CrukTAF48I1EydCASmQQRCaRKBSGIi0DJtItCxXSKQ2B4R6KcDIjC0IyIwnkyJwGy+IAJZXmD50WtFzlhvCh1sc3KPHXvL3h70eRzNSZ9pkp6higv72yvbj0huUEUod6gieJBdf7K80My9aG7ffql1vtBWDzk5olryAAAAAElFTkSuQmCC'), auto
   &__type
     c black
-    size 100%
+    size 100% 100%
     border 2px solid #f0f0f0
     padding 23px 50px 35px 47px
     bgc white
     border-bottom-right-radius 90px
     transition .7s background-color, .7s border-color
+    @media $LandscapeMedium
+      padding 23px 30px 25px 27px
     &:hover
       c white
       bgc $blue
@@ -103,12 +142,18 @@
       max-width 1364px
       margin 0 auto
       bgc white
+      @media $LandscapeMax
+        padding 0 20px
+      @media $PortraitMax
+        dn()
     &-hint
       fontify 17px 400 23px
       mt 20px
       text-align center
       @media $desktopMax
         fontify 15px 400 21px
+      @media $PortraitMax
+        dn()
     &-name
       font-weight 600
     .choosed

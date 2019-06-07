@@ -48,11 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  if (qs('.js-sticky')) {
+  if (qs('.js-sticky') && window.innerWidth > 670) {
     const sticky = new Sticky(0, 0);
   }
 
-  if (qs('.js-about')) {
+  if (qs('.js-about') && window.innerWidth > 670) {
     const about = new About('.about__wrapper', '.about__fixer-inner', '.js-about-mapshower', '.js-about-back');
   }
 

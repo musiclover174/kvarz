@@ -5,6 +5,10 @@
       size 100vw 100vh
       opacity .999 !important
       z-index -1
+      @media $LandscapeMax
+        h 500px
+      @media $PortraitMax
+        h 400px
       &-active
         z-index 1
       &-active ^[0]__slide
@@ -17,6 +21,11 @@
       b 27px
       r 33px
       w 98px
+      @media $LandscapeMax
+        r 20px
+      @media $PortraitMax
+        l 20px
+        r auto
   &__slide
     oh()
     pos absolute
@@ -27,6 +36,8 @@
     size 0 0
     border-top-left-radius 70vh
     transition 1s 1s width, 1s 1s height
+    @media $PortraitMax
+      border-radius 0
     &-inner
       pos absolute
       b 0
@@ -34,6 +45,13 @@
       size 100vw 100vh
       padding 0 30px 12%
       df(flex-end, flex-start)
+      @media $desktopMax
+        pb 10%
+      @media $LandscapeMax
+        pl 20px
+        pr 20px
+      @media $LandscapeMedium
+        pb 80px
   &__img
     pos absolute
     t 0
@@ -51,3 +69,15 @@
     @media $desktopMax
       fontify 48px 600 52px
       max-width 823px
+    @media $desktopMedium
+      fontify 36px 600 40px
+      max-width 700px
+    @media $LandscapeMedium
+      fontify 32px 600 36px
+      max-width 80%
+    @media $PortraitMax
+      fontify 26px 600 30px
+      text-align left
+      margin-left 0
+    @media $PortraitMin
+      max-width 100%

@@ -39,8 +39,8 @@ html
                 +e.downloads-item(data-type="file")
                   +e.downloads-href(href="#") Скачать
                   +e('span').downloads-info pdf, 3.2 мб
-                +e.downloads-item(data-type="print")
-                  +e.downloads-href(href="#") Распечатать
+                //- +e.downloads-item(data-type="print")
+                //-   +e.downloads-href(href="#") Распечатать
           +e.types.swiper-container.js-types
             .swiper-wrapper
               .swiper-slide
@@ -73,6 +73,8 @@ html
                   +e.type-href(href="#") RQ-2KFf
                   +e('p').type-admixture < 10 ppm примесей
                   +e('p').type-about Применяется в производстве кварцевого освещения, включая автомобильные ксеноновые, галогенные и HID-лампы, внешнего слоя тиглей для фотоэлектрической промышленности.
+            .swiper-button-prev
+            .swiper-button-next
         +e.table-wrapper
           +e('table').table.js-types-table
             thead
@@ -180,7 +182,7 @@ html
         +e.wrapper.block1.js-sticky-parent
           +e.fixer.js-sticky
             +e.fixer-inner.js-sticky-inner
-              +e('button').back.js-about-back(aria-label="открыть мобильное меню")
+              +e('button').back.js-about-back
               +e('section').mapover
                 script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
                 +e.map#about__map
@@ -219,20 +221,27 @@ html
                   p Минимальное содержание B и P, самое низкое содержание Al, щелочи, Cu, Ni, Cr, Fe, низкое содержание пузырьков и минеральных включений.
                   p После очистки общее число примесей в сортах RQ-2K/1K не превышает 10 ppm, что позволяет использовать кварц из этой жилы во всех областях применения, где требуются изделия из кварцевого стекла.
                 +e.lead-href(href="#") Узнать больше о месторождении
-          +e.lead-car.swiper-container.js-leads
-            .swiper-wrapper
-              .swiper-slide
-                a(href="img/lead1.jpg").glightbox
-                  +e.lead-img(src="img/lead1.jpg", alt="", title="")
-              .swiper-slide
-                a(href="img/lead2.jpg").glightbox
-                  +e.lead-img(src="img/lead2.jpg", alt="", title="")
-              .swiper-slide
-                a(href="img/lead1.jpg").glightbox
-                  +e.lead-img(src="img/lead1.jpg", alt="", title="")
-              .swiper-slide
-                a(href="img/lead2.jpg").glightbox
-                  +e.lead-img(src="img/lead2.jpg", alt="", title="")
+          +e.lead-car-wrapper
+            +e.lead-car.swiper-container.js-leads
+              .swiper-wrapper
+                .swiper-slide
+                  a(href="img/lead1.jpg").glightbox
+                    +e.lead-img(src="img/lead1.jpg", alt="", title="")
+                .swiper-slide
+                  a(href="img/lead2.jpg").glightbox
+                    +e.lead-img(src="img/lead2.jpg", alt="", title="")
+                .swiper-slide
+                  a(href="img/lead3.jpg").glightbox
+                    +e.lead-img(src="img/lead3.jpg", alt="", title="")
+                .swiper-slide
+                  a(href="img/lead4.jpg").glightbox
+                    +e.lead-img(src="img/lead4.jpg", alt="", title="")
+                .swiper-slide
+                  a(href="img/lead5.jpg").glightbox
+                    +e.lead-img(src="img/lead5.jpg", alt="", title="")
+                .swiper-slide
+                  a(href="img/lead6.jpg").glightbox
+                    +e.lead-img(src="img/lead6.jpg", alt="", title="")
 
     include layout/__footer
     include layout/__scripts

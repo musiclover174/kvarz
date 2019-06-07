@@ -3,6 +3,8 @@
   z-index 1
   oh()
   padding 70px 32px 24px
+  @media $LandscapeMax
+    padding 40px 20px 24px
   &:before
     content ""
     bgc $bg
@@ -12,14 +14,23 @@
     z-index -1
     size 100%
     border-bottom-right-radius 70vh
+    @media $PortraitMax
+      border-radius 0
   &__top
     max-width 1570px
+    @media $LandscapeMax
+      .footer__col
+        &:not(:first-child)
+          dn()
+        &:first-child
+          w 100%
   &__cols
     df()
     ml -32px
     w calc(100% + 32px)
     &_toend
-      justify-content flex-end
+      @media $LandscapeMaxFrom
+        justify-content flex-end
   &__col
     ml 32px
     w calc(100% / 6 - 32px)
@@ -30,18 +41,24 @@
     @media $desktopMaxFrom
       & ^[0]__col
         w 157px
+        @media $LandscapeMax
+          w 100%
   &__copy
     fontify 15px 400 21px
     pt 5px
     mb 20px
     @media $desktopMax
       fontify 14px 400 20px
+    @media $LandscapeMax
+      mb 15px
   &__address
     fontify 15px 400 21px
     max-width 85%
     mb 22px
     @media $desktopMax
       fontify 14px 400 20px
+    @media $LandscapeMax
+      mb 15px
   &__phones
     df()
     ml -64px
@@ -50,13 +67,24 @@
       ml 0
       w 100%
       flex-direction column
+    @media $LandscapeMax
+      flex-direction row
+      flex-wrap wrap
+      ml -32px
+      w calc(100% + 32px)
+      mb -10px
     &-elem
       ml 64px
       @media $desktopMax
         ml 0
+      @media $LandscapeMax
+        ml 32px
+        mb 10px
       & + &
         @media $desktopMax
           mt 23px
+        @media $LandscapeMax
+          mt 0
     &-title
       c $grey
       fontify 15px 400 21px
@@ -66,8 +94,11 @@
     &-val
       c black
       fontify 18px 500 18px
+      white-space nowrap
   &__feed
     mt 53px
+    @media $LandscapeMax
+      dn()
     &-title
       fontify 15px 400 21px
       max-width 81%
@@ -118,8 +149,8 @@
     fontify 9px 400 14px
     text-transform uppercase
     letter-spacing 0.18em
-    @media $PortraitMedium
-      l 42px
+    // @media $PortraitMedium
+    //   l 42px
     span
       pos absolute
       t 3px

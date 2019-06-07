@@ -2,18 +2,34 @@
   bgc $blue
   &__cols
     df()
+    @media $PortraitMax
+      flex-direction column
   &__col
     w calc(50% - 16px)
+    @media $PortraitMax
+      w 100%
     & + &
       ml 32px
+      @media $PortraitMax
+        ml 0
+        mt 19px
   &__wrapper
     h 300vh
     oh()
+    @media $PortraitMax
+      h auto
+      pt 50px
   &__fixer
     h 100vh
+    @media $PortraitMax
+      height auto !important
     &-inner
       pos relative
       size 100% 100vh
+      @media $PortraitMax
+        position relative !important
+        width 100% !important
+        h auto
   &__map
     pos absolute
     size 100%
@@ -29,6 +45,9 @@
       visibility visible
       z-index 3
       pointer-events all
+    &over
+      @media $PortraitMax
+        dn()
   &__back
     cursor pointer
     pos absolute
@@ -61,6 +80,21 @@
     pointer-events none
     visibility hidden
     transition .5s visibility, .5s opacity
+    @media $desktopMax
+      pt 71px
+    @media $LandscapeMax
+      pt 55px
+    @media $PortraitMax
+      pt 0
+      h auto
+      pos relative
+      visibility visible
+      pointer-events all
+      opacity 1
+      &_block2
+        mt 30px
+      &_block3
+        mt 19px
     ^[0]__wrapper.block1 &_block1
       opacity 1
       pointer-events all
@@ -95,9 +129,20 @@
       pointer-events none
       visibility hidden
       transition .5s visibility, .5s opacity
+      @media $desktopMax
+        b 71px
+      @media $LandscapeMax
+        b 50px
     &-title
       fontify 30px 600 34px
       max-width 90%
+      @media $desktopMax
+        fontify 24px 600 30px
+        max-width 100%
+      @media $LandscapeMedium
+        fontify 22px 600 26px
+      @media $PortraitMedium
+        fontify 20px 600 24px
     &-text
       max-width 90%
       margin 28px 0
@@ -124,6 +169,8 @@
       t 0
       l 0
       size 100%
+      @media $PortraitMax
+        dn()
       .map
         backface-visibility hidden
         transition .7s .7s transform
@@ -203,15 +250,29 @@
     c white
     pt 55px
     pb 100px
+    @media $desktopMax
+      pt 91px
+    @media $LandscapeMax
+      pt 55px
+      pb 60px
+    @media $PortraitMax
+      pt 0
     &-title
       fontify 30px 600 34px
       max-width 85%
+      @media $desktopMax
+        fontify 24px 600 30px
+        max-width 100%
+      @media $LandscapeMedium
+        fontify 22px 600 26px
     &-text
       pt 2px
       fontify 17px 400 23px
       mb 28px
       @media $desktopMax 
         fontify 15px 400 21px
+      @media $LandscapeMax
+        mb 19px
     &-href
       c white
       fontify 17px 500 23px
@@ -219,13 +280,21 @@
       @media $desktopMax 
         fontify 15px 500 21px
     &-car
-      margin 75px 32px 0
+      mt 75px
       overflow visible
+      @media $LandscapeMax
+        mt 40px
+      &-wrapper
+        padding 0 32px
+        margin 0 auto
+        max-width 920px
       .swiper-wrapper
         align-items stretch
       .swiper-slide
-        w auto
+        w 412px
         h auto
+        @media $LandscapeMedium
+          w 312px
         .glightbox
           db()
     &-img
@@ -233,3 +302,5 @@
       size 100%
       object-fit cover
       border-bottom-left-radius 120px
+      @media $LandscapeMedium
+        border-bottom-left-radius 80px

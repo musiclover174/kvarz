@@ -124,8 +124,6 @@
               <ul class="catalog__downloads">
                 <li class="catalog__downloads-item" data-type="file"><a class="catalog__downloads-href" href="#">Скачать</a><span class="catalog__downloads-info">pdf, 3.2 мб</span>
                 </li>
-                <li class="catalog__downloads-item" data-type="print"><a class="catalog__downloads-href" href="#">Распечатать</a>
-                </li>
               </ul>
             </div>
           </div>
@@ -180,6 +178,8 @@
                 </div>
               </div>
             </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
           </div>
         </section>
         <div class="catalog__table-wrapper">
@@ -300,7 +300,7 @@
         <div class="about__wrapper block1 js-sticky-parent">
           <div class="about__fixer js-sticky">
             <div class="about__fixer-inner js-sticky-inner">
-              <button class="about__back js-about-back" aria-label="открыть мобильное меню">
+              <button class="about__back js-about-back">
               </button>
               <section class="about__mapover">
                 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
@@ -3425,12 +3425,16 @@
               </div>
             </div>
           </div>
-          <div class="about__lead-car swiper-container js-leads">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide"><a class="glightbox" href="img/lead1.jpg"><img class="about__lead-img" src="img/lead1.jpg" alt="" title="" role="presentation"/></a></div>
-              <div class="swiper-slide"><a class="glightbox" href="img/lead2.jpg"><img class="about__lead-img" src="img/lead2.jpg" alt="" title="" role="presentation"/></a></div>
-              <div class="swiper-slide"><a class="glightbox" href="img/lead1.jpg"><img class="about__lead-img" src="img/lead1.jpg" alt="" title="" role="presentation"/></a></div>
-              <div class="swiper-slide"><a class="glightbox" href="img/lead2.jpg"><img class="about__lead-img" src="img/lead2.jpg" alt="" title="" role="presentation"/></a></div>
+          <div class="about__lead-car-wrapper">
+            <div class="about__lead-car swiper-container js-leads">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><a class="glightbox" href="img/lead1.jpg"><img class="about__lead-img" src="img/lead1.jpg" alt="" title="" role="presentation"/></a></div>
+                <div class="swiper-slide"><a class="glightbox" href="img/lead2.jpg"><img class="about__lead-img" src="img/lead2.jpg" alt="" title="" role="presentation"/></a></div>
+                <div class="swiper-slide"><a class="glightbox" href="img/lead3.jpg"><img class="about__lead-img" src="img/lead3.jpg" alt="" title="" role="presentation"/></a></div>
+                <div class="swiper-slide"><a class="glightbox" href="img/lead4.jpg"><img class="about__lead-img" src="img/lead4.jpg" alt="" title="" role="presentation"/></a></div>
+                <div class="swiper-slide"><a class="glightbox" href="img/lead5.jpg"><img class="about__lead-img" src="img/lead5.jpg" alt="" title="" role="presentation"/></a></div>
+                <div class="swiper-slide"><a class="glightbox" href="img/lead6.jpg"><img class="about__lead-img" src="img/lead6.jpg" alt="" title="" role="presentation"/></a></div>
+              </div>
             </div>
           </div>
         </div>
@@ -3442,12 +3446,12 @@
           <div class="footer__col footer__col_col2">
             <p class="footer__copy">© ООО «Русский Кварц», 2019
             </p>
-            <p class="footer__address">456870, Россия, Челябинская область, город Кыштым, Каслинское шоссе, дом 3
+            <p class="footer__address">456870, Россия, Челябинская область, город Кыштым, Каслинское шоссе, дом&nbsp;3
             </p>
             <div class="footer__phones">
               <div class="footer__phones-elem">
                 <p class="footer__phones-title">Телефон
-                </p><a class="footer__phones-val" href="+73515143845">+7 (35151) 4-38-45</a>
+                </p><a class="footer__phones-val" href="tel:+73515143845">+7 (35151) 4-38-45</a>
               </div>
               <div class="footer__phones-elem">
                 <p class="footer__phones-title">Факс

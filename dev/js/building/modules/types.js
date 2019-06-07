@@ -15,13 +15,21 @@ export default class Types {
   init() {
     const typesCarousel = new Swiper(this.typesClass, {
       speed: 800,
-      slidesPerView: 3,
-      loopedSlides: this.typesElems,
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      loopedSlydes: this.typesElems,
       spaceBetween: 32,
       loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
       breakpoints: {
-        1600: {
-          slidesPerView: 2,
+        900: {
+          spaceBetween: 20,
+        },
+        1400: {
+          centeredSlides: false,
         },
       },
     });
