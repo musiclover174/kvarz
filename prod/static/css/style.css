@@ -5498,3 +5498,151 @@ body.showmap .about__back:hover {
     border-bottom-left-radius: 0;
   }
 }
+.page404 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 0 88px;
+}
+@media (max-width: 1400px) {
+  .page404 {
+    padding: 0 33px;
+  }
+}
+@media (max-width: 1000px) {
+  .page404 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 0 20px;
+  }
+}
+.page404__decor {
+  position: absolute;
+  z-index: -1;
+}
+@media (max-width: 1000px) {
+  .page404__decor {
+    display: none;
+  }
+}
+.page404__decor_decor1 {
+  top: 78%;
+  right: 9%;
+  width: 217px;
+  height: 230px;
+  background: url("../i/rock1.png") no-repeat center;
+}
+.page404__decor_decor2 {
+  top: 22%;
+  left: 40%;
+  width: 149px;
+  height: 169px;
+  background: url("../i/rock2.png") no-repeat center;
+}
+.page404__col {
+  width: calc(50% - 25px);
+}
+@media (max-width: 1400px) {
+  .page404__col {
+    width: calc(50% - 16px);
+  }
+}
+@media (max-width: 1000px) {
+  .page404__col {
+    width: 100%;
+  }
+}
+.page404__col + .page404__col {
+  margin-left: 50px;
+}
+@media (max-width: 1400px) {
+  .page404__col + .page404__col {
+    margin-left: 32px;
+  }
+}
+@media (max-width: 1000px) {
+  .page404__col + .page404__col {
+    margin-left: 0;
+  }
+}
+.page404__img {
+  max-width: 100%;
+}
+.page404__pict {
+  display: block;
+  width: 95%;
+  height: 399px;
+  background: url("../i/page404.png") no-repeat center #113e92;
+  border-bottom-right-radius: 150px;
+}
+@media (max-width: 1400px) {
+  .page404__pict {
+    height: 369px;
+    width: 93%;
+  }
+}
+@media (max-width: 1000px) {
+  .page404__pict {
+    display: none;
+  }
+}
+.page404__digit {
+  font-size: 120px;
+  font-weight: 600;
+  line-height: 86px;
+  margin-top: 28px;
+  margin-bottom: 43px;
+}
+@media (max-width: 1400px) {
+  .page404__digit {
+    font-size: 100px;
+    font-weight: 600;
+    line-height: 72px;
+    margin-bottom: 38px;
+  }
+}
+@media (max-width: 1000px) {
+  .page404__digit {
+    margin-top: 0;
+  }
+}
+@media (max-width: 670px) {
+  .page404__digit {
+    font-size: 80px;
+    font-weight: 600;
+    line-height: 52px;
+    margin-bottom: 30px;
+  }
+}
+.page404__subtitle {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 52px;
+  margin-bottom: 17px;
+}
+@media (max-width: 1400px) {
+  .page404__subtitle {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 52px;
+    margin-bottom: 12px;
+  }
+}
+@media (max-width: 670px) {
+  .page404__subtitle {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 34px;
+  }
+}
+.page404__text {
+  max-width: 530px;
+}

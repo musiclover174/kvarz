@@ -1,0 +1,70 @@
+.page404
+  df()
+  padding 0 88px
+  @media $desktopMax
+    padding 0 33px
+  @media $LandscapeMax
+    flex-direction column
+    padding 0 20px
+  &__decor
+    pos absolute
+    z-index -1
+    @media $LandscapeMax
+      dn()
+    &_decor1
+      t 78%
+      r 9%
+      size 217px 230px
+      background url('../i/rock1.png') no-repeat center
+    &_decor2
+      t 22%
+      l 40%
+      size 149px 169px
+      background url('../i/rock2.png') no-repeat center
+  &__col
+    w calc(50% - 25px)
+    @media $desktopMax
+      w calc(50% - 16px)
+    @media $LandscapeMax
+      w 100%
+    & + &
+      ml 50px
+      @media $desktopMax
+        ml 32px
+      @media $LandscapeMax
+        ml 0
+  &__img
+    max-width 100%
+  &__pict
+    db()
+    w 95%
+    h 399px
+    background url('../i/page404.png') no-repeat center $blue
+    border-bottom-right-radius 150px
+    @media $desktopMax
+      h 369px
+      w 93%
+    @media $LandscapeMax
+      dn()
+  &__digit
+    fontify 120px 600 86px
+    mt 28px
+    mb 43px
+    @media $desktopMax
+      fontify 100px 600 72px
+      mb 38px
+    @media $LandscapeMax
+      mt 0
+    @media $PortraitMax
+      fontify 80px 600 52px
+      mb 30px
+  &__subtitle
+    fontify 48px 600 52px
+    mb 17px
+    @media $desktopMax
+      fontify 36px 600 52px
+      mb 12px
+    @media $PortraitMax
+      fontify 30px 500 34px
+  &__text
+    max-width 530px
