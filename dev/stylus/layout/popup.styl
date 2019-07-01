@@ -47,13 +47,14 @@
   &__bg
     pos fixed
     z-index 0
-    l 0
-    t 0
+    // l 0
+    // t 0
+    r 0
     b 0
-    w 0
+    size 0
     bgc $blue
     opacity 0
-    transition .7s .2s opacity, .7s .2s width
+    transition .7s .2s opacity, .7s .2s width, .7s .2s height
   &__inner
     pos absolute
     b 0
@@ -78,9 +79,9 @@
   &-show
     oh()
     & ^[0]__bg
-      w 100%
+      size 100%
       opacity 1
-      transition .7s opacity, .7s width
+      transition .7s opacity, .7s width, .7s height
       @media $desktopMin
         opacity 1
     & ^[0]__over
@@ -123,8 +124,8 @@
     @media $LandscapeMax
       size 20px
       background-size cover
-      r 22px
-      t 23px
+      // r 22px
+      // t 23px
     &:hover
       opacity .5
     &-btn

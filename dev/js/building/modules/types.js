@@ -6,7 +6,7 @@ export default class Types {
     this.hoverClass = hoverClass;
     this.tableClass = tableClass;
 
-    this.typesElems = qs(`${this.typesClass} .swiper-slide`).length;
+    this.typesElems = qsAll(`${this.typesClass} .swiper-slide`).length;
 
     this.init();
     if (hoverClass) this.hoverType();
@@ -16,22 +16,28 @@ export default class Types {
     const typesCarousel = new Swiper(this.typesClass, {
       speed: 800,
       slidesPerView: 'auto',
-      centeredSlides: true,
       loopedSlydes: this.typesElems,
-      spaceBetween: 32,
+      spaceBetween: 50,
       loop: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
+      // navigation: {
+      //   nextEl: '.swiper-button-next',
+      //   prevEl: '.swiper-button-prev',
+      // },
       breakpoints: {
         900: {
           spaceBetween: 20,
         },
         1400: {
-          centeredSlides: false,
+          spaceBetween: 32,
         },
       },
+    });
+
+    qsAll(`${this.typesClass} .swiper-slide`).forEach((item) => {
+      item.addEventListener('click', () => {
+        if (item.classList.contains('swiper-slide-prev')) typesCarousel.slidePrev(800);
+        if (item.previousElementSibling.classList.contains('swiper-slide-next')) typesCarousel.slideNext(800);
+      });
     });
   }
 

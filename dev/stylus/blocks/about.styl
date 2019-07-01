@@ -5,11 +5,15 @@
     @media $PortraitMax
       flex-direction column
   &__col
-    w calc(50% - 16px)
+    w calc(50% - 25px)
+    @media $desktopMax
+      w calc(50% - 16px)
     @media $PortraitMax
       w 100%
     & + &
-      ml 32px
+      ml 50px
+      @media $desktopMax
+        ml 32px
       @media $PortraitMax
         ml 0
         mt 19px
@@ -52,21 +56,22 @@
     cursor pointer
     pos absolute
     size 33px
-    l 10px
-    t 30px
+    r 33px
+    t 33px
     opacity 0
     z-index 30
     visibility hidden
-    background: url('../i/left_seq.png') no-repeat 0 -1617px
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAaCAQAAADsge97AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBgQOGCYGrpHVAAAAs0lEQVQ4y5XUUQ6DIAyA4bJzcP97bDvBjMsSPMy/B0JAbEvFFwU/Am1T4c1GRoJP5suHJOzAEYSZA/iR2msEDn/WzxKAp+3b1ApOZ+rTHrxcZFyyoHL787IG1ZDN+87QiPP1QCM0k6Ndv0Eno3rcKnTKwMpSAS+TD9FHEn84yS13DtkD4VSOXxEmXJWRAZdlpMMVMuAaqTCCFNhRWTaFMjaFGJpgbXgR1OGOCM+b7XXjhfwBP4Yq+YhM2FUAAAAASUVORK5CYII=") no-repeat center
     pointer-events none
-    transition 0.5s left, 0.5s opacity
+    transition .7s visibility, .7s opacity
+    /.no-touchevents &
+      r 50px
     /body.showmap &
       opacity 1
-      l 30px
       visibility visible
       pointer-events all
-    &:hover
-      animation arrAnimation 1s steps(49)
+      &:hover
+        opacity .5
   &__block
     pos absolute
     size 100% 100vh
@@ -75,7 +80,7 @@
     z-index 1
     c white
     dfv(center, space-between)
-    pt 85px
+    pt 93px
     opacity 0
     pointer-events none
     visibility hidden
@@ -120,9 +125,10 @@
       cursor pointer
       position absolute
       z-index 2
-      b 85px
+      b 100px
       l 50%
       r 0
+      font-weight 500
       transform translateX(-50%)
       text-align center
       opacity 0
@@ -133,22 +139,30 @@
         b 71px
       @media $LandscapeMax
         b 50px
+      @media $PortraitMedium
+        dn()
     &-title
       fontify 30px 600 34px
-      max-width 90%
       @media $desktopMax
         fontify 24px 600 30px
-        max-width 100%
       @media $LandscapeMedium
         fontify 22px 600 26px
       @media $PortraitMedium
         fontify 20px 600 24px
+      &.mobile
+        @media $PortraitMedium
+          fontify 15px 400 21px
     &-text
       max-width 90%
       margin 28px 0
       fontify 17px 400 23px
       @media $desktopMax 
         fontify 15px 400 21px
+      &.mobile
+        @media $PortraitMedium
+          dn()
+        & + ^[-2]-title
+          mt 20px
       span
         c black
         bgc white
@@ -169,6 +183,11 @@
       t 0
       l 0
       size 100%
+      @media $lDesktopSmall
+        transform scale(1.5)
+        transform-origin center !important
+      @media $LandscapeMedium
+        transform scale(2.1) translateX(-8%)
       @media $PortraitMax
         dn()
       .map
@@ -180,27 +199,36 @@
           stroke #5c7bb4
           opacity .2
           transition 2s stroke
+          @media $lDesktopSmall
+            opacity .4
         circle
           fill white
           transition 0.1s 1.4s opacity
       .path1
         opacity 0
+        backface-visibility hidden
+        transition .7s .7s transform
+        transform-origin center !important
         .st1
           fill none
           stroke #FFFFFF
           stroke-width 2
           stroke-miterlimit 10
+          transition .4s stroke-width
         .st11
           enable-background new
         .st12
           fill #FFFFFF
+          transition .7s opacity
         .st13
           fill #8593BC
+          transition .7s opacity
         .st14
           fill #FFFFFF
           stroke #FFFFFF 
-          stroke-width:2 
+          stroke-width 2 
           stroke-miterlimit 10
+          transition .7s opacity
       .path2
         opacity 0
         .st2
@@ -214,6 +242,8 @@
           fill #FFFFFF
         .st223
           fill #8593BC
+        &_transform
+          transform translate3D(20px, -12px, 0)
       ^[0]__wrapper.block2 &
         .map
           transition .7s transform
@@ -241,17 +271,24 @@
             opacity 0
             transition 0s opacity
         .path1
-          opacity 0
-          transition 0s
-        .path2
           opacity 1
-          transition .7s
+          transform translate3D(-93%, -119%, 0) scale(12)
+          transition .7s transform
+          .st1
+            stroke-width .16
+          .st12,
+          .st13,
+          .st14
+            transition .2s opacity
+            opacity 0
+        .path2
+          z-index -1
+          opacity 1
+          transition .7s .5s
   &__lead
     c white
-    pt 55px
+    pt 91px
     pb 100px
-    @media $desktopMax
-      pt 91px
     @media $LandscapeMax
       pt 55px
       pb 60px
@@ -259,14 +296,14 @@
       pt 0
     &-title
       fontify 30px 600 34px
-      max-width 85%
+      max-width 87%
       @media $desktopMax
         fontify 24px 600 30px
         max-width 100%
       @media $LandscapeMedium
         fontify 22px 600 26px
     &-text
-      pt 2px
+      pt 3px
       fontify 17px 400 23px
       mb 28px
       @media $desktopMax 
@@ -285,22 +322,31 @@
       @media $LandscapeMax
         mt 40px
       &-wrapper
-        padding 0 32px
+        padding 0 50px
         margin 0 auto
-        max-width 920px
+        max-width 1150px
+        @media $desktopMax
+          padding 0 32px
+          max-width 920px
       .swiper-wrapper
         align-items stretch
       .swiper-slide
-        w 412px
+        w 500px
         h auto
+        @media $desktopMax
+          w 412px
         @media $LandscapeMedium
           w 312px
         .glightbox
           db()
+        // &-prev
+        //   cursor url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAaCAQAAACeTo3NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBwEJNA4F252GAAAA+klEQVRIx63VvU5CQRCG4e/AAQuE5YKIsfBKiTEGgRBjsJafKGDlPdhrYmfgpdgQ4BxOsbM702y2eJqdbzZDF8tpooZ6CqxaBfaqW32HYpIot+MdmNBEoV2FjS1YmXN8AEMbVuQcK+CJhg075zw2ILdip5xjDQyo27Ej59gAj3HYgeuyAR5iMc957D4eQ6LLJ9BPgaGMN91I+tXOEKlifeX6lyT9aJuA+xOOZey0nT9Fh2VcFoqD0mERk9TyGHtwFAsej20W9sVU5kSbuXVtXuIO4LMdLF5cMwde0qxPD86AaZrlfgpepeFEixkwDueyim+7pZFy3YWGdg8rInNs0wxWzwAAAABJRU5ErkJggg=='), auto
+        // &-next + .swiper-slide
+        //   cursor url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAaCAQAAACeTo3NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBwEJNCI3A/FlAAAA+ElEQVRIx63V3UoCQRjG8WfbWENT82K6hC7Aw25PRSJBQlFZKiRLVEroJjyo8zz9eyBCs7sI+87MnM0DP5iP950IlR7f+lVbf0XRRXlNO91pplphRvl5xQxYcJ3PLJyoMAXeqYfhRMIY+KARhhMJT8CSZhhOJAyB1X/QhxMJAxf048Qlj8DmBPpyIuYB+OQmDCdiesAXrTCciOkAW1oRqW4NhZYv1qaklaVmz41Am+0eTy8M1j/drT/mvDxfLFMXvtjQbQN+2CjbpOxYhQmwcFuoFTs2+Ddq7roNq5ICc6rZxIa9AK95zMalwHMRhiLDt73Wj+61L4oOaL5xwudIGxsAAAAASUVORK5CYII='), auto
     &-img
       db()
       size 100%
       object-fit cover
       border-bottom-left-radius 120px
       @media $LandscapeMedium
-        border-bottom-left-radius 80px
+        border-bottom-left-radius 0

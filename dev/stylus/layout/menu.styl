@@ -50,7 +50,7 @@
   &__href
     pos relative
     z-index 1
-    color white
+    color inherit
     fontify 15px 500 19px
     transition .7s opacity
     @media $lDesktopSmall
@@ -135,7 +135,7 @@
           content ""
           pos absolute 
           z-index -1
-          l 0
+          r 0
           t 0
           size 0% 100%
           bgc $dblue
@@ -147,32 +147,25 @@
           &:before
             w 100%
   &__search
-    size 12px
-    background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBgQMKDu5ah+RAAAAs0lEQVQY012NMU4CURRFz/ygCTQkUxpdgg2J7IACGmkpLNTKzg1YsQms2AAl2AqJ7RDWQUnijzNOOBbfMZFzu3dy70PMfHBn5cGVfUnBzLmqn36rlZNGPKp7RwY7Tj0avUqiUIfNgDP1JYnSaPgTt+pCJFDSok1DF4gAgXfOeP49n/MErAHwxtKjr469c6vWXqQfODHaUKuFuWQCXHLPNV9seGNJjy0DPE1uoX6kxn9yloQfvIKVPZQw44MAAAAASUVORK5CYII=') no-repeat center
+    c inherit
+    pl 20px
+    fontify 15px 500 20px
+    background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBgQMKDu5ah+RAAAAs0lEQVQY012NMU4CURRFz/ygCTQkUxpdgg2J7IACGmkpLNTKzg1YsQms2AAl2AqJ7RDWQUnijzNOOBbfMZFzu3dy70PMfHBn5cGVfUnBzLmqn36rlZNGPKp7RwY7Tj0avUqiUIfNgDP1JYnSaPgTt+pCJFDSok1DF4gAgXfOeP49n/MErAHwxtKjr469c6vWXqQfODHaUKuFuWQCXHLPNV9seGNJjy0DPE1uoX6kxn9yloQfvIKVPZQw44MAAAAASUVORK5CYII=') no-repeat left center
     will-change filter
-    mt 3px
-    filter brightness(0) invert(1)
-    transition .7s filter
-    @media $LandscapeMaxFrom
-      span
-        dn()
+    transition .7s opacity
+    /body:not(.index) &
+      background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBwEMNzYAP7QwAAAAtklEQVQY012NMU5CURQFZ17URBsDHdEt2JjACmygwZbCQq3s3ICVm9CKDViCLaGg/OA6LAn+8MFwLR7fRM90Z3LvQdQ7P9y4dGxHMqhDw/DLreHGQS3uDT/tmTzx2Z0rz7IoDLv1A18Mn7KoLE2/om/4JpKoOOCYOqdACZCYcMjjvj7iAZgAYNvKna9ee+PccGsrb+DA0tjzbVjYFAU455YL1kx5Z8QlC67wP00Lw1m++JsGY9IP3Hkz+6sWbOIAAAAASUVORK5CYII=')
     @media $LandscapeMax
-      fontify 24px 600 32px
-      width auto
-      height auto
-      pl 25px
-      background-position left center
-      transition .7s opacity
+      dn()
     &:hover
-      @media $LandscapeMaxFrom
-        filter none
-      @media $LandscapeMax
-        opacity .75
+      opacity .5
 
 .burger
   @media $LandscapeMaxFrom
     dn()
   ml 30px
+  mr 13px
+  mt 10px
   @media $PortraitMedium
     ml 15px
   @media $PortraitMax
@@ -203,8 +196,9 @@
       h 2px
       bgc white
       transition .5s width, .5s background, .5s transform, .5s top
-      @media $PortraitMax
-        bgc $blue
+      @media $LandscapeMax
+        /body:not(.index) &
+          bgc $blue
     &:after
       content ""
       pos absolute
@@ -214,8 +208,9 @@
       h 2px
       bgc white
       transition .5s width, .5s background, .5s transform, .5s top  
-      @media $PortraitMax
-        bgc $blue
+      @media $LandscapeMax
+        /body:not(.index) &
+          bgc $blue
     &-meat
       content ""
       pos absolute
@@ -226,17 +221,20 @@
       mt -1px
       bgc white
       transition .5s width, .5s background, .5s transform, .5s top  
-      @media $PortraitMax
-        bgc $blue
+      @media $LandscapeMax
+        /body:not(.index) &
+          bgc $blue
     &.open
       &:before
         animation burger-top 1s ease-in-out forwards
-        @media $PortraitMax
-          bgc white
+        @media $LandscapeMax
+          /body:not(.index) &
+            bgc white
       &:after
         animation burger-bottom 1s ease-in-out forwards
-        @media $PortraitMax
-          bgc white
+        @media $LandscapeMax
+          /body:not(.index) &
+            bgc white
       & ^[-1]-meat
         opacity 0
       & + ^[0]__shadow

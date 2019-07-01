@@ -18,7 +18,7 @@
       df(flex-start, space-between)
       pos absolute
       z-index 1
-      b 27px
+      b 30px
       r 33px
       w 98px
       @media $LandscapeMax
@@ -34,24 +34,27 @@
     b 0
     bgc black
     size 0 0
-    border-top-left-radius 70vh
+    border-top-left-radius 496px
     transition 1s 1s width, 1s 1s height
-    @media $PortraitMax
+    @media $LandscapeMedium
       border-radius 0
     &-inner
       pos absolute
       b 0
       r 0
       size 100vw 100vh
-      padding 0 30px 12%
+      padding 0 30px 13%
       df(flex-end, flex-start)
       @media $desktopMax
         pb 10%
       @media $LandscapeMax
         pl 20px
         pr 20px
+        h 500px
       @media $LandscapeMedium
         pb 80px
+      @media $PortraitMax
+        h 400px
   &__img
     pos absolute
     t 0
@@ -64,20 +67,32 @@
     max-width 1020px
     margin 0 auto
     c white
-    fontify 60px 600 64px
     text-align center
     @media $desktopMax
-      fontify 48px 600 52px
       max-width 823px
     @media $desktopMedium
-      fontify 36px 600 40px
       max-width 700px
     @media $LandscapeMedium
-      fontify 32px 600 36px
       max-width 80%
     @media $PortraitMax
-      fontify 26px 600 30px
       text-align left
       margin-left 0
     @media $PortraitMin
       max-width 100%
+  &__title
+    fontify 60px 600 64px
+    @media $desktopMax
+      fontify 48px 600 52px
+    @media $desktopMedium
+      fontify 36px 600 40px
+    @media $LandscapeMedium
+      fontify 32px 600 36px
+    @media $PortraitMax
+      fontify 26px 600 30px
+  &__text
+    mt 30px
+    fontify 17px 400 23px
+    @media $desktopMax
+      fontify 15px 400 21px
+    @media $PortraitMax
+      dn()

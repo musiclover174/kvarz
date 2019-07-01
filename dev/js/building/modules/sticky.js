@@ -12,5 +12,8 @@ export default class Sticky {
       topSpacing: this.ts,
       bottomSpacing: this.bs,
     });
+    window.addEventListener('resize', () => {
+      sidebar.updateSticky();
+    });
   }
 }

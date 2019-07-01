@@ -15,12 +15,15 @@ html
               +e.slide
                 +e.slide-inner
                   +e.img(src="img/banner.jpg")
-                  +e('p').inner «Русский Кварц» – единственный в РФ производитель высокочистого кварцевого концентрата.
+                  +e.inner 
+                    +e('p').title «Русский Кварц» – единственный в РФ производитель высокочистого кварцевого концентрата.
+                    +e('p').text Природный кварц — распространённый минерал, один из главных породообразующих минералов горных пород. Тем не менее, на практике редко встречаются месторождения, обладающие коммерческой значимостью.
             .swiper-slide
               +e.slide
                 +e.slide-inner
                   +e.img(src="img/banner2.jpg")
-                  +e('p').inner Следующий слайд с текстом покороче
+                  +e.inner 
+                    +e('p').title Следующий слайд с текстом покороче
           .swiper-buttons
             button.swiper-button-prev
             button.swiper-button-next
@@ -73,27 +76,40 @@ html
                   +e.type-href(href="#") RQ-2KFf
                   +e('p').type-admixture < 10 ppm примесей
                   +e('p').type-about Применяется в производстве кварцевого освещения, включая автомобильные ксеноновые, галогенные и HID-лампы, внешнего слоя тиглей для фотоэлектрической промышленности.
-            .swiper-button-prev
-            .swiper-button-next
+            //- .swiper-button-prev
+            //- .swiper-button-next
         +e.table-wrapper
           +e('table').table.js-types-table
             thead
               th 
-              th Al
-              th B
-              th Ca
-              th Cr
-              th Cu
-              th Fe
-              th K
-              th Li
-              th Mg
-              th Ni
-              th Na
-              th Ti
+              th 
+                span(title="All inclusive", alt="All inclusive") Al
+              th 
+                span(title="Текст подсказки", alt="Текст подсказки") B
+              th 
+                span(title="Текст подсказки", alt="Текст подсказки") Ca
+              th 
+                span(title="Текст подсказки", alt="Текст подсказки") Cr
+              th 
+                span(title="Текст подсказки", alt="Текст подсказки") Cu
+              th 
+                span(title="Текст подсказки", alt="Текст подсказки") Fe
+              th 
+                span(title="Текст подсказки", alt="Текст подсказки") K
+              th 
+                span(title="Текст подсказки", alt="Текст подсказки") Li
+              th 
+                span(title="Текст подсказки", alt="Текст подсказки") Mg
+              th 
+                span(title="Текст подсказки", alt="Текст подсказки") Ni
+              th 
+                span(title="Текст подсказки", alt="Текст подсказки") Na
+              th 
+                span(title="Текст подсказки", alt="Текст подсказки") Ti
             tbody
               tr(data-type="RQ-2KFf")
-                td.catalog__table-name RQ-2KFf
+                td.catalog__table-name 
+                  span(title="Текст подсказки", alt="Текст подсказки") RQ-2KFf
                 td 6
                 td n/a
                 td 0,5
@@ -107,7 +123,8 @@ html
                 td 0,6
                 td 2,9
               tr(data-type="RQ-2Ki")
-                td.catalog__table-name RQ-2Ki
+                td.catalog__table-name 
+                  span(title="Текст подсказки", alt="Текст подсказки") RQ-2Ki
                 td 4
                 td < 0,1
                 td 0,2
@@ -121,7 +138,8 @@ html
                 td 0,6
                 td 2,9
               tr(data-type="RQ-3K")
-                td.catalog__table-name RQ-3K
+                td.catalog__table-name 
+                  span(title="Текст подсказки", alt="Текст подсказки") RQ-3K
                 td 6
                 td n/a
                 td 0,5
@@ -135,7 +153,8 @@ html
                 td 0,6
                 td 2,9
               tr(data-type="RQ-2Kf")
-                td.catalog__table-name RQ-2Kf
+                td.catalog__table-name 
+                  span(title="Текст подсказки", alt="Текст подсказки") RQ-2Kf
                 td 4
                 td < 0,1
                 td 0,2
@@ -149,7 +168,8 @@ html
                 td 0,6
                 td 2,9
               tr(data-type="RQ-2K")
-                td.catalog__table-name RQ-2K
+                td.catalog__table-name 
+                  span(title="Текст подсказки", alt="Текст подсказки") RQ-2K
                 td 6
                 td n/a
                 td 0,5
@@ -163,7 +183,8 @@ html
                 td 0,6
                 td 2,9
               tr(data-type="RQ-1K")
-                td.catalog__table-name RQ-1K
+                td.catalog__table-name 
+                  span(title="Текст подсказки", alt="Текст подсказки") RQ-1K
                 td 4
                 td < 0,1
                 td 0,2
@@ -197,14 +218,14 @@ html
                 .container
                   +e.cols
                     +e.col
-                      +e('p').block-title Расстояние от Екатеринбурга составляет ~155 км (2 часа 10 минут в пути), расстояние от Челябинска составляет ~100 км (1 час 30 минут в пути).
+                      +e('p').block-title.mobile Расстояние от Екатеринбурга составляет ~155 км (2 часа 10 минут в пути), расстояние от Челябинска составляет ~100 км (1 час 30 минут в пути).
                       +e.block-text 
                         p Данный район является исторически промышленно развитым, в связи с чем Компания не имеет каких-либо ограничений с точки зрения инфраструктуры и логистики. 
               +e.block._block3.js-block
                 .container
                   +e.cols
                     +e.col
-                      +e.block-text 
+                      +e.block-text.mobile
                         p
                           span 1
                           |  Здесь расположен административный корпус компании «Русский Кварц», лаборатория и цех глубокого обогащения, а так же 
@@ -215,7 +236,7 @@ html
           .container
             +e.cols
               +e.col
-                +e('p').lead-title Жила №175 на всем своем протяжении имеет природный кварц с уникальным сочетанием свойств.
+                +e('p').lead-title Жила №175 на всем своем протяжении имеет природный кварц с&nbsp;уникальным сочетанием свойств.
               +e.col
                 +e.lead-text
                   p Минимальное содержание B и P, самое низкое содержание Al, щелочи, Cu, Ni, Cr, Fe, низкое содержание пузырьков и минеральных включений.

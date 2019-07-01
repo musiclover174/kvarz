@@ -1,9 +1,11 @@
 .catalog
   &_index
-    pt 88px
+    pt 91px
     pb 95px
     pos relative
     z-index 1
+    @media $desktopMax
+      pt 87px
     @media $LandscapeMax
       pt 58px
       pb 65px
@@ -22,10 +24,13 @@
       l 30%
       size 149px 169px
       background url('../i/rock2.png') no-repeat center
+      @media $desktopMax
+        l 10%
   &__title
     c #010101
     fontify 48px 600 52px
     mb 27px
+    ml -3px
     @media $desktopMax
       fontify 36px 600 52px
       mb 22px
@@ -35,15 +40,21 @@
       fontify 26px 600 30px
   &__cols
     df()
-    mb 35px
+    mb 44px
+    @media $desktopMax
+      mb 34px
     @media $LandscapeMedium
       flex-direction column
   &__col
-    w calc(50% - 16px)
+    w calc(50% - 25px)
+    @media $desktopMax
+      w calc(50% - 16px)
     @media $LandscapeMedium
       w 100%
     & + &
-      ml 32px
+      ml 50px
+      @media $desktopMax
+        ml 32px
       @media $LandscapeMedium
         ml 0
         mt 19px
@@ -84,39 +95,51 @@
       ml 8px
   &__types
     overflow visible
-    mb 40px
+    mb 50px
+    @media $desktopMax
+      mb 40px
     @media $PortraitMax
       mb 0
     .swiper-wrapper
       align-items stretch
     .swiper-slide
-      w 412px
+      w 500px
       h auto
+      @media $desktopMax
+        w 412px
       @media $LandscapeMedium
         w 312px
-    .swiper-button-prev
-      pos absolute
-      background-image none
-      size calc((100vw - 100%) / 2) 100%
-      t 0
-      l calc((100% - 100vw) / 2)
-      cursor url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAfCAMAAABeSlSAAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAsVBMVEUMNYH///8MNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYH///8OEDCSAAAAOXRSTlMAAD2q6TvoPjnmQDVENEYySDBJLuROLFEq5VIoVSbiVyThWiPgXsOk2GFdWSdUKVMrTUoxM+dBPKkqavEaAAAAAWJLR0QB/wIt3gAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB+MGBwkNCY0w8/MAAACnSURBVDjLhdPXDoJAFATQsQCuvawFGyjYe9f//zHhUUxm5vlkk82dAX6SLyCTXAYUHS4c1wMVJVMGFRVTBRU1tw4qGm4TVLRMG1R0bBdU9GwfVAz8IagY2TGomEwDUBHO5qAiihfgYvnhWSFab8QbCOOtEMlfdkJgbw9C4GhOQuDsi7ukt70IkfTjKgRuqmPAXfU06fpDdD3dy1MIvbl0ty8h4L3/xBdYBw8viStCmAAAAABJRU5ErkJggg=='), auto
-    .swiper-button-next
-      pos absolute
-      background-image none
-      size calc((100vw - 100%) / 2) 100%
-      t 0
-      r calc((100% - 100vw) / 2)
-      cursor url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAfCAMAAABeSlSAAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAsVBMVEUMNYH///8MNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYEMNYH///8OEDCSAAAAOXRSTlMAAKo9O+k+6EDmOUQ1RjRIMkkwTuQuUSxS5SpVKFfiJlrhJF7gI6TDYdhdWVQnUykrTUoxM+dBPKlLel+0AAAAAWJLR0QB/wIt3gAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB+MGBwkRLCBDeukAAACjSURBVDjLhdPZDoIwEAXQiyBjRQS1orgr4L7v/v+P+Ywmc+dtkpOmnc4FfqvillrnD8CrukTAF48I1EydCASmQQRCaRKBSGIi0DJtItCxXSKQ2B4R6KcDIjC0IyIwnkyJwGy+IAJZXmD50WtFzlhvCh1sc3KPHXvL3h70eRzNSZ9pkp6higv72yvbj0huUEUod6gieJBdf7K80My9aG7ffql1vtBWDzk5olryAAAAAElFTkSuQmCC'), auto
+      &-prev
+        cursor url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAaCAQAAACeTo3NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBwEJEx1boG49AAAAsUlEQVRIx63UsUqCARQF4C+yGqz+nqiHjRCzkoiIhkDSXy118kkM2qJug4OLS3DOfr/pnsP+NEZaoTRmyk0KmysPjnPYMIW9K3cp7EO5dZTDBjoZbKEMHGawpdLPYBeWSi+JXaewlXKVwQ68ucSn34C27vgGGz8B7ovGNPdtcG6a68IWbHNN3YH3OfBMmxumLTjJzeYOfMyBpybKUxIcK8958CQFdo2VYYqj68Xr/8/+ADvYQhQ3RvEsAAAAAElFTkSuQmCC'), auto
+      &-next + .swiper-slide
+        cursor url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAaCAQAAACeTo3NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBwEJEzQZEvZRAAAAtklEQVRIx63VyQrCMBSF4d9GWqlD7cP4wioiCuKAljggVqWKCr7RdVG3XSjn7PMRktwT+D1vtjT/WFeRNUauAxtkGDktFRixwTjTVoEhK4wLHR04x7iS6MAZRqEEp1qwzgTjrgMdY4wHXR04xHiS6sA+xou0hqcnAAMSoAhUG1TGMdCdnmOku1vpy5PORTm1ohoIWepKKvqWvKRCy4I/aX6MGI9xJNZge4yDBgOPsVNhcGNRhX0Ar788dDd8VnYAAAAASUVORK5CYII='), auto
+    // .swiper-button-prev
+    //   pos absolute
+    //   background-image none
+    //   size calc((100vw - 100%) / 2) 100%
+    //   t 0
+    //   l calc((100% - 100vw) / 2)
+    //   cursor url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAaCAMAAAADmbV0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAkFBMVEURPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpL///9e5pjNAAAALnRSTlMAD7/ExqnHsAauyKzJqwWqBMoDy6gQpqTMosHw7sC84N20xQ6tDcOyDMK2Bwu4pFNltAAAAAFiS0dELyPUIBEAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBwEJDCDOkiyyAAAAjElEQVQ4y43SSRKCQBBE0WrbCSdEnAcQRBTFvP/xJNi4Mvi5rbeqTLNfXM8biOtrQNhQozFiAWETTQmbab5ALFwCFilcARZrDdgm1paxHWF7HQCzo3Q6d+ZiiZReO5OZy9HrzG45qqKBHlXbwgLBu0ebamCJNtrCB4LPUhmDlV4YvgmsKwXEWf1J/t6+Q4MUGuX/KfgAAAAASUVORK5CYII='), auto
+    // .swiper-button-next
+    //   pos absolute
+    //   background-image none
+    //   size calc((100vw - 100%) / 2) 100%
+    //   t 0
+    //   r calc((100% - 100vw) / 2)
+    //   cursor url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAaCAMAAAADmbV0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAnFBMVEURPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpL///8bjjfrAAAAMnRSTlMA0LoLtcIItwwHtsMNBrPEDrDFD67HqwSqyQOoyxCkzBGizbnu8MajprLBCr+8vbvIsUmqe60AAAABYktHRDM31XxeAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH4wcBCQ0vRzYAYgAAAJBJREFUOMuN09kSwUAUhOFDRBKEiD22MAhi7fd/OHPpRvn7+quaM3N6zH6l0QyMpKUQwXakMCYw6ajbIzDta5AhOFQ+QnCsCYNTCGdzLRAsllqtEdxoWyK40740d/ibo3TCDpxboQGLM7owfEC4EL9g0oT0gpqV+O6DpvrmX8EXqZ1uNWB3PQAzpydh9np/sw8OsxeYYa3nSgAAAABJRU5ErkJggg=='), auto
   &__type
     c black
     size 100% 100%
     border 2px solid #f0f0f0
-    padding 23px 50px 35px 47px
+    padding 23px 50px 97px 47px
     bgc white
     border-bottom-right-radius 90px
     transition .7s background-color, .7s border-color
+    @media $desktopMax
+      padding 23px 50px 35px 47px
+      border-bottom-right-radius 105px
     @media $LandscapeMedium
+      border-bottom-right-radius 0
       padding 23px 30px 25px 27px
     &:hover
       c white
@@ -144,11 +167,11 @@
       bgc white
       @media $LandscapeMax
         padding 0 20px
-      @media $PortraitMax
+      @media $LandscapeMedium
         dn()
     &-hint
       fontify 17px 400 23px
-      mt 20px
+      mt 15px
       text-align center
       @media $desktopMax
         fontify 15px 400 21px

@@ -13,9 +13,8 @@ export default class Lead {
       speed: 800,
       slidesPerView: 'auto',
       loopedSlides: this.leadElems,
-      spaceBetween: 32,
+      spaceBetween: 50,
       loop: true,
-      centeredSlides: true,
       watchOverflow: true,
       roundLengths: true,
       breakpoints: {
@@ -23,7 +22,7 @@ export default class Lead {
           spaceBetween: 20,
         },
         1400: {
-          centeredSlides: false,
+          spaceBetween: 32,
         },
       },
     });

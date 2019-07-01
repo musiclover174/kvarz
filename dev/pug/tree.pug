@@ -7,13 +7,13 @@ html
   body
     include layout/__header
   
-    +b('main').content
+    +b('main').main
       .container
         +b('section').text
-          h1 Разводящая
           +b('section').breadcrumbs
             +e.href(href="#") Главная
             +e('span').delim / 
+          h1 Разводящая
           +e.content
             ul
               li

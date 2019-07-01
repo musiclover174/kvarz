@@ -162,14 +162,17 @@
   pos relative
   cursor pointer
   outline none
-  size 33px 33px
-  background url('../i/left_seq.png') no-repeat 0 -1617px
+  // size 33px 33px
+  size 39px 26px
+  background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAaCAQAAACeTo3NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBwEIAxP3GDtcAAAA+klEQVRIx63VvU5CQRCG4e/AAQuE5YKIsfBKiTEGgRBjsJafKGDlPdhrYmfgpdgQ4BxOsbM702y2eJqdbzZDF8tpooZ6CqxaBfaqW32HYpIot+MdmNBEoV2FjS1YmXN8AEMbVuQcK+CJhg075zw2ILdip5xjDQyo27Ej59gAj3HYgeuyAR5iMc957D4eQ6LLJ9BPgaGMN91I+tXOEKlifeX6lyT9aJuA+xOOZey0nT9Fh2VcFoqD0mERk9TyGHtwFAsej20W9sVU5kSbuXVtXuIO4LMdLF5cMwde0qxPD86AaZrlfgpepeFEixkwDueyim+7pZFy3YWGdg8rInNs0wxWzwAAAABJRU5ErkJggg==') no-repeat center
+  // background url('../i/left_seq.png') no-repeat 0 -1617px
   z-index 1
   transition .7s opacity, .7s background
   &:hover{
-    @supports not (-webkit-overflow-scrolling: touch){
-      animation arrAnimation 1s steps(49)
-    }
+    opacity .7
+    // @supports not (-webkit-overflow-scrolling: touch){
+    //   animation arrAnimation 1s steps(49)
+    // }
   }
 }
 
@@ -187,9 +190,9 @@
 }
 .swiper-button-next{
   transform scaleX(-1)
-  ml 30px
+  ml 20px
   @media $PortraitMedium{
-    ml 20px
+    ml 15px
   }
 }
 .swiper-button-lock {

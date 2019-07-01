@@ -1,73 +1,90 @@
 .main
   oh()
+  fontify 17px 400 23px
+  @media $desktopMax 
+    fontify 15px 400 21px
   /body:not(.index) &
-    pt 106px
+    pt 252px
+    pb 95px
     pos relative
     @media $LandscapeMax
-      pt 120px
+      pt 180px
+    @media $PortraitMax
+      pt 140px
+      pb 75px
   h1:not([class])
     color $dark
     fontify 60px 500 64px
     mt 63px 
-    mb 48px
+    mb 33px
+    ml -4px
     @media $desktopMax
       fontify 48px 500 52px
+      mb 38px
     @media $PortraitMax
       fontify 36px 500 40px
   h2:not([class])
     color $dark
     fontify 48px 500 52px
-    margin 54px 0 -3px
+    margin 64px 0 -1px -4px
     @media $desktopMax
       fontify 36px 500 40px
-      margin 57px 0 1px
+      margin 67px 0 29px
     @media $PortraitMax
       fontify 30px 500 34px
   h3:not([class]),
   h4:not([class])
     color $dark
-    fontify 30px 500 38px
-    margin 56px 0 -2px
+    fontify 36px 500 40px
+    margin 69px 0 28px -2px
     @media $desktopMax
-      fontify 24px 500 28px
+      fontify 30px 500 34px
   iframe:not([class]),
   img:not([class])
-    margin 4px 0
+    margin 7px 0
     max-width 100%
   ul:not([class])
     list-style  none
-    margin -18px 0 20px
   ul:not([class]) li
-    pl 25px
+    pl 30px
     pos relative
+    & + li
+      mt 6px
+      @media $desktopMax
+        mt 4px
   ul:not([class]) > li:before
     content ""
     pos absolute
     l 0
-    t 14px
-    size 15px 2px
-    bgc $red
+    t 12px
+    size 20px 1px
+    bgc $blue
   ol:not([class])
     list-style none
-    margin -11px 0 20px
     counter-reset myCounter
   ol:not([class]) li
-    pl 25px
+    pl 30px
     pos relative
+    & + li
+      mt 6px
+      @media $desktopMax
+        mt 4px
   ol:not([class]) > li:before
     counter-increment myCounter
     content counter(myCounter)"."	
     pos absolute
     l 0
     t 0
-    w 32px
-    pr 9px
-    color $red
+    w 21px
+    color $blue
+    text-align right
   p:not([class])
-    margin 19px 0
+    margin 25px 0
+    @media $desktopMax
+      margin 20px 0
   a:not([class])
-    c $red
-    border-bottom 1px solid alpha($red, .4)
+    c $blue
+    border-bottom 1px solid alpha($blue, .4)
     transition .5s border
     &:hover
       border-color transparent
@@ -84,21 +101,27 @@
       border-top 0
     th
       fontify 17px 600 23px
-      padding 9px 19px
+      padding 11px 20px
       text-align left
       border-left 1px solid #f0f0f0
       border-right 1px solid #f0f0f0
       @media $desktopMax
+        padding 8px 20px
         fontify 15px 600 21px
     td
-      padding 10px 19px 11px
-      font-size 17px
-      line-height 23px
+      padding 9px 19px 10px
+      fontify 17px 400 23px
       border-left 1px solid #f0f0f0
       border-right 1px solid #f0f0f0
+      &:first-child
+        max-width 220px
       @media $desktopMax
-        font-size 14px
-        line-height 20px
+        padding 11px 19px
+        fontify 14px 400 20px
+
+.text
+  &__content
+    max-width 1043px
 
 div[class\^="table-scroller"]
   overflow auto
