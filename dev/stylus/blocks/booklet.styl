@@ -1,0 +1,46 @@
+.booklet
+  df()
+  flex-wrap wrap
+  mt 69px
+  mb -40px
+  @media $PortraitMax
+    flex-direction column
+  &__item
+    pos relative
+    w calc(50% - 25px)
+    pl 70px
+    mb 40px
+    @media $desktopMax
+      w calc(50% - 16px)
+      pl 64px
+      mb 38px
+    @media $PortraitMax
+      w 100%
+    &:nth-child(2n)
+      ml 50px
+      @media $desktopMax
+        ml 32px
+      @media $PortraitMax
+        ml 0
+        mt 19px
+    &:before
+      content ""
+      pos absolute
+      t 6px
+      l 24px
+      size 26px 34px
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAiBAMAAACzTdQ9AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAMFBMVEURPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpL///8BYb2FAAAADnRSTlMAxH/ru7TyutIV5qqx8O/HZvwAAAABYktHRA8YugDZAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH4wcCCCk6yHTA9gAAAFNJREFUGNNjkHsHAY8YQOCxCwS8UwDxnjJAwLNHyLznfQpIvKczHiHzOEGScB4DSBLBA0nCeK927z77CM4DuwLOA4G4UR5RPGA4wsE6BlhsgsBDAEzDVkylQnCzAAAAAElFTkSuQmCC') no-repeat center
+      @media $desktopMax
+        l 19px
+    &-href
+      c black
+      fontify 17px 500 23px
+      bb(1px, solid, black)
+      @media $desktopMax
+        fontify 15px 500 21px
+    &-info
+      c $grey
+      fontify 16px 400 20px
+      mt 5px
+      @media $desktopMax
+        fontify 14px 400 20px

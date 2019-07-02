@@ -3938,7 +3938,7 @@ body:not(.index) .main {
 .main h1:not([class]) {
   color: #000;
   font-size: 60px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 64px;
   margin-top: 63px;
   margin-bottom: 33px;
@@ -3947,7 +3947,7 @@ body:not(.index) .main {
 @media (max-width: 1400px) {
   .main h1:not([class]) {
     font-size: 48px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 52px;
     margin-bottom: 38px;
   }
@@ -3955,21 +3955,21 @@ body:not(.index) .main {
 @media (max-width: 670px) {
   .main h1:not([class]) {
     font-size: 36px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 40px;
   }
 }
 .main h2:not([class]) {
   color: #000;
   font-size: 48px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 52px;
   margin: 64px 0 -1px -4px;
 }
 @media (max-width: 1400px) {
   .main h2:not([class]) {
     font-size: 36px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 40px;
     margin: 67px 0 29px;
   }
@@ -3977,7 +3977,7 @@ body:not(.index) .main {
 @media (max-width: 670px) {
   .main h2:not([class]) {
     font-size: 30px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 34px;
   }
 }
@@ -3985,7 +3985,7 @@ body:not(.index) .main {
 .main h4:not([class]) {
   color: #000;
   font-size: 36px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 40px;
   margin: 69px 0 28px -2px;
 }
@@ -3993,7 +3993,7 @@ body:not(.index) .main {
   .main h3:not([class]),
   .main h4:not([class]) {
     font-size: 30px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 34px;
   }
 }
@@ -5668,4 +5668,106 @@ body.showmap .about__back:hover {
 }
 .page404__text {
   max-width: 530px;
+}
+.booklet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 69px;
+  margin-bottom: -40px;
+}
+@media (max-width: 670px) {
+  .booklet {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+.booklet__item {
+  position: relative;
+  width: calc(50% - 25px);
+  padding-left: 70px;
+  margin-bottom: 40px;
+}
+@media (max-width: 1400px) {
+  .booklet__item {
+    width: calc(50% - 16px);
+    padding-left: 64px;
+    margin-bottom: 38px;
+  }
+}
+@media (max-width: 670px) {
+  .booklet__item {
+    width: 100%;
+  }
+}
+.booklet__item:nth-child(2n) {
+  margin-left: 50px;
+}
+@media (max-width: 1400px) {
+  .booklet__item:nth-child(2n) {
+    margin-left: 32px;
+  }
+}
+@media (max-width: 670px) {
+  .booklet__item:nth-child(2n) {
+    margin-left: 0;
+    margin-top: 19px;
+  }
+}
+.booklet__item:before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 24px;
+  width: 26px;
+  height: 34px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAiBAMAAACzTdQ9AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAMFBMVEURPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpL///8BYb2FAAAADnRSTlMAxH/ru7TyutIV5qqx8O/HZvwAAAABYktHRA8YugDZAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH4wcCCCk6yHTA9gAAAFNJREFUGNNjkHsHAY8YQOCxCwS8UwDxnjJAwLNHyLznfQpIvKczHiHzOEGScB4DSBLBA0nCeK927z77CM4DuwLOA4G4UR5RPGA4wsE6BlhsgsBDAEzDVkylQnCzAAAAAElFTkSuQmCC") no-repeat center;
+}
+@media (max-width: 1400px) {
+  .booklet__item:before {
+    left: 19px;
+  }
+}
+.booklet__item-href {
+  color: #000;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 23px;
+  border-bottom: 1px solid #000;
+  -webkit-transition: 0.7s border-color;
+  transition: 0.7s border-color;
+}
+.booklet__item-href:hover {
+  border-color: transparent;
+}
+@media (max-width: 1400px) {
+  .booklet__item-href {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 21px;
+  }
+}
+.booklet__item-info {
+  color: #858585;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-top: 5px;
+}
+@media (max-width: 1400px) {
+  .booklet__item-info {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
 }
