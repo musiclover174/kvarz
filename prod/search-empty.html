@@ -85,19 +85,18 @@
     <main class="main" role="main">
       <div class="container">
         <section class="text">
-          <section class="breadcrumbs"><a class="breadcrumbs__href" href="#">Главная</a><span class="breadcrumbs__delim">/ </span>
+          <section class="breadcrumbs"><a class="breadcrumbs__href" href="#">Главная</a><span class="breadcrumbs__delim">/ </span><span class="breadcrumbs__current">Результаты поиска</span>
           </section>
-          <h1>Разводящая</h1>
+          <h1>Результаты поиска</h1>
           <div class="text__content">
-            <ul>
-              <li><a href="index">Главная</a></li>
-              <li><a href="text">Типовая текстовая</a></li>
-              <li><a href="page404">404 Страница не найдена</a></li>
-              <li><a href="booklet">Брошюры для скачивания</a></li>
-              <li><a href="docs">Лицензии и сертификаты</a></li>
-              <li><a href="search">Результаты поиска</a></li>
-              <li><a href="search-empty">Результаты поиска: Ничего не найдено</a></li>
-            </ul>
+            <section class="search">
+              <form class="search__form">
+                <input class="search__input" type="text" data-req="req" placeholder="Что будем искать?" value="Баклажан">
+                <button class="search__sbm" type="submit" aria-label="Найти"></button>
+              </form>
+              <p class="search__text">По вашему запросу «<span>Баклажан</span>» ничего не найдено. Попробуйте изменить запрос.
+              </p>
+            </section>
           </div>
         </section>
       </div>

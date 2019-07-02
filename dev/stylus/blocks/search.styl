@@ -1,0 +1,67 @@
+.search
+  mt -8px
+  &__form
+    pos relative
+    max-width 775px
+  &__input
+    w 100%
+    background transparent
+    border 0
+    border-bottom 2px solid #f0f0f0
+    h 52px
+    font-size 17px
+    c black
+    pr 45px
+    &::-webkit-input-placeholder
+      c $grey
+    &::-moz-placeholder
+      c $grey
+    &:-ms-input-placeholder
+      c $grey
+    @media $desktopMax
+      font-size 15px
+    @media $PortraitMedium
+      padding 0
+      pr 35px
+  &__sbm
+    pos absolute
+    t 13px
+    r 0
+    size 21px 21px
+    background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAQAAAADHm0dAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBwIKGizLT8T5AAABHklEQVQoz43SvUoDQRSG4e+NdiFBkGAC23gf4kWIKzYiLP4RNIIgFnsD3o6FVgoRttDextiIhT/EkIhYKCHHZjc7WXeJ8zVzmAdmOHOE4sxxQkQfo0ebIyrjkzjJJqCPTaTLeh49xTCu8akzQ4MVIowRYZYGGD/sZi48YMgI36U1PrA/UIhDjC7VlIYYVzlQwA1GK6W3mHvNRDYxLlP6hdEooIsYryk1jNkCWsX4TKqSepJqyl/zkt6ToqSOpKUCuizpflxxPKUDe+lbK7wV9LWF8ULZ/a0NjG92MnCfIcZWdgZCRhhtVllA1FkjiofmAS87WT7dzGQ9E9BxsdvDJuc8MeCRM7YpIzwX57c+jYOnUQdPpwm+A/1jebrQ4Bfx3G0WE9PtdAAAAABJRU5ErkJggg==') no-repeat center
+    transition .7s opacity
+    &:hover
+      opacity .5
+    @media $PortraitMedium
+      r 0
+  &__text
+    c black
+    fontify 17px 400 23px
+    mt 24px
+    @media $desktopMax
+      fontify 15px 500 21px
+    span
+      c $blue
+  &__list
+    mt 68px
+    max-width 850px
+  &__item
+    & + &
+      mt 48px
+    &-href
+      c black
+      fontify 20px 600 26px
+      bb(1px, solid, black)
+      @media $desktopMax
+        fontify 18px 600 24px
+      span
+        c $blue
+    &-text
+      c black
+      fontify 17px 400 23px
+      mt 19px
+      @media $desktopMax
+        fontify 15px 500 21px
+        mt 16px
+      span
+        c $blue

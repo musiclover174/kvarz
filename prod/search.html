@@ -85,19 +85,48 @@
     <main class="main" role="main">
       <div class="container">
         <section class="text">
-          <section class="breadcrumbs"><a class="breadcrumbs__href" href="#">Главная</a><span class="breadcrumbs__delim">/ </span>
+          <section class="breadcrumbs"><a class="breadcrumbs__href" href="#">Главная</a><span class="breadcrumbs__delim">/ </span><span class="breadcrumbs__current">Результаты поиска</span>
           </section>
-          <h1>Разводящая</h1>
+          <h1>Результаты поиска</h1>
           <div class="text__content">
-            <ul>
-              <li><a href="index">Главная</a></li>
-              <li><a href="text">Типовая текстовая</a></li>
-              <li><a href="page404">404 Страница не найдена</a></li>
-              <li><a href="booklet">Брошюры для скачивания</a></li>
-              <li><a href="docs">Лицензии и сертификаты</a></li>
-              <li><a href="search">Результаты поиска</a></li>
-              <li><a href="search-empty">Результаты поиска: Ничего не найдено</a></li>
-            </ul>
+            <section class="search">
+              <form class="search__form">
+                <input class="search__input" type="text" data-req="req" placeholder="Что будем искать?" value="Русский кварц">
+                <button class="search__sbm" type="submit" aria-label="Найти"></button>
+              </form>
+              <p class="search__text">По вашему запросу «<span>Русский Кварц</span>» найдено 15 страниц.
+              </p>
+              <ul class="search__list">
+                <li class="search__item"><a class="search__item-href" href="#"> <span>Русский кварц</span> победил в конкурсе «Лучший экспортер Челябинской области 2016» в номинации «Средний бизнес»</a>
+                  <p class="search__item-text">Применяется в производстве тиглей Чохральского для фотоэлектрической промышленности, кварцевых трубок и слитков, кварцевого освещения.
+                  </p>
+                </li>
+                <li class="search__item"><a class="search__item-href" href="#">ООО «<span>Русский Кварц</span>» переименовал сорт высокочистого кварцевого концентрата RQ-Os в RQ-3K</a>
+                  <p class="search__item-text">В связи с проведением работ по стандартизации и приведению к единому стилю наименований сортов в классификации высокочистых кварцевых концентратов, выпускаемых ООО «<span>Русский кварц</span>».
+                  </p>
+                </li>
+                <li class="search__item"><a class="search__item-href" href="#">RQ-1K — новый сорт для полупроводниковой промышленности</a>
+                  <p class="search__item-text"> <span>Русский кварц </span>начинает промышленное производство нового сорта ВЧК под названием RQ-1K, разработанного специально для использования в полупроводниковой промышленности Химический и гранулометрический состав сорта RQ-1K.
+                  </p>
+                </li>
+                <li class="search__item"><a class="search__item-href" href="#">Запущена вторая очередь цеха глубокого обогащения кварцевых концентратов</a>
+                  <p class="search__item-text">В декабре 2016 года в присутствии Председателя правления ООО УК «РОСНАНО» А.Б.Чубайса произведен запуск 2й очереди цеха глубокого обогащения.
+                  </p>
+                </li>
+                <li class="search__item"><a class="search__item-href" href="#">Комбинат перешел полностью на импортные реагенты</a>
+                  <p class="search__item-text">После экспериментов с реагентами различных производителей комбинат полностью перешел на использование импортных реагентов, которые показывают устойчивое качество.
+                  </p>
+                </li>
+                <li class="search__item"><a class="search__item-href" href="#">Быть ли 450-мм кремниевым пластинам?</a>
+                  <p class="search__item-text">В индустрии полупроводниковых устройств наблюдается сейчас одна важная тенденция — переход на использование кремниевых пластин все большего диаметра.
+                  </p>
+                </li>
+              </ul>
+            </section>
+            <section class="more more_left">
+              <button class="more__button btn" type="button">Показать еще результаты
+              </button>
+            </section>
           </div>
         </section>
       </div>

@@ -4,6 +4,7 @@ import {
   qs,
   qsAll,
   eventsDispatcher,
+  getStyle,
 } from './modules/helpers';
 import Popup from './modules/popup';
 import Forms from './modules/forms';
@@ -56,23 +57,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const about = new About('.about__wrapper', '.about__fixer-inner', '.js-about-mapshower', '.js-about-back');
   }
 
-  // if (document.body.classList.contains('index')) {
-  //   const index = new Index(30);
-  //   index.preload();
-  // }
+  document.onreadystatechange = () => {
+    if (document.readyState === 'complete') {
+      window.addEventListener('resize', () => {
+        const mainEl = qs('.main');
+        const footerEl = qs('.footer');
+        footerEl.removeAttribute('style');
+        const hMain = parseInt(getStyle(mainEl).height, 10);
+        const hFooter = parseInt(getStyle(footerEl).height, 10);
+        if ((hMain + hFooter) < window.innerHeight) footerEl.style.marginTop = `${window.innerHeight - hMain - hFooter}px`;
+      });
+    }
+  };
 
-  // if (document.querySelector('.js-contacts-map')) {
-  //   const contacts = new Contacts('contacts-map');
-  //   contacts.init();
-  // }
-
-  // if (document.querySelectorAll('.js-shave').length) {
-  //   document.querySelectorAll('.js-shave').forEach((sh) => {
-  //     shave(sh, sh.getAttribute('data-height'));
-  //   });
-  // }}
-
-  // resize and scroll
   resizeWatcher();
   eventsDispatcher();
 });
