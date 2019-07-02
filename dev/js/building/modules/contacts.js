@@ -1,32 +1,36 @@
+import { qs } from './helpers';
+
 export default class Contacts {
-  constructor(mapId) {
-    this.el = document.querySelector('.js-contacts-map');
-    this.mapId = mapId;
+  constructor(mapElem) {
+    this.el = qs(mapElem);
+    ymaps.ready(this.init.bind(this));
   }
 
   init() {
-    const t = this;
+    const {
+      pin, center, locations, zoom,
+    } = this.el.dataset;
 
-    function mapInit() {
-      const pinCoord = t.el.getAttribute('data-coords').split(', ');
+    this.myMap = new ymaps.Map(this.el, {
+      center: [parseFloat(center.split(':')[0]), parseFloat(center.split(':')[1])],
+      zoom,
+      controls: ['smallMapDefaultSet'],
+    });
 
-      const myMap = new ymaps.Map(t.mapId, {
-        center: [parseFloat(pinCoord[0]), parseFloat(pinCoord[1])],
-        zoom: window.innerWidth <= 1000 ? 15 : 17,
-        controls: ['smallMapDefaultSet']
-      });
+    this.myMap.behaviors.disable('scrollZoom');
 
-      const PMitem = new ymaps.Placemark([parseFloat(pinCoord[0]), parseFloat(pinCoord[1])], {}, {
-        iconLayout: 'default#image',
-        iconImageSize: [54, 67],
-        iconImageHref: '/static/i/pin.png',
-        iconImageOffset: [-32, -42],
-      });
+    locations.split(', ').forEach((item) => {
+      const coords = item.split(':');
 
-      myMap.behaviors.disable('scrollZoom');
-      myMap.geoObjects.add(PMitem);
-    }
-
-    ymaps.ready(mapInit);
+      const HouseMarker = new ymaps.Placemark(
+        [parseFloat(coords[0]), parseFloat(coords[1])], {}, {
+          iconLayout: 'default#image',
+          iconImageSize: [27, 35],
+          iconImageHref: pin,
+          iconImageOffset: [-28, -42],
+        },
+      );
+      this.myMap.geoObjects.add(HouseMarker);
+    });
   }
 }

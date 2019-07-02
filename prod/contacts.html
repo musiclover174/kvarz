@@ -85,23 +85,103 @@
     <main class="main" role="main">
       <div class="container">
         <section class="text">
-          <section class="breadcrumbs"><a class="breadcrumbs__href" href="#">Главная</a><span class="breadcrumbs__delim">/ </span>
+          <section class="breadcrumbs"><a class="breadcrumbs__href" href="#">Главная</a><span class="breadcrumbs__delim">/ </span><span class="breadcrumbs__current">Контактная информация</span>
           </section>
-          <h1>Разводящая</h1>
+          <h1>Контактная информация</h1>
           <div class="text__content">
-            <ul>
-              <li><a href="index">Главная</a></li>
-              <li><a href="text">Типовая текстовая</a></li>
-              <li><a href="page404">404 Страница не найдена</a></li>
-              <li><a href="booklet">Брошюры для скачивания</a></li>
-              <li><a href="docs">Лицензии и сертификаты</a></li>
-              <li><a href="search">Результаты поиска</a></li>
-              <li><a href="search-empty">Результаты поиска: Ничего не найдено</a></li>
-              <li><a href="contacts">Контактная информация</a></li>
-            </ul>
+            <section class="contacts">
+              <div class="contacts__cols">
+                <div class="contacts__col">
+                  <div class="contacts__block">
+                    <p class="contacts__block-title">Исполнительный директор
+                    </p>
+                    <div class="contacts__block-text">
+                      <p>Миллер Антон Витальевич</p>
+                    </div>
+                  </div>
+                  <div class="contacts__block">
+                    <p class="contacts__block-title">Адрес
+                    </p>
+                    <div class="contacts__block-text">
+                      <p>456870 Россия, Челябинская область, город Кыштым, Каслинское шоссе, дом 3</p>
+                    </div>
+                  </div>
+                  <div class="contacts__block">
+                    <p class="contacts__block-title">Телефон
+                    </p>
+                    <div class="contacts__block-text"><a class="contacts__block-tel" href="tel:+73515143845">+7 (35151) 4-38-45</a>
+                    </div>
+                  </div>
+                  <div class="contacts__block">
+                    <p class="contacts__block-title">Факс
+                    </p>
+                    <div class="contacts__block-text">
+                      <p>+7 (35151) 4-38-48</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="contacts__col">
+                  <div class="contacts__block">
+                    <p class="contacts__block-title">Электронная почта
+                    </p>
+                    <div class="contacts__block-text">
+                      <p> <a href="mailto:info@russianquartz.com">info@russianquartz.com</a><br>Отправляя письмо по данному адресу не забывайте указывать кому оно предназначено.
+                        <br><br><a href="mailto:mts@russianquartz.com">mts@russianquartz.com</a><br><a href="mailto:it@russianquartz.com">it@russianquartz.com</a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="contacts__block">
+                    <p class="contacts__block-title">Время работы
+                    </p>
+                    <div class="contacts__block-text">
+                      <p>Понедельник – пятница: 08:00 – 17:00 (обед: 12:00 – 13:00)<br>Суббота, воскресение – выходные</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
         </section>
       </div>
+      <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+      <div class="contacts__map js-contacts-map" id="map" data-pin="./img/pin.png" data-zoom="12" data-center="55.728829:60.521423" data-locations="55.728829:60.521423"></div>
+      <section class="contacts contacts_form">
+        <div class="container">
+          <p class="contacts__title">Связаться с нами
+          </p>
+          <p class="contacts__hint">Обратите внимание, отправляя данную форму, вы даете согласие на <a href="#" target="_blank">обработку персональных данных</a>. Поля со звездочкой «*» – обязательны для заполнения.
+          </p>
+          <form class="contacts__form">
+            <div class="common__cols">
+              <div class="common__col">
+                <div class="common__row">
+                  <label class="common__label">Ваше имя <span>*</span></label>
+                  <input class="common__input" type="text" data-req="req">
+                </div>
+                <div class="common__row">
+                  <label class="common__label">Электронная почта <span>*</span></label>
+                  <input class="common__input" type="text" data-req="req">
+                </div>
+                <div class="common__row">
+                  <label class="common__label">Телефон</label>
+                  <input class="common__input js-phone" type="text">
+                </div>
+                <div class="common__row">
+                  <label class="common__label">Название компании</label>
+                  <input class="common__input" type="text">
+                </div>
+              </div>
+              <div class="common__col">
+                <div class="common__row">
+                  <label class="common__label">Текст сообщения <span>*</span></label>
+                  <textarea class="common__textarea" type="text" data-req="req"></textarea>
+                </div>
+              </div>
+            </div>
+            <button class="common__submit btn btn_white" type="submit">Отправить</button>
+          </form>
+        </div>
+      </section>
     </main>
     <footer class="footer">
       <div class="footer__top">

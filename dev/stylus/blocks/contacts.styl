@@ -1,0 +1,71 @@
+.contacts
+  &_form
+    bgc $blue
+    c white
+    padding 92px 0 99px
+    mb -95px
+    @media $PortraitMax
+      mb -75px
+      padding 62px 0 66px
+  &__cols
+    df()
+    flex-wrap wrap
+    @media $PortraitMax
+      flex-direction column
+  &__col
+    pos relative
+    w calc(50% - 25px)
+    @media $desktopMax
+      w calc(50% - 16px)
+    @media $PortraitMax
+      w 100%
+    & + &
+      ml 50px
+      @media $desktopMax
+        ml 32px
+      @media $PortraitMax
+        ml 0
+        mt 25px
+  &__map
+    size 100% 540px
+    max-height 70vh
+    mt 97px
+    @media $desktopMax
+      h 460px
+    @media $PortraitMax
+      mt 60px
+  &__block
+    & + &
+      mt 38px
+      @media $desktopMax
+        mt 40px
+      @media $PortraitMax
+        mt 25px
+    &-title
+      fontify 20px 600 26px
+      @media $desktopMax
+        fontify 18px 600 24px
+    &-text
+      mt 9px
+    &-tel
+      c black
+   &__title
+    pos relative
+    z-index 1
+    fontify 36px 600 40px
+    mb 29px
+    @media $PortraitMax
+      fontify 30px 600 34px
+  &__hint
+    max-width 710px
+    c white
+    fontify 17px 400 23px
+    @media $lDesktopSmall
+      fontify 15px 400 25px
+    a:not([class])
+      c white
+      bb(1px, solid, white)
+  &__form
+    mt 38px
+    .common__textarea
+      h 305px

@@ -13,7 +13,7 @@ import Banner from './modules/banner';
 import Leads from './modules/lead';
 import Types from './modules/types';
 import About from './modules/about';
-// import Contacts from './modules/contacts';
+import Contacts from './modules/contacts';
 import Sticky from './modules/sticky';
 import Spacer from './modules/spacer';
 
@@ -55,6 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (qs('.js-about') && window.innerWidth > 670) {
     const about = new About('.about__wrapper', '.about__fixer-inner', '.js-about-mapshower', '.js-about-back');
+  }
+
+  if (qs('.js-contacts-map')) {
+    const contacts = new Contacts('.js-contacts-map');
   }
 
   document.onreadystatechange = () => {

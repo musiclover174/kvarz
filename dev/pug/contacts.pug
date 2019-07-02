@@ -1,0 +1,88 @@
+include bemto/bemto.pug
+
+doctype html
+html
+  head(lang="ru")
+    include layout/__head
+  body
+    include layout/__header
+  
+    +b('main').main
+      .container
+        +b('section').text
+          +b('section').breadcrumbs
+            +e.href(href="#") Главная
+            +e('span').delim / 
+            +e('span').current Контактная информация
+          h1 Контактная информация
+          +e.content
+            +b('section').contacts
+              +e.cols
+                +e.col
+                  +e.block
+                    +e('p').block-title Исполнительный директор
+                    +e.block-text
+                      p Миллер Антон Витальевич
+                  +e.block
+                    +e('p').block-title Адрес
+                    +e.block-text
+                      p 456870 Россия, Челябинская область, город Кыштым, Каслинское шоссе, дом 3
+                  +e.block
+                    +e('p').block-title Телефон
+                    +e.block-text
+                      +e.block-tel(href="tel:+73515143845") +7 (35151) 4-38-45
+                  +e.block
+                    +e('p').block-title Факс
+                    +e.block-text
+                      p +7 (35151) 4-38-48
+                +e.col
+                  +e.block
+                    +e('p').block-title Электронная почта
+                    +e.block-text
+                      p 
+                        a(href="mailto:info@russianquartz.com") info@russianquartz.com
+                        | <br>Отправляя письмо по данному адресу не забывайте указывать кому оно предназначено.
+                        | <br><br>
+                        a(href="mailto:mts@russianquartz.com") mts@russianquartz.com
+                        | <br>
+                        a(href="mailto:it@russianquartz.com") it@russianquartz.com
+                  +e.block
+                    +e('p').block-title Время работы
+                    +e.block-text
+                      p Понедельник – пятница: 08:00 – 17:00 (обед: 12:00 – 13:00)<br>Суббота, воскресение – выходные
+
+      script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
+      .contacts__map#map.js-contacts-map(data-pin="./img/pin.png", data-zoom="12", data-center="55.728829:60.521423", data-locations="55.728829:60.521423")
+
+      +b('section').contacts._form
+        .container
+          +e('p').title Связаться с нами
+          +e('p').hint Обратите внимание, отправляя данную форму, вы даете согласие на 
+            a(href="#", target="_blank") обработку персональных данных
+            | . Поля со звездочкой «*» – обязательны для заполнения.
+          +e('form').form
+            .common__cols
+              .common__col
+                .common__row
+                  label.common__label Ваше имя 
+                    span *
+                  input.common__input(type="text", data-req="req")
+                .common__row
+                  label.common__label Электронная почта 
+                    span *
+                  input.common__input(type="text", data-req="req")
+                .common__row
+                  label.common__label Телефон
+                  input.common__input.js-phone(type="text")
+                .common__row
+                  label.common__label Название компании
+                  input.common__input(type="text")
+              .common__col
+                .common__row
+                  label.common__label Текст сообщения 
+                    span *
+                  textarea.common__textarea(type="text", data-req="req")
+            button.common__submit.btn.btn_white(type="submit") Отправить
+       
+    include layout/__footer
+    include layout/__scripts
