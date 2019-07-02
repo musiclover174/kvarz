@@ -1,0 +1,101 @@
+.docs
+  df(stretch, flex-start)
+  flex-wrap wrap
+  mb -50px
+  @media $PortraitMax
+    flex-direction column
+    mb 0
+  &__decor
+    pos absolute
+    z-index -1
+    @media $LandscapeMax
+      dn()
+    &_decor1
+      b 4%
+      r 1%
+      size 217px 230px
+      background url('../i/rock1.png') no-repeat center
+      @media $desktopMax
+        r -5%
+    &_decor2
+      t 28%
+      l -2%
+      size 149px 169px
+      background url('../i/rock2.png') no-repeat center
+      @media $desktopMax
+        l -4%
+  &__item
+    oh()
+    pos relative
+    w calc(50% - 25px)
+    mb 50px
+    bgc white
+    border 2px solid #f0f0f0
+    border-bottom 0
+    padding 24px 51px 200px
+    transition .7s background-color, .7s border-color
+    &:after
+      content ""
+      pos absolute
+      z-index 1
+      size 100% 2px
+      l 0
+      r 0
+      b 0
+      bgc #f0f0f0
+      transition .7s background-color
+    &:hover
+      bgc $blue
+      border-color $blue
+      &:after
+        bgc transparent
+    @media $desktopMax
+      padding 25px 48px 150px
+      w calc(50% - 16px)
+      mb 32px
+    @media $LandscapeMedium
+      padding 25px 38px 180px
+    @media $PortraitMax
+      w 100%
+      mb 0
+    @media $PortraitMedium
+      padding 18px 20px 180px
+    &:nth-child(2n)
+      ml 50px
+      @media $desktopMax
+        ml 32px
+      @media $PortraitMax
+        ml 0
+    & + &
+      @media $PortraitMax
+        mt 20px
+    &-name
+      max-width 251px
+      c black
+      fontify 17px 500 23px
+      transition .7s color
+      ^[-1]:hover &
+        c white
+      @media $desktopMax
+        fontify 15px 500 21px
+    &-info 
+      c $grey
+      fontify 16px 400 20px
+      mt 5px
+      transition .7s color
+      ^[-1]:hover &
+        c #a6b0cd
+      @media $desktopMax
+        fontify 14px 400 20px
+    &-img
+      pos absolute
+      b -45px
+      r 61px
+      w 172px
+      @media $desktopMax
+        b -39px
+        w 143px
+      @media $LandscapeMedium
+        r 38px
+      @media $PortraitMedium
+        r 20px
