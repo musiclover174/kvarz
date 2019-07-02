@@ -2394,11 +2394,30 @@ body {
   -ms-flex-pack: start;
   justify-content: flex-start;
 }
+@media (max-width: 670px) {
+  .common__cols {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
 .common__col {
   width: calc(50% - 16px);
 }
+@media (max-width: 670px) {
+  .common__col {
+    width: 100%;
+  }
+}
 .common__col + .common__col {
   margin-left: 32px;
+}
+@media (max-width: 670px) {
+  .common__col + .common__col {
+    margin-left: 0;
+    margin-top: 26px;
+  }
 }
 .common__row + .common__row {
   margin-top: 26px;
@@ -3740,6 +3759,7 @@ body.burgeropen .menu {
 }
 .popup__form {
   margin-top: 41px;
+  font-size: 0;
 }
 .popup__form_search {
   position: relative;
@@ -3754,6 +3774,9 @@ body.burgeropen .menu {
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAARCAQAAAB+puRPAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjARcNGBwyaNJfAAAA30lEQVQoz32QPU4CcRBHH2TPQNDELNnGzhtgbSI2HoBGQ8P2FhyB1hL1EtYUhoRiEztsSIhgAa4HMFbPgvyB1c3+ppnJvPmsCQAJN5zTIOeFBxbsVAcgJSNiwBUDIjLSPYCYOrMlO4ud2Q8Rxn4V0lskN976dXo88U5RSx7phRFT23/qEdtOQ4cmH/zXJ81wxYaTEqDBJgBjOiXAJeOww8HGZVeEP8SF9JtpiCLgHnhlxDNrjuhwyw/Z4ScRE4dOnDtxaOKFuWf7EWV27drTKgC7rmxVAdh37nFNKnTH9y9AkMAQtzyvuQAAAABJRU5ErkJggg==") no-repeat center #f1151d;
   -webkit-transition: 0.7s background-color;
   transition: 0.7s background-color;
+}
+.popup__form .common__textarea {
+  height: 305px;
 }
 .popup__search-input {
   color: #fff;

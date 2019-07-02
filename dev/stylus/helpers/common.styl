@@ -155,10 +155,17 @@ body
     transition .7s top, .7s line-height
   &__cols
     df()
+    @media $PortraitMax
+      flex-direction column
   &__col
     w calc(50% - 16px)
+    @media $PortraitMax
+      w 100%
     & + &
       ml 32px
+      @media $PortraitMax
+        ml 0
+        mt 26px
   &__row
     & + &
       mt 26px
