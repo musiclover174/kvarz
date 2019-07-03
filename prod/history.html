@@ -90,7 +90,7 @@
           <h1>История</h1>
           <div class="text__content">
             <section class="history">
-              <section class="history__info"><span class="history__bg"><img class="history__bg-img" src="img/hist-bg.jpg" alt="" role="presentation"/></span>
+              <section class="history__info"><span class="history__bg"><img class="history__bg-img js-history-colorizer" src="img/hist-bg.jpg" alt="" role="presentation"/></span>
                 <div class="history__cols">
                   <div class="history__col">
                     <p class="history__title">«Русский Кварц» владеет двумя производственными площадками, и полностью обеспечен всей необходимой инфраструктурой.
@@ -105,39 +105,36 @@
                 </div>
               </section>
               <section class="history__sort">
-                <button class="history__button" type="button">Сначала новые
+                <button class="history__sort-button" type="button">Сначала новые
                 </button>
-                <button class="history__button active" type="button">Сначала старые
+                <button class="history__sort-button active" type="button">Сначала старые
                 </button>
               </section>
               <ul class="history__list">
-                <li class="history__item">
-                  <aside class="history__imgover"><img class="history__img" src="img/hist1.jpg" alt="" role="presentation"/>
-                  </aside>
-                  <div class="history__content">
-                    <p class="history__year">1966
-                    </p><a class="history__href" href="#">Кварц Кыштымского месторождения используется в производстве нашим предприятием с 1966</a>
-                    <div class="history__text">В СССР кварцевые концентраты комбината обеспечивали более 60% всей потребности страны (в основном для производства кварцевого стекла и изделий из него). За советское время предприятие поставило порядка 50 000 тонн кварцевых концентратов на рынок СССР.
+                <li class="history__item"><a class="history__item-imgover js-history-popup" href="_ajax-history.html"><img class="history__item-img" src="img/hist1.jpg" alt="" role="presentation"/></a>
+                  <div class="history__item-content">
+                    <p class="history__item-year">1966
+                    </p><a class="history__item-href js-history-popup" href="_ajax-history.html">Кварц Кыштымского месторождения используется в производстве нашим предприятием с 1966</a>
+                    <div class="history__item-text"> 
+                      <p>В СССР кварцевые концентраты комбината обеспечивали более 60% всей потребности страны (в основном для производства кварцевого стекла и изделий из него). За советское время предприятие поставило порядка 50 000 тонн кварцевых концентратов на рынок СССР.</p>
                     </div>
                   </div>
                 </li>
-                <li class="history__item">
-                  <aside class="history__imgover"><img class="history__img" src="img/hist2.jpg" alt="" role="presentation"/>
-                  </aside>
-                  <div class="history__content">
-                    <p class="history__year">1999
-                    </p><a class="history__href" href="#">Начиная с 1999 года предприятие начало системную работу по выходу на зарубежные рынки</a>
-                    <div class="history__text">Высокочистые кварцевые концентраты, которые мы выпускаем, применяются для производства широкого спектра инновационной продукции — от элементов полупроводниковой электроники до фотоэлектрических преобразователей — солнечных батарей.
+                <li class="history__item"><a class="history__item-imgover js-history-popup" href="_ajax-history.html"><img class="history__item-img" src="img/hist2.jpg" alt="" role="presentation"/></a>
+                  <div class="history__item-content">
+                    <p class="history__item-year">1999
+                    </p><a class="history__item-href js-history-popup" href="_ajax-history.html">Начиная с 1999 года предприятие начало системную работу по выходу на зарубежные рынки</a>
+                    <div class="history__item-text"> 
+                      <p>Высокочистые кварцевые концентраты, которые мы выпускаем, применяются для производства широкого спектра инновационной продукции — от элементов полупроводниковой электроники до фотоэлектрических преобразователей — солнечных батарей.</p>
                     </div>
                   </div>
                 </li>
-                <li class="history__item">
-                  <aside class="history__imgover"><img class="history__img" src="img/hist3.jpg" alt="" role="presentation"/>
-                  </aside>
-                  <div class="history__content">
-                    <p class="history__year">2006
-                    </p><a class="history__href" href="#">С 2006 года начинаются регулярные поставки кварцевых концентратов заграничным потребителям</a>
-                    <div class="history__text">Получение высокотехнологичного продукта необходимой заказчикам чистоты достигается за счет инвестиций в научно-конструкторские разработки (что подтверждается целым рядом собственных патентов) и непрерывной модернизацией производства.
+                <li class="history__item"><a class="history__item-imgover js-history-popup" href="_ajax-history.html"><img class="history__item-img" src="img/hist3.jpg" alt="" role="presentation"/></a>
+                  <div class="history__item-content">
+                    <p class="history__item-year">2006
+                    </p><a class="history__item-href js-history-popup" href="_ajax-history.html">С 2006 года начинаются регулярные поставки кварцевых концентратов заграничным потребителям</a>
+                    <div class="history__item-text"> 
+                      <p>Получение высокотехнологичного продукта необходимой заказчикам чистоты достигается за счет инвестиций в научно-конструкторские разработки (что подтверждается целым рядом собственных патентов) и непрерывной модернизацией производства.</p>
                     </div>
                   </div>
                 </li>
@@ -207,6 +204,12 @@
                 <input class="popup__search-input" type="text" data-req="req" placeholder="Что будем искать?">
                 <button class="popup__search-sbm" type="submit" aria-label="Найти"></button>
               </form>
+            </div>
+            <div class="popup popup_history" id="history">
+              <button class="popup__close js-popclose" type="button" title="Закрыть">
+              </button>
+              <div class="history__popup js-history-content"></div>
+                  <button class="popup__close-btn btn js-popclose" type="button" arial-label="Закрыть">Закрыть</button>
             </div>
             <div class="popup" id="feed">
               <button class="popup__close js-popclose" type="button" title="Закрыть">

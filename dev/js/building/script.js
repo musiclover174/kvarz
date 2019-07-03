@@ -16,6 +16,7 @@ import About from './modules/about';
 import Contacts from './modules/contacts';
 import Sticky from './modules/sticky';
 import Spacer from './modules/spacer';
+import History from './modules/history';
 
 document.addEventListener('DOMContentLoaded', () => {
   const spacer = new Spacer('.main *:not([class])');
@@ -33,6 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (qs('.js-types')) {
     const types = new Types('.js-types', '.js-type', '.js-types-table');
+  }
+
+  if (qs('.js-history-popup')) {
+    const history = new History('.js-history-popup', '.js-history-content', '.js-history-colorizer');
   }
 
   if (qs('[data-popup]')) {

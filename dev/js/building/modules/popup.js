@@ -54,7 +54,7 @@ export default class Popup {
         this.openFlag = true;
       }
       qs(id).classList.add('show');
-      qs('input[type="text"]', qs(id)).focus();
+      if (qs('input[type="text"]', qs(id))) qs('input[type="text"]', qs(id)).focus();
     }
   }
 }

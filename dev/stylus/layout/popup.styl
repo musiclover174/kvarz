@@ -25,6 +25,20 @@
     ml -40px
     & ^[0]__form
       mt 0
+  &_history
+    bgc white
+    c black
+    padding 81px 60px 90px
+    max-width 1050px
+    @media $desktopMax
+      max-width 856px
+      padding 73px 47px 90px
+    @media $PortraitMedium
+      w 100%
+      margin -60px 0
+      padding 73px 20px 50px
+      & ^[0]__close
+        background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAaCAQAAADsge97AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBwMJNS0UrhU+AAAA4UlEQVQ4y43RsQrCMBDG8X9vcBX3jHURBN/AVhDEJ9bFFnyEju2YVZ9A0EGakiaX5rYQfrncd8XxyZorFqVa71QZ7nw4CBv2NBgyqjI07FiBcGGgzIGVoaFk4Nx+BUtNvwwdqlsLAlhOS9BHf7YI52hkSRgiKI7TveHBloHaW0cETd20jlHksxAqaM58qCJ/tvmMaCjORoiGwk+650hWjI0z9ZQ0lcljLogxnBgUFdkp1RCKirx1zKEkUAJKEgFtFEoaaVCWUByKQ72GYlAcOukohMItB3nwBsKLLgc52PGGH4WpmYfHxvDqAAAAAElFTkSuQmCC')
   &.show
     t 0
     pos relative
@@ -62,6 +76,7 @@
     r 0
     t 0
   &__stage
+    font-size 0
     padding 60px 0 30px
     ps absolute
     l 0
@@ -118,14 +133,9 @@
     size 27px 26px
     background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAaCAQAAADsge97AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBgQOGCYGrpHVAAAAs0lEQVQ4y5XUUQ6DIAyA4bJzcP97bDvBjMsSPMy/B0JAbEvFFwU/Am1T4c1GRoJP5suHJOzAEYSZA/iR2msEDn/WzxKAp+3b1ApOZ+rTHrxcZFyyoHL787IG1ZDN+87QiPP1QCM0k6Ndv0Eno3rcKnTKwMpSAS+TD9FHEn84yS13DtkD4VSOXxEmXJWRAZdlpMMVMuAaqTCCFNhRWTaFMjaFGJpgbXgR1OGOCM+b7XXjhfwBP4Yq+YhM2FUAAAAASUVORK5CYII=') no-repeat center
     transition .7s opacity
-    @media $PortraitMedium
-      r 0
-      t -40px
     @media $LandscapeMax
       size 20px
       background-size cover
-      // r 22px
-      // t 23px
     &:hover
       opacity .5
     &-btn

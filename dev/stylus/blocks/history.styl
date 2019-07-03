@@ -3,20 +3,30 @@
     pos relative
     z-index 1
     padding 94px 0
-    min-height 80vh
+    min-height 66vh
+    @media $desktopMax
+      padding 74px 0
   &__bg
     pos absolute
     z-index -1
     t 0
     l 50%
     size 100vw 100%
-    transform translateX(-50%)
+    oh()
     bgc black
+    transform translateX(-50%)
+    border-bottom-right-radius 510px
+    @media $LandscapeMedium
+      border-radius 0
     &-img
       pos absolute
       size 100%
       object-fit cover
       opacity .45
+      filter grayscale(100%)
+      transition .7s filter
+      &.colorizer
+        filter grayscale(0%)
   &__cols
     c white
     df()
@@ -41,3 +51,110 @@
     fontify 30px 600 34px
     @media $desktopMax
       fontify 24px 600 30px
+  &__sort
+    df(flex-start, center)
+    mt 78px
+    @media $desktopMax
+      mt 75px
+    @media $LandscapeMedium
+      mt 50px
+    &-button
+      c #010101
+      fontify 17px 600 17px
+      @media $desktopMax
+        fontify 15px 600 17px
+      & + &
+        ml 50px
+        @media $desktopMax
+          ml 32px
+      &.active
+        c $blue
+      &:not(.active)
+        bb(1px, solid, #010101)
+  &__list
+    mt 76px
+    @media $LandscapeMedium
+      mt 50px
+  &__item
+    df()
+    @media $PortraitMax
+      flex-direction column
+    & + &
+      mt 80px
+    &-imgover
+      w calc(50% - 25px)
+      h 314px
+      bgc $blue
+      oh()
+      border-bottom-right-radius 100px
+      @media $desktopMax
+        w calc(50% - 16px)
+        h 260px
+      @media $LandscapeMedium
+        border-radius 0
+      @media $PortraitMax
+        w 100%
+    &-img
+      db()
+      size 100%
+      object-fit cover
+      transition .7s opacity
+    &:hover &-img
+      opacity .7
+    &-content
+      ml 50px
+      w calc(50% - 25px)
+      mt -7px
+      c #010101
+      @media $desktopMax
+        w calc(50% - 16px)
+        ml 32px
+      @media $PortraitMax
+        w 100%
+        ml 0
+        mt 30px
+    &-year
+      fontify 36px 600 40px
+      mb 25px
+      @media $desktopMax
+        mb 18px
+    &-href
+      c #010101
+      fontify 20px 600 26px
+      bb(1px, dotted, #010101)
+      @media $desktopMax
+        fontify 18px 600 24px
+    &-text
+      fontify 17px 400 23px
+      mt 20px
+      max-width 460px
+      @media $desktopMax
+        fontify 15px 400 21px
+        mt 14px
+  &__popup
+    fontify 17px 400 23px
+    @media $desktopMax 
+      fontify 15px 400 21px
+  &__loader
+    db()
+    margin 0 auto
+    pos relative
+    size 100px
+    transform translate(-50px, -50px) scale(1) translate(50px, 50px)
+    i
+      pos absolute
+      animation lds-eclipse 1s linear infinite
+      size 40px
+      t 30px
+      l 30px
+      border-radius 50%
+      box-shadow 0 4px 0 0 #113e92
+      transform-origin 20px 22px
+
+@keyframes lds-eclipse
+  0%
+    transform rotate(0deg)
+  50%
+    transform rotate(180deg)
+  100%
+    transform rotate(360deg)

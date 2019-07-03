@@ -9,6 +9,11 @@
             input.popup__search-input(type="text", data-req="req", placeholder="Что будем искать?")
             button.popup__search-sbm(type="submit", aria-label="Найти")
 
+        +b.popup._history#history
+          +e.close.js-popclose(type="button", title="Закрыть")
+          .history__popup.js-history-content
+          +btn('Закрыть', false)(class="popup__close-btn btn js-popclose")
+
         +b.popup#feed
           +e.close.js-popclose(type="button", title="Закрыть")
           +e('p').title Связаться с нами
