@@ -1,0 +1,272 @@
+include bemto/bemto.pug
+
+doctype html
+html
+  head(lang="ru")
+    include layout/__head
+  body
+    include layout/__header
+  
+    +b('main').main
+      .container
+        +b('section').text
+          +b('section').breadcrumbs
+            +e.href(href="#") Главная
+            +e('span').delim / 
+            +e('span').current Продукция
+          h1 Продукция
+          +e.content
+            +b('section').catalog
+              +e('span').decor._decor1
+              +e('span').decor._decor2
+              +e('section').info
+                +e.info-col
+                  +e('p').info-title Компания производит высокочистый кварцевый концентрат под маркой Russian Quartz.
+                +e.info-col
+                  +e.info-text
+                    p Высокочистый кварцевый концентрат – продукт измельчения природного кварца, очищенный от минеральных и химических примесей. Массовая доля примесей – не более 12-30 ppm. Также наше предприятие реализует кварцевую муку фракции -0,1 мм ТУ 5717-001-16767071-99.
+              +b('section').about._catalog
+                +e('section').lead-car-wrapper
+                  +e.lead-car.swiper-container.js-leads
+                    .swiper-wrapper
+                      .swiper-slide
+                        a(href="img/lead1.jpg").glightbox
+                          +e.lead-img(src="img/lead1.jpg", alt="", title="")
+                      .swiper-slide
+                        a(href="img/lead2.jpg").glightbox
+                          +e.lead-img(src="img/lead2.jpg", alt="", title="")
+                      .swiper-slide
+                        a(href="img/lead3.jpg").glightbox
+                          +e.lead-img(src="img/lead3.jpg", alt="", title="")
+                      .swiper-slide
+                        a(href="img/lead4.jpg").glightbox
+                          +e.lead-img(src="img/lead4.jpg", alt="", title="")
+                      .swiper-slide
+                        a(href="img/lead5.jpg").glightbox
+                          +e.lead-img(src="img/lead5.jpg", alt="", title="")
+                      .swiper-slide
+                        a(href="img/lead6.jpg").glightbox
+                          +e.lead-img(src="img/lead6.jpg", alt="", title="")
+              +e('section').other
+                p Помимо выпускаемой базовой номенклатуры продукции, наше предприятие готово рассмотреть запросы на поставку кварцевых концентратов с характеристиками, необходимыми заказчику и отличающимися от характеристик базовых сортов.
+                p Стабильность и долгосрочность поставок под индивидуальные потребности заказчика обеспечивает сырьевая база предприятия, основанная на объектах Кыштымского месторождения, обладающих широкой вариативностью химических свойств и значительными запасами сырья.
+              +e('section').content.js-sticky-parent
+                +e.content-main.js-sticky
+                  +e.content-inner.js-sticky-inner
+                    +e('table').table.js-types-table
+                      thead
+                        th 
+                        th(data-type="RQ-3K")
+                          span(title="Текст подсказки", alt="Текст подсказки") RQ-3K
+                        th(data-type="RQ-2K")
+                          span(title="Текст подсказки", alt="Текст подсказки") RQ-2K
+                        th(data-type="RQ-2Ki")
+                          span(title="Текст подсказки", alt="Текст подсказки") RQ-2Ki
+                        th(data-type="RQ-2Kf")
+                          span(title="Текст подсказки", alt="Текст подсказки") RQ-2Kf
+                        th(data-type="RQ-2KFf")
+                          span(title="Текст подсказки", alt="Текст подсказки") RQ-2KFf
+                        th(data-type="RQ-1K")
+                          span(title="Текст подсказки", alt="Текст подсказки") RQ-1K
+                      tbody
+                        tr
+                          td.catalog__table-name.center
+                            span(title="Текст подсказки", alt="Текст подсказки") Al
+                          td(data-type="RQ-3K") 4,2
+                          td(data-type="RQ-2K") 4,1
+                          td(data-type="RQ-2Ki") 4
+                          td(data-type="RQ-2Kf") 4,2
+                          td(data-type="RQ-2KFf") 6
+                          td(data-type="RQ-1K") 3,8
+                        tr
+                          td.catalog__table-name.center
+                            span(title="Текст подсказки", alt="Текст подсказки") B
+                          td(data-type="RQ-3K") < 0,1
+                          td(data-type="RQ-2K") < 0,1
+                          td(data-type="RQ-2Ki") < 0,1
+                          td(data-type="RQ-2Kf") < 0,1
+                          td(data-type="RQ-2KFf") n/a
+                          td(data-type="RQ-1K") 0,07
+                        tr
+                          td.catalog__table-name.center
+                            span(title="Текст подсказки", alt="Текст подсказки") Ca
+                          td(data-type="RQ-3K") 0,2
+                          td(data-type="RQ-2K") 0,1
+                          td(data-type="RQ-2Ki") 0,2
+                          td(data-type="RQ-2Kf") 0,2
+                          td(data-type="RQ-2KFf") 0,5
+                          td(data-type="RQ-1K") 0,1
+                        tr
+                          td.catalog__table-name.center
+                            span(title="Текст подсказки", alt="Текст подсказки") Cr
+                          td(data-type="RQ-3K") < 0,01
+                          td(data-type="RQ-2K") < 0,01
+                          td(data-type="RQ-2Ki") < 0,01
+                          td(data-type="RQ-2Kf") < 0,01
+                          td(data-type="RQ-2KFf") n/a
+                          td(data-type="RQ-1K") < 0,001
+                        tr
+                          td.catalog__table-name.center
+                            span(title="Текст подсказки", alt="Текст подсказки") Cu
+                          td(data-type="RQ-3K") < 0,01
+                          td(data-type="RQ-2K") < 0,01
+                          td(data-type="RQ-2Ki") < 0,01
+                          td(data-type="RQ-2Kf") < 0,01
+                          td(data-type="RQ-2KFf") n/a
+                          td(data-type="RQ-1K") < 0,001
+                        tr
+                          td.catalog__table-name.center
+                            span(title="Текст подсказки", alt="Текст подсказки") Fe
+                          td(data-type="RQ-3K") 4,2
+                          td(data-type="RQ-2K") 4,1
+                          td(data-type="RQ-2Ki") 4
+                          td(data-type="RQ-2Kf") 4,2
+                          td(data-type="RQ-2KFf") 6
+                          td(data-type="RQ-1K") 3,8
+                        tr
+                          td.catalog__table-name.center
+                            span(title="Текст подсказки", alt="Текст подсказки") K
+                          td(data-type="RQ-3K") < 0,1
+                          td(data-type="RQ-2K") < 0,1
+                          td(data-type="RQ-2Ki") < 0,1
+                          td(data-type="RQ-2Kf") < 0,1
+                          td(data-type="RQ-2KFf") n/a
+                          td(data-type="RQ-1K") 0,07
+                        tr
+                          td.catalog__table-name.center
+                            span(title="Текст подсказки", alt="Текст подсказки") Li
+                          td(data-type="RQ-3K") 0,2
+                          td(data-type="RQ-2K") 0,1
+                          td(data-type="RQ-2Ki") 0,2
+                          td(data-type="RQ-2Kf") 0,2
+                          td(data-type="RQ-2KFf") 0,5
+                          td(data-type="RQ-1K") 0,1
+                        tr
+                          td.catalog__table-name.center
+                            span(title="Текст подсказки", alt="Текст подсказки") Mg
+                          td(data-type="RQ-3K") < 0,01
+                          td(data-type="RQ-2K") < 0,01
+                          td(data-type="RQ-2Ki") < 0,01
+                          td(data-type="RQ-2Kf") < 0,01
+                          td(data-type="RQ-2KFf") n/a
+                          td(data-type="RQ-1K") < 0,001
+                        tr
+                          td.catalog__table-name.center
+                            span(title="Текст подсказки", alt="Текст подсказки") Ni
+                          td(data-type="RQ-3K") < 0,01
+                          td(data-type="RQ-2K") < 0,01
+                          td(data-type="RQ-2Ki") < 0,01
+                          td(data-type="RQ-2Kf") < 0,01
+                          td(data-type="RQ-2KFf") n/a
+                          td(data-type="RQ-1K") < 0,001
+                        tr
+                          td.catalog__table-name.center
+                            span(title="Текст подсказки", alt="Текст подсказки") Na
+                          td(data-type="RQ-3K") < 0,01
+                          td(data-type="RQ-2K") < 0,01
+                          td(data-type="RQ-2Ki") < 0,01
+                          td(data-type="RQ-2Kf") < 0,01
+                          td(data-type="RQ-2KFf") n/a
+                          td(data-type="RQ-1K") < 0,001
+                        tr
+                          td.catalog__table-name.center
+                            span(title="Текст подсказки", alt="Текст подсказки") Ti
+                          td(data-type="RQ-3K") < 0,01
+                          td(data-type="RQ-2K") < 0,01
+                          td(data-type="RQ-2Ki") < 0,01
+                          td(data-type="RQ-2Kf") < 0,01
+                          td(data-type="RQ-2KFf") n/a
+                          td(data-type="RQ-1K") < 0,001
+                    +e('table').table.js-types-table
+                      thead
+                        th 
+                        th(data-type="RQ-3K")
+                          span(title="Текст подсказки", alt="Текст подсказки") RQ-3K
+                        th(data-type="RQ-2K") 
+                          span(title="Текст подсказки", alt="Текст подсказки") RQ-2K
+                        th(data-type="RQ-2Ki") 
+                          span(title="Текст подсказки", alt="Текст подсказки") RQ-2Ki
+                        th(data-type="RQ-2Kf")
+                          span(title="Текст подсказки", alt="Текст подсказки") RQ-2Kf
+                        th(data-type="RQ-2KFf")
+                          span(title="Текст подсказки", alt="Текст подсказки") RQ-2KFf
+                        th(data-type="RQ-1K")
+                          span(title="Текст подсказки", alt="Текст подсказки") RQ-1K
+                      tbody
+                        tr
+                          td
+                            span(title="Текст подсказки", alt="Текст подсказки") Основная фракция, мкм
+                          td(data-type="RQ-3K") 100 - 300
+                          td(data-type="RQ-2K") 75 - 300
+                          td(data-type="RQ-2Ki") 100 - 300
+                          td(data-type="RQ-2Kf") 75 - 165
+                          td(data-type="RQ-2KFf") 100 - 300
+                          td(data-type="RQ-1K") 75 - 300
+                        tr
+                          td
+                            span(title="Текст подсказки", alt="Текст подсказки") Массовая доля основной фракции, %B
+                          td(data-type="RQ-3K") 96
+                          td(data-type="RQ-2K") 67
+                          td(data-type="RQ-2Ki") 97
+                          td(data-type="RQ-2Kf") 93
+                          td(data-type="RQ-2KFf") 97
+                          td(data-type="RQ-1K") 97
+                        tr
+                          td
+                            span(title="Текст подсказки", alt="Текст подсказки") Мельче, не более, %
+                          td(data-type="RQ-3K") 2
+                          td(data-type="RQ-2K") 1,5
+                          td(data-type="RQ-2Ki") 1,5
+                          td(data-type="RQ-2Kf") 5
+                          td(data-type="RQ-2KFf") 2
+                          td(data-type="RQ-1K") 1,5
+                        tr
+                          td
+                            span(title="Текст подсказки", alt="Текст подсказки") Крупнее, не более, %
+                          td(data-type="RQ-3K") 2
+                          td(data-type="RQ-2K") 1,5
+                          td(data-type="RQ-2Ki") 1,5
+                          td(data-type="RQ-2Kf") 2
+                          td(data-type="RQ-2KFf") 1
+                          td(data-type="RQ-1K") 1,5
+                +e('aside').content-sidebar
+                  +e('ul').types-list
+                    +e.types-item
+                      +e.type.js-type(data-type="RQ-3K", data-orientation="vertical")
+                        +e.type-href(href="#") RQ-3K
+                        +e('p').type-admixture < 12 ppm примесей
+                        +e('p').type-about Применяется в производстве кварцевого освещения, включая автомобильные ксеноновые, галогенные и HID-лампы, внешнего слоя тиглей для фотоэлектрической промышленности.
+                    +e.types-item
+                      +e.type.js-type(data-type="RQ-2K", data-orientation="vertical")
+                        +e.type-href(href="#") RQ-2K
+                        +e('p').type-admixture < 10 ppm примесей
+                        +e('p').type-about Применяется в производстве тиглей Чохральского для фотоэлектрической промышленности, кварцевых трубок и слитков, кварцевого освещения.
+                    +e.types-item
+                      +e.type.js-type(data-type="RQ-2Kf", data-orientation="vertical")
+                        +e.type-href(href="#") RQ-2Kf
+                        +e('p').type-admixture < 10 ppm примесей
+                        +e('p').type-about Применяется в производстве крупногабаритных кварцевые трубки и слитков.
+                    +e.types-item
+                      +e.type.js-type(data-type="RQ-1K", data-orientation="vertical")
+                        +e.type-href(href="#") RQ-1K
+                        +e('p').type-admixture < 10 ppm примесей
+                        +e('p').type-about Применяется в производстве кварцевого освещения, включая автомобильные ксеноновые, галогенные и HID-лампы, внешнего слоя тиглей для фотоэлектрической промышленности.
+                    +e.types-item
+                      +e.type.js-type(data-type="RQ-2Ki", data-orientation="vertical")
+                        +e.type-href(href="#") RQ-2Ki
+                        +e('p').type-admixture < 5 ppm примесей
+                        +e('p').type-about Текст из двух слов
+                    +e.types-item
+                      +e.type.js-type(data-type="RQ-2KFf", data-orientation="vertical")
+                        +e.type-href(href="#") RQ-2KFf
+                        +e('p').type-admixture < 10 ppm примесей
+                        +e('p').type-about Применяется в производстве кварцевого освещения, включая автомобильные ксеноновые, галогенные и HID-лампы, внешнего слоя тиглей для фотоэлектрической промышленности.
+              +e('section').docs
+                +e('p').docs-title Брошюра с продукцией «Русский Кварц»
+                +e('ul').downloads
+                  +e.downloads-item(data-type="file")
+                    +e.downloads-href(href="#") Скачать
+                    +e('span').downloads-info pdf, 3.2 мб
+
+    include layout/__footer
+    include layout/__scripts

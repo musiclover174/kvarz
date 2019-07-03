@@ -1,4 +1,4 @@
-import { qs, qsAll } from './helpers';
+import { qsAll } from './helpers';
 
 export default class Types {
   constructor(typesClass, hoverClass = null, tableClass = null) {
@@ -8,7 +8,7 @@ export default class Types {
 
     this.typesElems = qsAll(`${this.typesClass} .swiper-slide`).length;
 
-    this.init();
+    if (this.typesElems) this.init();
     if (hoverClass) this.hoverType();
   }
 
@@ -19,10 +19,6 @@ export default class Types {
       loopedSlydes: this.typesElems,
       spaceBetween: 50,
       loop: true,
-      // navigation: {
-      //   nextEl: '.swiper-button-next',
-      //   prevEl: '.swiper-button-prev',
-      // },
       breakpoints: {
         900: {
           spaceBetween: 20,
@@ -46,13 +42,17 @@ export default class Types {
 
     qsAll(this.hoverClass).forEach((item) => {
       item.addEventListener('mouseenter', () => {
-        const { type } = item.dataset;
+        const { type, orientation } = item.dataset;
 
-        qs(`${t.tableClass} tr[data-type="${type}"]`).classList.add('choosed');
+        if (orientation === 'vertical') {
+          qsAll(`${t.tableClass} [data-type="${type}"]`).forEach(cell => cell.classList.add('choosed'));
+        } else {
+          qsAll(`${t.tableClass} tr[data-type="${type}"]`).forEach(cell => cell.classList.add('choosed'));
+        }
       });
 
       item.addEventListener('mouseleave', () => {
-        qsAll(`${t.tableClass} tr`).forEach(tr => tr.classList.remove('choosed'));
+        qsAll(`${t.tableClass} th, tr, td`).forEach(tr => tr.classList.remove('choosed'));
       });
     });
   }

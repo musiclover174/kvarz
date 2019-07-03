@@ -21,6 +21,7 @@ import History from './modules/history';
 document.addEventListener('DOMContentLoaded', () => {
   const spacer = new Spacer('.main *:not([class])');
   const burger = new Burger('.js-burger');
+  const types = new Types('.js-types', '.js-type', '.js-types-table');
 
   if (qsAll('.h-anim').length) elemVisCheck();
 
@@ -30,10 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (qs('.js-leads')) {
     const leads = new Leads('.js-leads');
-  }
-
-  if (qs('.js-types')) {
-    const types = new Types('.js-types', '.js-type', '.js-types-table');
   }
 
   if (qs('.js-history-popup')) {

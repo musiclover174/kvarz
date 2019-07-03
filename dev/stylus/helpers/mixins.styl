@@ -142,3 +142,7 @@ bb_invert($size = 1px, $type = solid, $color = rgba($dark, .25))
 
 rem($val)
   return unit($val/16, 'rem')
+
+vw($num, $def = 1280) {
+  return ($num * 100 / $def) vw;
+}

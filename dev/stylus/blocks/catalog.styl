@@ -1,4 +1,5 @@
 .catalog
+  pos relative
   &_index
     pt 91px
     pb 95px
@@ -100,6 +101,12 @@
       mb 40px
     @media $PortraitMax
       mb 0
+    &-list
+      dfv()
+    &-item
+      w 100%
+      & + &
+        mt 30px
     .swiper-wrapper
       align-items stretch
     .swiper-slide
@@ -113,20 +120,6 @@
         cursor url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAaCAQAAACeTo3NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBwEJEx1boG49AAAAsUlEQVRIx63UsUqCARQF4C+yGqz+nqiHjRCzkoiIhkDSXy118kkM2qJug4OLS3DOfr/pnsP+NEZaoTRmyk0KmysPjnPYMIW9K3cp7EO5dZTDBjoZbKEMHGawpdLPYBeWSi+JXaewlXKVwQ68ucSn34C27vgGGz8B7ovGNPdtcG6a68IWbHNN3YH3OfBMmxumLTjJzeYOfMyBpybKUxIcK8958CQFdo2VYYqj68Xr/8/+ADvYQhQ3RvEsAAAAAElFTkSuQmCC'), auto
       &-next + .swiper-slide
         cursor url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAaCAQAAACeTo3NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBwEJEzQZEvZRAAAAtklEQVRIx63VyQrCMBSF4d9GWqlD7cP4wioiCuKAljggVqWKCr7RdVG3XSjn7PMRktwT+D1vtjT/WFeRNUauAxtkGDktFRixwTjTVoEhK4wLHR04x7iS6MAZRqEEp1qwzgTjrgMdY4wHXR04xHiS6sA+xou0hqcnAAMSoAhUG1TGMdCdnmOku1vpy5PORTm1ohoIWepKKvqWvKRCy4I/aX6MGI9xJNZge4yDBgOPsVNhcGNRhX0Ar788dDd8VnYAAAAASUVORK5CYII='), auto
-    // .swiper-button-prev
-    //   pos absolute
-    //   background-image none
-    //   size calc((100vw - 100%) / 2) 100%
-    //   t 0
-    //   l calc((100% - 100vw) / 2)
-    //   cursor url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAaCAMAAAADmbV0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAkFBMVEURPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpL///9e5pjNAAAALnRSTlMAD7/ExqnHsAauyKzJqwWqBMoDy6gQpqTMosHw7sC84N20xQ6tDcOyDMK2Bwu4pFNltAAAAAFiS0dELyPUIBEAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBwEJDCDOkiyyAAAAjElEQVQ4y43SSRKCQBBE0WrbCSdEnAcQRBTFvP/xJNi4Mvi5rbeqTLNfXM8biOtrQNhQozFiAWETTQmbab5ALFwCFilcARZrDdgm1paxHWF7HQCzo3Q6d+ZiiZReO5OZy9HrzG45qqKBHlXbwgLBu0ebamCJNtrCB4LPUhmDlV4YvgmsKwXEWf1J/t6+Q4MUGuX/KfgAAAAASUVORK5CYII='), auto
-    // .swiper-button-next
-    //   pos absolute
-    //   background-image none
-    //   size calc((100vw - 100%) / 2) 100%
-    //   t 0
-    //   r calc((100% - 100vw) / 2)
-    //   cursor url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAaCAMAAAADmbV0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAnFBMVEURPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpL///8bjjfrAAAAMnRSTlMA0LoLtcIItwwHtsMNBrPEDrDFD67HqwSqyQOoyxCkzBGizbnu8MajprLBCr+8vbvIsUmqe60AAAABYktHRDM31XxeAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH4wcBCQ0vRzYAYgAAAJBJREFUOMuN09kSwUAUhOFDRBKEiD22MAhi7fd/OHPpRvn7+quaM3N6zH6l0QyMpKUQwXakMCYw6ajbIzDta5AhOFQ+QnCsCYNTCGdzLRAsllqtEdxoWyK40740d/ibo3TCDpxboQGLM7owfEC4EL9g0oT0gpqV+O6DpvrmX8EXqZ1uNWB3PQAzpydh9np/sw8OsxeYYa3nSgAAAABJRU5ErkJggg=='), auto
   &__type
     c black
     size 100% 100%
@@ -186,3 +179,112 @@
       td
         transition .7s border-color, .7s color
         border-color #28519c
+  &__info
+    df()
+    flex-wrap wrap
+    @media $PortraitMax
+      flex-direction column
+    &-col
+      pos relative
+      w calc(50% - 25px)
+      @media $desktopMax
+        w calc(50% - 16px)
+      @media $PortraitMax
+        w 100%
+      & + &
+        ml 50px
+        @media $desktopMax
+          ml 32px
+        @media $PortraitMax
+          ml 0
+          mt 25px
+    &-title
+      fontify 30px 600 34px
+      @media $desktopMax
+        fontify 24px 600 30px
+    &-text
+      pt 3px
+  .about__lead-car-wrapper
+    padding 0
+  &__other
+    mt 74px
+    @media $LandscapeMax
+      mt 54px
+  &__content
+    df()
+    margin 74px vw(-275, 1920) 0
+    @media $lDesktopSmall1680
+      margin 74px vw(-175, 1680) 0
+    @media $desktopMax
+      margin 74px calc((100% - 100vw + 66px) / 2) 0
+    @media $LandscapeMax
+      margin 54px 0 0
+    &-main
+      w calc(67% - 25px)
+      mr 50px
+      @media $desktopMax
+        w calc(67% - 16px)
+        mr 32px
+      @media $LandscapeMax
+        dn()
+    &-sidebar
+      w calc(33% - 25px)
+      @media $desktopMax
+        w calc(33% - 16px)
+      @media $LandscapeMax
+        w 100%
+      & ^[0]__types
+        @media $LandscapeMax
+          &-list
+            flex-direction row
+            flex-wrap wrap
+            align-items stretch
+            ml -32px
+            w calc(100% + 32px)
+            mb -32px
+          &-item
+            w calc(50% - 32px)
+            ml 32px
+            mb 32px
+            & + ^[0]__types-item
+              mt 0
+        @media $PortraitMedium
+          &-list
+            mb -16px
+          &-item
+            w calc(100% - 32px)
+            mb 16px
+    th:first-child
+      w 28%
+      @media $desktopMin
+        w 22%
+    th:not(:first-child)
+      w 12%
+      @media $desktopMin
+        w 13%
+  &__docs
+    dfv(center, flex-start)
+    mt 75px
+    @media $PortraitMedium
+      mt 50px
+    & ^[0]__downloads
+      justify-content center
+  &__decor
+    pos absolute
+    z-index -1
+    @media $LandscapeMax
+      dn()
+    &_decor1
+      t -6%
+      r -20%
+      size 217px 230px
+      background url('../i/rock1.png') no-repeat center
+      @media $desktopMax
+        r -25%
+    &_decor2
+      t 19%
+      l -20%
+      size 149px 169px
+      background url('../i/rock2.png') no-repeat center
+      @media $desktopMax
+        l -24%
