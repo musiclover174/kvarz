@@ -2303,7 +2303,6 @@ body {
   color: #fff;
   font-family: "Montserrat";
   font-size: 16px;
-  line-height: 500;
   -webkit-transition: 0.7s border;
   transition: 0.7s border;
 }
@@ -2327,7 +2326,6 @@ body {
   color: #fff;
   font-family: "Montserrat";
   font-size: 16px;
-  line-height: 500;
   line-height: 25px;
   -webkit-transition: 0.7s border;
   transition: 0.7s border;
