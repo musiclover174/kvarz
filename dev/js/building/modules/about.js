@@ -4,6 +4,7 @@ export default class About {
   constructor(wrapperCl, fixerCl, mapShowerCl, backCl) {
     this.wrapper = wrapperCl;
     this.fixer = fixerCl;
+    this.isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
     this.wrapperEl = qs(this.wrapper);
     this.init();
@@ -21,7 +22,16 @@ export default class About {
       const bottom = qs(this.fixer).getBoundingClientRect().bottom - window.innerHeight;
       const awailHeight = height - window.innerHeight;
 
-      if (top <= 0 && bottom >= 0) {
+      if (this.isIE11) {
+        const g = document.querySelectorAll('g.map');
+        g.forEach((item) => {
+          const transform = getComputedStyle(item).getPropertyValue('transform');
+          item.setAttribute('transform', transform);
+          console.log(transform);
+        });
+      }
+
+      if (top <= 0 && bottom >= -0.5) {
         if (Math.abs(top) > awailHeight / 3) {
           if (Math.abs(top) > awailHeight * 2 / 3) {
             this.selectClass('block3');
@@ -36,7 +46,9 @@ export default class About {
   }
 
   selectClass(cl) {
-    this.wrapperEl.classList.remove('block1', 'block2', 'block3');
+    this.wrapperEl.classList.remove('block1');
+    this.wrapperEl.classList.remove('block2');
+    this.wrapperEl.classList.remove('block3');
     this.wrapperEl.classList.add(cl);
   }
 
