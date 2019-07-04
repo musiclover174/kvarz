@@ -76,8 +76,6 @@ html
                   +e.type-href(href="#") RQ-2KFf
                   +e('p').type-admixture < 10 ppm примесей
                   +e('p').type-about Применяется в производстве кварцевого освещения, включая автомобильные ксеноновые, галогенные и HID-лампы, внешнего слоя тиглей для фотоэлектрической промышленности.
-            //- .swiper-button-prev
-            //- .swiper-button-next
         +e.table-wrapper
           +e('table').table.js-types-table
             thead
@@ -208,7 +206,8 @@ html
                 script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
                 +e.map#about__map
               include ../img/svg/Map-russia-shape.svg
-              +e('button').block-tomap.btn._white.js-about-mapshower(arial-label="Показать маршрут на карте", data-from="55.159897, 61.402554", data-from2="56.838011, 60.597465", data-to="55.707877, 60.538949") Показать маршрут на карте
+              +e.block-tomap
+                +e('button').block-tobtn.btn._white.js-about-mapshower(arial-label="Показать маршрут на карте", data-from="55.159897, 61.402554", data-from2="56.838011, 60.597465", data-to="55.707877, 60.538949") Показать маршрут на карте
               +e.block._block1.js-block
                 .container
                   +e.cols
