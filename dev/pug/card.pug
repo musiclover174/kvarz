@@ -1,0 +1,191 @@
+include bemto/bemto.pug
+
+doctype html
+html
+  head(lang="ru")
+    include layout/__head
+  body
+    include layout/__header
+  
+    +b('main').main
+      .container
+        +b('section').text
+          +b('section').breadcrumbs
+            +e.href(href="#") Главная
+            +e('span').delim / 
+            +e.href(href="#") Продукция
+            +e('span').delim / 
+            +e('span').current RQ-2Ki
+          h1.card__title RQ-2Ki
+          +e.content
+            +b('section').card
+              +e('span').decor._decor1
+              +e('span').decor._decor2
+              +e('section').info
+                +e.col
+                  +e.info-text
+                    p RQ-2Ki специально разработан для использования в качестве внутреннего слоя тиглей для солнечной и полупроводниковой индустрии и производства кварцевых труб большого диаметра.
+                +e.col
+                  +e.info-text
+                    e('p').docs-title Буклет кварцевого концентрата RQ-2Ki 
+                    +e('ul').downloads
+                      +e.downloads-item(data-type="file")
+                        +e.downloads-href(href="#") Скачать
+                        +e('span').downloads-info pdf, 3.2 мб
+              +e('section').content.js-sticky-parent
+                +e.content-main
+                  +e('p').table-title Содержание примесей, ppm
+                  +e('table').table.js-types-table
+                    thead
+                      th 
+                      th Спецификация
+                      th Типичное значение
+                    tbody
+                      tr
+                        td.catalog__table-name
+                          span(title="Текст подсказки", alt="Текст подсказки") Al
+                        td 5
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"4","RQ-2KFf":"3","RQ-2Kf":"4","RQ-2K":"4","RQ-3K":"3"}')
+                        td 4,1
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"3,8","RQ-2KFf":"4,2","RQ-2Kf":"3,2","RQ-2K":"4,8","RQ-3K":"3,3"}')
+                      tr
+                        td.catalog__table-name
+                          span(title="Текст подсказки", alt="Текст подсказки") B
+                        td 5
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"4","RQ-2KFf":"3","RQ-2Kf":"4","RQ-2K":"4","RQ-3K":"3"}')
+                        td 4,1
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"3,8","RQ-2KFf":"4,2","RQ-2Kf":"3,2","RQ-2K":"4,8","RQ-3K":"3,3"}')
+                      tr
+                        td.catalog__table-name
+                          span(title="Текст подсказки", alt="Текст подсказки") Ca
+                        td 5
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"4","RQ-2KFf":"3","RQ-2Kf":"4","RQ-2K":"4","RQ-3K":"3"}')
+                        td 4,1
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"3,8","RQ-2KFf":"4,2","RQ-2Kf":"3,2","RQ-2K":"4,8","RQ-3K":"3,3"}')
+                      tr
+                        td.catalog__table-name
+                          span(title="Текст подсказки", alt="Текст подсказки") Cr
+                        td 5
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"4","RQ-2KFf":"3","RQ-2Kf":"4","RQ-2K":"4","RQ-3K":"3"}')
+                        td 4,1
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"3,8","RQ-2KFf":"4,2","RQ-2Kf":"3,2","RQ-2K":"4,8","RQ-3K":"3,3"}')
+                      tr
+                        td.catalog__table-name
+                          span(title="Текст подсказки", alt="Текст подсказки") Cu
+                        td 5
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"4","RQ-2KFf":"3","RQ-2Kf":"4","RQ-2K":"4","RQ-3K":"3"}')
+                        td 4,1
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"3,8","RQ-2KFf":"4,2","RQ-2Kf":"3,2","RQ-2K":"4,8","RQ-3K":"3,3"}')
+                      tr
+                        td.catalog__table-name
+                          span(title="Текст подсказки", alt="Текст подсказки") Fe
+                        td 5
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"4","RQ-2KFf":"3","RQ-2Kf":"4","RQ-2K":"4","RQ-3K":"3"}')
+                        td 4,1
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"3,8","RQ-2KFf":"4,2","RQ-2Kf":"3,2","RQ-2K":"4,8","RQ-3K":"3,3"}')
+                      tr
+                        td.catalog__table-name
+                          span(title="Текст подсказки", alt="Текст подсказки") K
+                        td 5
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"4","RQ-2KFf":"3","RQ-2Kf":"4","RQ-2K":"4","RQ-3K":"3"}')
+                        td 4,1
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"3,8","RQ-2KFf":"4,2","RQ-2Kf":"3,2","RQ-2K":"4,8","RQ-3K":"3,3"}')
+                      tr
+                        td.catalog__table-name
+                          span(title="Текст подсказки", alt="Текст подсказки") Li
+                        td 5
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"4","RQ-2KFf":"3","RQ-2Kf":"4","RQ-2K":"4","RQ-3K":"3"}')
+                        td 4,1
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"3,8","RQ-2KFf":"4,2","RQ-2Kf":"3,2","RQ-2K":"4,8","RQ-3K":"3,3"}')
+                      tr
+                        td.catalog__table-name
+                          span(title="Текст подсказки", alt="Текст подсказки") Mg
+                        td 5
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"4","RQ-2KFf":"3","RQ-2Kf":"4","RQ-2K":"4","RQ-3K":"3"}')
+                        td 4,1
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"3,8","RQ-2KFf":"4,2","RQ-2Kf":"3,2","RQ-2K":"4,8","RQ-3K":"3,3"}')
+                      tr
+                        td.catalog__table-name
+                          span(title="Текст подсказки", alt="Текст подсказки") Ni
+                        td 5
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"4","RQ-2KFf":"3","RQ-2Kf":"4","RQ-2K":"4","RQ-3K":"3"}')
+                        td 4,1
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"3,8","RQ-2KFf":"4,2","RQ-2Kf":"3,2","RQ-2K":"4,8","RQ-3K":"3,3"}')
+                      tr
+                        td.catalog__table-name
+                          span(title="Текст подсказки", alt="Текст подсказки") Na
+                        td 5
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"4","RQ-2KFf":"3","RQ-2Kf":"4","RQ-2K":"4","RQ-3K":"3"}')
+                        td 4,1
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"3,8","RQ-2KFf":"4,2","RQ-2Kf":"3,2","RQ-2K":"4,8","RQ-3K":"3,3"}')
+                      tr
+                        td.catalog__table-name
+                          span(title="Текст подсказки", alt="Текст подсказки") Ti
+                        td 5
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"4","RQ-2KFf":"3","RQ-2Kf":"4","RQ-2K":"4","RQ-3K":"3"}')
+                        td 4,1
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"3,8","RQ-2KFf":"4,2","RQ-2Kf":"3,2","RQ-2K":"4,8","RQ-3K":"3,3"}')
+
+                  +e('p').table-title Гранулометрический состав
+                  +e('table').table.js-types-table
+                    thead
+                      th Меш
+                      th Микрометры (um)
+                      th Допуск (масс, %)
+                    tbody
+                      tr
+                        td > 80
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"> 80","RQ-2KFf":"> 82","RQ-2Kf":"> 85","RQ-2K":"> 88","RQ-3K":"> 75"}')
+                        td > 180
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"> 182","RQ-2KFf":"> 178","RQ-2Kf":"> 160","RQ-2K":"> 190","RQ-3K":"> 170"}')
+                        td < 3
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"< 3","RQ-2KFf":"< 2","RQ-2Kf":"< 4","RQ-2K":"< 5","RQ-3K":"< 6"}')
+                      tr
+                        td 200 - 80
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"200 - 50","RQ-2KFf":"180 - 80","RQ-2Kf":"160 - 60","RQ-2K":"170 - 90","RQ-3K":"190 - 80"}')
+                        td 75 – 180
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"75 – 180","RQ-2KFf":"76 – 181","RQ-2Kf":"77 – 182","RQ-2K":"78 – 183","RQ-3K":"75 – 180"}')
+                        td > 87
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"> 86","RQ-2KFf":"> 83","RQ-2Kf":"> 89","RQ-2K":"> 78","RQ-3K":"> 88"}')
+                      tr
+                        td 200 - 80
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"200 - 50","RQ-2KFf":"180 - 80","RQ-2Kf":"160 - 60","RQ-2K":"170 - 90","RQ-3K":"190 - 80"}')
+                        td 75 – 180
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"75 – 180","RQ-2KFf":"76 – 181","RQ-2Kf":"77 – 182","RQ-2K":"78 – 183","RQ-3K":"75 – 180"}')
+                        td > 87
+                          +e('span').table-cmp.js-card-container(data-card='{"RQ-1K":"> 86","RQ-2KFf":"> 83","RQ-2Kf":"> 89","RQ-2K":"> 78","RQ-3K":"> 88"}')
+
+                +e('aside').content-sidebar.js-sticky(data-top="7")
+                  +e.content-inner.js-sticky-inner
+                    +e('p').types-title Сравнить с:
+                    +e('ul').types-list
+                      +e.types-item
+                        +e.type.js-card-type(href="#", data-type="RQ-1K")
+                          span RQ-1K
+                        +e.type-href.btn(href="#") Перейти
+                      +e.types-item
+                        +e.type.js-card-type(href="#", data-type="RQ-2KFf")
+                          span RQ-2KFf
+                        +e.type-href.btn(href="#") Перейти
+                      +e.types-item
+                        +e.type.js-card-type(href="#", data-type="RQ-2Kf")
+                          span RQ-2Kf
+                        +e.type-href.btn(href="#") Перейти
+                      +e.types-item
+                        +e.type.js-card-type(href="#", data-type="RQ-2K")
+                          span RQ-2K
+                        +e.type-href.btn(href="#") Перейти
+                      +e.types-item
+                        +e.type.js-card-type(href="#", data-type="RQ-3K")
+                          span RQ-3K
+                        +e.type-href.btn(href="#") Перейти
+
+              +e('section').about
+                +e.col
+                  +e('p').about-title Концентрат RQ-2Kf произведен из уникального кварца Кыштымского месторождения в России.
+                +e.col
+                  +e.about-text
+                    p Кыштымский кварц отличается высочайшей химической чистотой и прозрачностью и в течение более чем 50 лет успешно используется для производства кварцевых труб различного диаметра, кварцевых заготовок и кварцевых тиглей для солнечной и полупроводниковой промышленности.
+
+    include layout/__footer
+    include layout/__scripts

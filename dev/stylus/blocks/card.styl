@@ -1,0 +1,196 @@
+.card
+  pos relative
+  &__decor
+    pos absolute
+    z-index -1
+    @media $LandscapeMax
+      dn()
+    &_decor1
+      t 50%
+      r -15%
+      size 217px 230px
+      background url('../i/rock1.png') no-repeat center
+    &_decor2
+      t 5%
+      l -25%
+      size 149px 169px
+      background url('../i/rock2.png') no-repeat center
+  &__title
+    c #010101
+    fontify 90px 600 83px
+    ml -7px
+    mb 34px
+    @media $desktopMedium
+      fontify 70px 600 63px
+      ml -4px
+    @media $PortraitMedium
+      fontify 50px 600 49px
+  &__info
+    df()
+    mb 44px
+    @media $desktopMax
+      mb 34px
+    @media $LandscapeMedium
+      flex-direction column
+  &__col
+    w calc(50% - 25px)
+    @media $desktopMax
+      w calc(50% - 16px)
+    @media $LandscapeMedium
+      w 100%
+    & + &
+      ml 50px
+      @media $desktopMax
+        ml 32px
+      @media $LandscapeMedium
+        ml 0
+        mt 19px
+  &__content
+    df(flex-start, space-between)
+    margin 96px 0 0
+    @media $LandscapeMax
+      margin 54px 0 0
+    &-main
+      w 665px
+      mt -27px
+      @media $desktopMax
+        w 545px
+      @media $LandscapeMin
+        w 100%
+    &-sidebar
+      w 115px
+      @media $desktopMax
+        w 106px
+      @media $LandscapeMin
+        dn()
+  &__table
+    w 100%
+    bgc white
+    border 2px solid #717171 !important
+    &-title
+      fontify 30px 600 34px
+      mb -10px
+      /.ps + &,
+      ^[0]__table + &
+        mt 70px
+      @media $desktopMax
+        fontify 24px 600 30px
+    &-cmp
+      display inline-block
+      vertical-align middle
+      fontify 16px 400 17px
+      padding 0 4px
+      c white
+      bgc $blue
+      ml 10px
+      &:empty
+        dn()
+    th,
+    td
+      border 1px solid #d9d9d9
+      w calc(100% / 3)
+  &__downloads
+    df()
+    flex-wrap wrap
+    ml -30px
+    mt 14px
+    w calc(100% + 30px)
+    &-item
+      pos relative
+      pl 22px
+      ml 30px
+      &:before
+        content ""
+        pos absolute
+        l 0
+        t 5px
+        size 14px 14px
+      &[data-type="file"]:before
+        background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAPFBMVEURPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpL///9zGEmvAAAAEnRSTlMAw60O67vLzRW0AYgPh8jE5qqPK3JeAAAAAWJLR0QTDLtclgAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB+MGBAwgNZYLuJ4AAABNSURBVAjXjc9LFoAgDAPA4K+CCpj7H1a0VnBHVp1F2lc4WoYRAKdZs1DWQg9N2Ch7JXCUuWGIbAn/UJc743uoj9pNxt/mfH7JRH3hLlyjXQd2Ka+cMQAAAABJRU5ErkJggg==') no-repeat center
+      &[data-type="print"]:before
+        background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOBAMAAADtZjDiAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAIVBMVEX///8RPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpIRPpL////jC7s7AAAACXRSTlMAAMPru7TmqsRim+vmAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB+MGBAwhCjl2pOIAAABTSURBVAjXY2BgmjlzpgIDg6AkkJ4oCKc1Z4LAJIbJLiBgyTBVEAQiETRYHYg2cXEG0tMqAwVFp2cC9QHpmTOA5gBpoDmMkunlZRMZGBiFgOobGQAodB/BL+fcjgAAAABJRU5ErkJggg==') no-repeat center
+    &-href
+      c black
+      fontify 15px 500 21px
+      bb(1px, solid, black)
+    &-info
+      c $grey
+      fontify 14px 400 20px
+      ml 8px
+  &__about
+    df()
+    mt 78px
+    pt 74px
+    border-top 1px solid #f0f0f0
+    @media $LandscapeMedium
+      flex-direction column
+    @media $LandscapeMin
+      mt 58px
+      pt 54px
+    &-title
+      fontify 30px 600 34px
+      @media $desktopMax
+        fontify 24px 600 30px
+    &-text
+      pt 3px
+  &__types
+    &-title
+      fontify 17px 400 23px
+      pl 6px
+      mb 7px
+      @media $desktopMax
+        fontify 15px 400 21px
+    &-list
+      dfv()
+      bgc white
+      border 2px solid #717171
+    &-item
+      pos relative
+      w 100%
+  &__type
+    pos relative
+    z-index 1
+    db()
+    padding 15px 18px 15px 20px
+    c black
+    fontify 17px 500 23px
+    transition .7s color
+    @media $desktopMax
+      fontify 15px 400 21px
+      padding 10px 15px 10px 19px
+    &:before
+      content ""
+      pos absolute
+      z-index -1
+      t -2px
+      l -2px
+      r -2px
+      b -2px
+      bgc $blue
+      opacity 0
+      transition .7s opacity
+    &:hover,
+    &.active
+      c white
+      &:before
+        opacity 1
+      span  
+        border-color transparent
+    span
+      white-space nowrap
+      border-bottom 1px dotted black
+      transition .7s bottom-color
+    &-href
+      pos absolute
+      l calc(100% + 10px)
+      t 50%
+      opacity 0
+      visibility hidden
+      pointer-events none
+      transform translateY(-50%)
+      transition .7s left, .7s visibility, .7s opacity
+    &.active + &-href
+      opacity 1
+      visibility visible
+      l calc(100% + 20px)
+      pointer-events all

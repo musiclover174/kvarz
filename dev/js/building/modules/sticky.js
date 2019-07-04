@@ -1,6 +1,8 @@
+import { qs } from './helpers';
+
 export default class Sticky {
   constructor(topSpacing, bottomSpacing) {
-    this.ts = topSpacing;
+    this.ts = topSpacing || qs('.js-sticky').dataset.top;
     this.bs = bottomSpacing;
     this.init();
   }

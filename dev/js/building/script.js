@@ -17,8 +17,9 @@ import Contacts from './modules/contacts';
 import Sticky from './modules/sticky';
 import Spacer from './modules/spacer';
 import History from './modules/history';
+import Card from './modules/card';
 
-document.addEventListener('DOMContentLoaded', () => {
+window.onload = () => {
   const spacer = new Spacer('.main *:not([class])');
   const burger = new Burger('.js-burger');
   const types = new Types('.js-types', '.js-type', '.js-types-table');
@@ -35,6 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (qs('.js-history-popup')) {
     const history = new History('.js-history-popup', '.js-history-content', '.js-history-colorizer');
+  }
+
+  if (qs('.js-card-type')) {
+    const card = new Card('.js-card-type', '.js-card-container');
   }
 
   if (qs('[data-popup]')) {
@@ -78,4 +83,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   resizeWatcher();
   eventsDispatcher();
-});
+};
