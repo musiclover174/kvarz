@@ -11,9 +11,11 @@
         h 400px
       &-active
         z-index 1
-      &-active ^[0]__slide
-        size 100%
-        transition-delay 0s
+        & ^[0]__slide
+          size 100%
+          transition-delay 0s
+        & ^[0]__img
+          transform scale(1.08)
     .swiper-buttons
       df(flex-start, space-between)
       pos absolute
@@ -63,6 +65,7 @@
     size 100%
     object-fit cover
     opacity .45
+    transition 8s transform
   &__inner
     max-width 1020px
     margin 0 auto

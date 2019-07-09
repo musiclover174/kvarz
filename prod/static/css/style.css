@@ -4442,6 +4442,10 @@ div[class^="table-scroller"] table {
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
 }
+.banner__car .swiper-slide-active .banner__img {
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
+}
 .banner__car .swiper-buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4536,6 +4540,10 @@ div[class^="table-scroller"] table {
   -o-object-fit: cover;
   object-fit: cover;
   opacity: 0.45;
+  -webkit-transition: 8s -webkit-transform;
+  transition: 8s -webkit-transform;
+  transition: 8s transform;
+  transition: 8s transform, 8s -webkit-transform;
 }
 .banner__inner {
   max-width: 1020px;
