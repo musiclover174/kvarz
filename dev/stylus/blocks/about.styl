@@ -17,7 +17,7 @@
         ml 32px
       @media $PortraitMax
         ml 0
-        mt 19px
+        mt 30px
   &__wrapper
     h 300vh
     oh()
@@ -100,7 +100,7 @@
       &_block2
         mt 30px
       &_block3
-        mt 19px
+        mt 39px
     ^[0]__wrapper.block1 &_block1
       opacity 1
       pointer-events all
@@ -159,6 +159,8 @@
       fontify 17px 400 23px
       @media $desktopMax 
         fontify 15px 400 21px
+      @media $PortraitMedium
+        margin 20px 0
       &.mobile
         @media $PortraitMedium
           dn()
@@ -328,6 +330,8 @@
         @media $desktopMax
           padding 0 32px
           max-width 920px
+        @media $LandscapeMax
+          padding 0 20px
       .swiper-wrapper
         align-items stretch
       .swiper-slide

@@ -61,11 +61,11 @@
   &__bg
     pos fixed
     z-index 0
-    // l 0
-    // t 0
+    l 0
+    t 0
     r 0
     b 0
-    size 0
+    // size 0
     bgc $blue
     opacity 0
     transition .7s .2s opacity, .7s .2s width, .7s .2s height
@@ -94,9 +94,8 @@
   &-show
     oh()
     & ^[0]__bg
-      size 100%
       opacity 1
-      transition .7s opacity, .7s width, .7s height
+      transition .7s opacity
       @media $desktopMin
         opacity 1
     & ^[0]__over

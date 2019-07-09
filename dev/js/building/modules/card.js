@@ -11,9 +11,14 @@ export default class Card {
   init() {
     this.types.forEach((el) => {
       el.addEventListener('click', (e) => {
-        const { type } = el.dataset;
-        this.types.forEach(item => item.classList.remove('active'));
-        el.classList.add('active');
+        let { type } = el.dataset;
+        if (el.classList.contains('active')) {
+          this.types.forEach(item => item.classList.remove('active'));
+          type = '';
+        } else {
+          this.types.forEach(item => item.classList.remove('active'));
+          el.classList.add('active');
+        }
 
         qsAll(this.containerCl).forEach((container) => {
           const data = JSON.parse(container.dataset.card);

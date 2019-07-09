@@ -10,23 +10,23 @@
     @media $LandscapeMax
       pt 58px
       pb 65px
-  &__decor
-    pos absolute
-    z-index -1
-    @media $LandscapeMax
-      dn()
-    &_decor1
-      t 10%
-      r 9%
-      size 217px 230px
-      background url('../i/rock1.png') no-repeat center
-    &_decor2
-      t 45%
-      l 30%
-      size 149px 169px
-      background url('../i/rock2.png') no-repeat center
-      @media $desktopMax
-        l 10%
+    & ^[0]__decor
+      pos absolute
+      z-index -1
+      @media $LandscapeMax
+        dn()
+      &_decor1
+        t 10%
+        r 9%
+        size 217px 230px
+        background url('../i/rock1.png') no-repeat center
+      &_decor2
+        t 45%
+        l 30%
+        size 149px 169px
+        background url('../i/rock2.png') no-repeat center
+        @media $desktopMax
+          l 10%
   &__title
     c #010101
     fontify 48px 600 52px
@@ -117,9 +117,9 @@
       @media $LandscapeMedium
         w 312px
       &-prev
-        cursor url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAaCAQAAACeTo3NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBwEJEx1boG49AAAAsUlEQVRIx63UsUqCARQF4C+yGqz+nqiHjRCzkoiIhkDSXy118kkM2qJug4OLS3DOfr/pnsP+NEZaoTRmyk0KmysPjnPYMIW9K3cp7EO5dZTDBjoZbKEMHGawpdLPYBeWSi+JXaewlXKVwQ68ucSn34C27vgGGz8B7ovGNPdtcG6a68IWbHNN3YH3OfBMmxumLTjJzeYOfMyBpybKUxIcK8958CQFdo2VYYqj68Xr/8/+ADvYQhQ3RvEsAAAAAElFTkSuQmCC'), auto
+        cursor url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAaCAQAAACeTo3NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBwEIAxP3GDtcAAAA+klEQVRIx63VvU5CQRCG4e/AAQuE5YKIsfBKiTEGgRBjsJafKGDlPdhrYmfgpdgQ4BxOsbM702y2eJqdbzZDF8tpooZ6CqxaBfaqW32HYpIot+MdmNBEoV2FjS1YmXN8AEMbVuQcK+CJhg075zw2ILdip5xjDQyo27Ej59gAj3HYgeuyAR5iMc957D4eQ6LLJ9BPgaGMN91I+tXOEKlifeX6lyT9aJuA+xOOZey0nT9Fh2VcFoqD0mERk9TyGHtwFAsej20W9sVU5kSbuXVtXuIO4LMdLF5cMwde0qxPD86AaZrlfgpepeFEixkwDueyim+7pZFy3YWGdg8rInNs0wxWzwAAAABJRU5ErkJggg=="), auto
       &-next + .swiper-slide
-        cursor url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAaCAQAAACeTo3NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBwEJEzQZEvZRAAAAtklEQVRIx63VyQrCMBSF4d9GWqlD7cP4wioiCuKAljggVqWKCr7RdVG3XSjn7PMRktwT+D1vtjT/WFeRNUauAxtkGDktFRixwTjTVoEhK4wLHR04x7iS6MAZRqEEp1qwzgTjrgMdY4wHXR04xHiS6sA+xou0hqcnAAMSoAhUG1TGMdCdnmOku1vpy5PORTm1ohoIWepKKvqWvKRCy4I/aX6MGI9xJNZge4yDBgOPsVNhcGNRhX0Ar788dDd8VnYAAAAASUVORK5CYII='), auto
+        cursor url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAaCAQAAACeTo3NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBwkHAgyt42g6AAAA+0lEQVRIx63Vy2oCMRTG8W+MxkWnXp6ga5/EbaFvWEqpV6SIbtqNjr3Zl2nBVQt/F8MwOMbFJDlZfvCDkHNOElS7XvSvOx1cUaO+pl8NtdaVM6P+abMCNqTnmQ8n7CXQjxOWJbCtgr6csDwDW67jcMKyqIIhnLDMgawEwzhhmQEZnTicsExLMJwTLSbAjk4cTjQZAzu6CUsNPAatWkY3kl6bStWPwOWz34pzWcM98E0vDvYA7OnFeArDY4GFc4YnYE83RhsbxsBXgYVxebd9llgIl8/CCRayPqfAxynmv9znwHsV8+PytenA/LgR8ObCUOLxbWf6061+XNERm/xxw6DlclkAAAAASUVORK5CYII='), auto
   &__type
     c black
     size 100% 100%
@@ -153,6 +153,10 @@
         fontify 15px 400 21px
   &__table
     w 100%
+    th,
+    td
+      border-top 0 !important
+      border-bottom 0 !important
     &-wrapper
       padding 0 32px
       max-width 1364px
@@ -168,7 +172,7 @@
       text-align center
       @media $desktopMax
         fontify 15px 400 21px
-      @media $PortraitMax
+      @media $LandscapeMedium
         dn()
     &-name
       font-weight 600
@@ -210,6 +214,8 @@
     mt 74px
     @media $LandscapeMax
       mt 54px
+    @media $PortraitMax
+      mt 40px
   &__content
     df()
     margin 74px vw(-275, 1920) 0
@@ -248,6 +254,14 @@
             mb 32px
             & + ^[0]__types-item
               mt 0
+        @media $LandscapeMedium
+          &-list
+            mb -20px
+            ml -20px
+          &-item
+            w calc(50% - 20px)
+            ml 20px
+            mb 20px
         @media $PortraitMedium
           &-list
             mb -16px

@@ -2,6 +2,10 @@
   df(stretch, flex-start)
   flex-wrap wrap
   mb -50px
+  @media $desktopMax
+    mb -32px
+  @media $LandscapeMedium
+    mb -20px
   @media $PortraitMax
     flex-direction column
     mb 0
@@ -55,6 +59,7 @@
       mb 32px
     @media $LandscapeMedium
       padding 25px 38px 180px
+      mb 20px
     @media $PortraitMax
       w 100%
       mb 0
@@ -64,6 +69,8 @@
       ml 50px
       @media $desktopMax
         ml 32px
+      @media $LandscapeMedium
+        ml 20px
       @media $PortraitMax
         ml 0
     & + &

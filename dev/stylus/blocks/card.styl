@@ -48,6 +48,8 @@
   &__content
     df(flex-start, space-between)
     margin 96px 0 0
+    @media $dekstop1142
+      justify-content flex-start
     @media $LandscapeMax
       margin 54px 0 0
     &-main
@@ -55,6 +57,8 @@
       mt -27px
       @media $desktopMax
         w 545px
+      @media $dekstop1142
+        mr 32px
       @media $LandscapeMin
         w 100%
     &-sidebar
@@ -87,7 +91,6 @@
         dn()
     th,
     td
-      border 1px solid #d9d9d9
       w calc(100% / 3)
   &__downloads
     df()
@@ -140,6 +143,7 @@
       mb 7px
       @media $desktopMax
         fontify 15px 400 21px
+        mb 5px
     &-list
       dfv()
       bgc white
@@ -189,6 +193,8 @@
       pointer-events none
       transform translateY(-50%)
       transition .7s left, .7s visibility, .7s opacity
+      @media $LandscapeMedium
+        dn()
     &.active + &-href
       opacity 1
       visibility visible
