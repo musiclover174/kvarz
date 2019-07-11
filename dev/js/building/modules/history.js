@@ -1,33 +1,48 @@
-import { qs, qsAll } from './helpers';
+import { qs } from './helpers';
 
 export default class History {
   constructor(popupClass, historyContainer, colorizerClass) {
-    this.hrefEls = qsAll(popupClass);
+    this.popupCl = popupClass;
     this.popupContainerEl = qs(historyContainer);
     this.colorizerEl = qs(colorizerClass);
 
-    if (this.hrefEls.length) this.init();
+    this.init();
     if (this.colorizerEl) this.colorizer();
   }
 
-  init() {
+  handler(e, item) {
     const th = this;
+    const href = item.getAttribute('href');
 
-    this.hrefEls.forEach((item) => {
-      item.addEventListener('click', (e) => {
-        const href = item.getAttribute('href');
-        th.popupContainerEl.innerHTML = '<span class="history__loader"><i></i></span>';
-        axios.get(href)
-          .then(({ data }) => {
-            th.popupContainerEl.innerHTML = data;
-            window.popup.open('#history');
-          })
-          .catch(({ data }) => {
-            th.popupContainerEl.innerHTML = data;
-          });
-        e.preventDefault();
+    this.popupContainerEl.innerHTML = '<span class="history__loader"><i></i></span>';
+
+    axios({
+      method: 'get',
+      url: href,
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+    })
+      .then(({ data }) => {
+        th.popupContainerEl.innerHTML = data;
+        window.popup.open('#history');
+      })
+      .catch(({ data }) => {
+        th.popupContainerEl.innerHTML = data;
       });
-    });
+
+    e.preventDefault();
+  }
+
+  init() {
+    document.addEventListener('click', (e) => {
+      for (let { target } = e; target && target !== this; target = target.parentNode) {
+        if (target.matches(this.popupCl)) {
+          this.handler.call(this, e, target);
+          break;
+        }
+      }
+    }, false);
   }
 
   colorizer() {
