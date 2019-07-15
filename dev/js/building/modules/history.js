@@ -36,7 +36,7 @@ export default class History {
 
   init() {
     document.addEventListener('click', (e) => {
-      for (let { target } = e; target && target !== this; target = target.parentNode) {
+      for (let { target } = e; target && target !== this && target !== document; target = target.parentNode) {
         if (target.matches(this.popupCl)) {
           this.handler.call(this, e, target);
           break;

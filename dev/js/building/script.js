@@ -20,7 +20,7 @@ import History from './modules/history';
 import Card from './modules/card';
 
 window.onload = () => {
-  const spacer = new Spacer('.main *:not([class])');
+  const spacer = new Spacer('.main *:not([class]):not([id])');
   const burger = new Burger('.js-burger');
   const types = new Types('.js-types', '.js-type', '.js-types-table');
 
@@ -34,7 +34,7 @@ window.onload = () => {
     const leads = new Leads('.js-leads');
   }
 
-  if (qs('.js-history-popup')) {
+  if (qs('.history__list')) {
     const history = new History('.js-history-popup', '.js-history-content', '.js-history-colorizer');
   }
 

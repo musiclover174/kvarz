@@ -123,7 +123,8 @@
     &-href
       c #010101
       fontify 20px 600 26px
-      bb(1px, dotted, #010101)
+      &[href]
+        bb(1px, dotted, #010101)
       @media $desktopMax
         fontify 18px 600 24px
     &-text

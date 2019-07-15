@@ -6884,11 +6884,13 @@ body.showmap .about__back:hover {
   font-size: 20px;
   font-weight: 600;
   line-height: 26px;
+}
+.history__item-href[href] {
   border-bottom: 1px dotted #010101;
   -webkit-transition: 0.7s border-color;
   transition: 0.7s border-color;
 }
-.history__item-href:hover {
+.history__item-href[href]:hover {
   border-color: transparent;
 }
 @media (max-width: 1400px) {
